@@ -328,6 +328,10 @@
 
 .field public static final MEDIA_CONTENT_CONTROL:Ljava/lang/String; = "android.permission.MEDIA_CONTENT_CONTROL"
 
+.field public static final MEIZU_CONTROL_PACKAGE_PERMISSIONS:Ljava/lang/String; = "android.permission.MEIZU_CONTROL_PACKAGE_PERMISSIONS"
+
+.field public static final MEIZU_SMART_LOCK:Ljava/lang/String; = "android.permission.MEIZU_SMART_LOCK"
+
 .field public static final MODIFY_APPWIDGET_BIND_PERMISSIONS:Ljava/lang/String; = "android.permission.MODIFY_APPWIDGET_BIND_PERMISSIONS"
 
 .field public static final MODIFY_AUDIO_ROUTING:Ljava/lang/String; = "android.permission.MODIFY_AUDIO_ROUTING"

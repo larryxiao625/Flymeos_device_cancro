@@ -47,6 +47,8 @@
 
 .field private mFlags:I
 
+.field private mFlymeIsHeader:Z
+
 .field private final mGroup:I
 
 .field private mIconDrawable:Landroid/graphics/drawable/Drawable;
@@ -159,7 +161,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040515
+    const v2, #android:string@prepend_shortcut_label#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -176,7 +178,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040517
+    const v2, #android:string@menu_enter_shortcut_label#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -193,7 +195,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040518
+    const v2, #android:string@menu_delete_shortcut_label#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -210,7 +212,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040516
+    const v2, #android:string@menu_space_shortcut_label#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2003,4 +2005,23 @@
     const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method public isCategoryHeader()Z
+    .locals 1
+
+    .prologue
+    iget-boolean v0, p0, Lcom/android/internal/view/menu/MenuItemImpl;->mFlymeIsHeader:Z
+
+    return v0
+.end method
+
+.method public setCategoryHeader(Z)V
+    .locals 0
+    .param p1, "isHeader"    # Z
+
+    .prologue
+    iput-boolean p1, p0, Lcom/android/internal/view/menu/MenuItemImpl;->mFlymeIsHeader:Z
+
+    return-void
 .end method

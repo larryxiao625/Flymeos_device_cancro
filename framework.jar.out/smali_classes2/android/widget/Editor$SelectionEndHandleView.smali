@@ -120,7 +120,7 @@
 .end method
 
 .method public updatePosition(FF)V
-    .locals 4
+    .locals 3
     .param p1, "x"    # F
     .param p2, "y"    # F
 
@@ -150,29 +150,17 @@
 
     move-result v1
 
-    .line 3752
     .local v1, "selectionStart":I
     if-gt v0, v1, :cond_0
 
-    .line 3753
-    add-int/lit8 v2, v1, 0x1
-
-    iget-object v3, p0, Landroid/widget/Editor$SelectionEndHandleView;->this$0:Landroid/widget/Editor;
+    iget-object v2, p0, Landroid/widget/Editor$SelectionEndHandleView;->this$0:Landroid/widget/Editor;
 
     # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-    invoke-static {v3}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-static {v2}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/lang/CharSequence;->length()I
-
-    move-result v3
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->min(II)I
+    invoke-virtual {v2}, Landroid/widget/TextView;->getSelectionEnd()I
 
     move-result v0
 

@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/power/Notifier$FlymeInjector;,
         Lcom/android/server/power/Notifier$NotifierHandler;
     }
 .end annotation
@@ -892,8 +893,6 @@
     return-void
 .end method
 
-
-# virtual methods
 .method public onUserActivity(II)V
     .locals 4
     .param p1, "event"    # I
@@ -1346,4 +1345,15 @@
     .prologue
     .line 381
     return-void
+.end method
+
+
+# virtual methods
+.method flymeGetFieldContext()Landroid/content/Context;
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Lcom/android/server/power/Notifier;->mContext:Landroid/content/Context;
+
+    return-object v0
 .end method

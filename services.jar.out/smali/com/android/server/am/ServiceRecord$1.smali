@@ -80,6 +80,15 @@
     .line 437
     :cond_0
     :try_start_0
+    iget-object v1, p0, Lcom/android/server/am/ServiceRecord$1;->this$0:Lcom/android/server/am/ServiceRecord;
+
+    # invokes: Lcom/android/server/am/ServiceRecord;->isFlymeFalse()Z
+    invoke-static {v1}, Lcom/android/server/am/ServiceRecord;->access$000(Lcom/android/server/am/ServiceRecord;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
     iget-object v1, p0, Lcom/android/server/am/ServiceRecord$1;->val$localForegroundNoti:Landroid/app/Notification;
 
     iget v1, v1, Landroid/app/Notification;->icon:I
@@ -222,7 +231,7 @@
 
     move-result-object v2
 
-    const v3, 0x106005c
+    const v3, #android:color@system_notification_accent_color#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -239,7 +248,7 @@
 
     iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040545
+    const v3, #android:string@app_running_notification_title#t
 
     const/4 v4, 0x1
 
@@ -259,7 +268,7 @@
 
     iget-object v3, v3, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
-    const v4, 0x1040546
+    const v4, #android:string@app_running_notification_text#t
 
     const/4 v5, 0x1
 

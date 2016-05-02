@@ -51,9 +51,11 @@
 
 # virtual methods
 .method public run()V
-    .locals 9
+    .locals 10
 
     .prologue
+    const/4 v9, 0x2
+
     const/4 v8, 0x0
 
     .line 3068
@@ -104,6 +106,18 @@
 
     .line 3075
     .local v1, "handled":Z
+    iget-object v6, p0, Landroid/widget/AbsListView$CheckForLongPress;->this$0:Landroid/widget/AbsListView;
+
+    iput v9, v6, Landroid/widget/AbsListView;->mTouchMode:I
+
+    iget-object v6, p0, Landroid/widget/AbsListView$CheckForLongPress;->this$0:Landroid/widget/AbsListView;
+
+    invoke-virtual {v6, v4, v2, v3, v0}, Landroid/widget/AbsListView;->mzCheckForLongPressForMeiZu(IJLandroid/view/View;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_1
+
     invoke-virtual {p0}, Landroid/widget/AbsListView$CheckForLongPress;->sameWindow()Z
 
     move-result v6
@@ -157,9 +171,7 @@
     :cond_2
     iget-object v6, p0, Landroid/widget/AbsListView$CheckForLongPress;->this$0:Landroid/widget/AbsListView;
 
-    const/4 v7, 0x2
-
-    iput v7, v6, Landroid/widget/AbsListView;->mTouchMode:I
+    iput v9, v6, Landroid/widget/AbsListView;->mTouchMode:I
 
     goto :goto_0
 .end method

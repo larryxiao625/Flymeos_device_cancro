@@ -103,6 +103,24 @@
 
     .line 3098
     .local v0, "handled":Z
+    iget-object v3, p0, Landroid/widget/AbsListView$CheckForKeyLongPress;->this$0:Landroid/widget/AbsListView;
+
+    iget-object v4, p0, Landroid/widget/AbsListView$CheckForKeyLongPress;->this$0:Landroid/widget/AbsListView;
+
+    iget v4, v4, Landroid/widget/AbsListView;->mSelectedPosition:I
+
+    iget-object v5, p0, Landroid/widget/AbsListView$CheckForKeyLongPress;->this$0:Landroid/widget/AbsListView;
+
+    iget v5, v5, Landroid/widget/AbsListView;->mSelectedPosition:I
+
+    int-to-long v6, v5
+
+    invoke-virtual {v3, v4, v6, v7, v2}, Landroid/widget/AbsListView;->mzCheckForLongPressForMeiZu(IJLandroid/view/View;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
     invoke-virtual {p0}, Landroid/widget/AbsListView$CheckForKeyLongPress;->sameWindow()Z
 
     move-result v3

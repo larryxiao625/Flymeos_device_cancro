@@ -7,7 +7,7 @@
 # The default value is base.
 # Support values: base, base_cm, base_mt6592 and other devices in the future.
 #-----------------------------------------------------------------------------
-#BASE := base_cm
+BASE := base_nian
 
 ##############################################################################
 # The value is used for resource adapter with the aapt tool.
@@ -54,9 +54,10 @@ vendor_modify_images := boot
 # The default value is Bluetooth.
 # You can configure the apk name in the vendor/system/app or vendor/system/pri-app directory.
 #-----------------------------------------------------------------------------
-vendor_saved_apps := Bluetooth KeyChain HTMLViewer UserDictionaryProvider BackupRestoreConfirmation \
-                     FusedLocation PrintSpooler SharedStorageBackup  ExternalStorageProvider InputDevices \
-                     ProxyHandler Shell DefaultContainerService
+vendor_saved_apps := AntHalService  Bluetooth BluetoothExt BackupRestoreConfirmation Camera2 \
+ExternalStorageProvider FusedLocation HTMLViewer InputDevices KeyChain NfcNci ProxyHandler \
+qcrilmsgtunnel QuickBoot shutdownlistener TimeService SharedStorageBackup Shell Stk Tag \
+UserDictionaryProvider WAPPushManager
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -96,7 +97,7 @@ board_saved_files := lib/libwebviewchromium.so
 # The default value is nothing.
 # You can configure the board system apk name in the value.
 #-----------------------------------------------------------------------------
-#board_remove_apps := LogReport
+board_remove_apps := LogReport MzUpdate
 
 ##############################################################################
 # The value decides which apk you want to modify, when the apk is based on the board system apk.
@@ -141,8 +142,8 @@ board_saved_files := lib/libwebviewchromium.so
 # The default value is Nexus-5_Unofficial.
 # You should configure the property according to your device and your ID with replace the "Nexus-5_Unofficial".
 override_property += \
-    ro.flyme.romer=Unofficial \
-    ro.product.model_romer=Nexus-5_Unofficial
+    ro.flyme.romer=nian0114 \
+    ro.product.model_romer=port_nian0114
 
 ##############################################################################
 # The value decides which property you will remove from the build.prop.

@@ -118,14 +118,11 @@
 .end method
 
 .method public updatePosition(FF)V
-    .locals 4
+    .locals 3
     .param p1, "x"    # F
     .param p2, "y"    # F
 
     .prologue
-    const/4 v3, 0x0
-
-    .line 3700
     iget-object v2, p0, Landroid/widget/Editor$SelectionStartHandleView;->this$0:Landroid/widget/Editor;
 
     # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
@@ -137,7 +134,6 @@
 
     move-result v0
 
-    .line 3703
     .local v0, "offset":I
     iget-object v2, p0, Landroid/widget/Editor$SelectionStartHandleView;->this$0:Landroid/widget/Editor;
 
@@ -150,21 +146,26 @@
 
     move-result v1
 
-    .line 3704
     .local v1, "selectionEnd":I
     if-lt v0, v1, :cond_0
 
-    add-int/lit8 v2, v1, -0x1
+    .line 3700
+    iget-object v2, p0, Landroid/widget/Editor$SelectionStartHandleView;->this$0:Landroid/widget/Editor;
 
-    invoke-static {v3, v2}, Ljava/lang/Math;->max(II)I
+    # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
+    invoke-static {v2}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/widget/TextView;->getSelectionStart()I
 
     move-result v0
 
-    .line 3706
     :cond_0
-    invoke-virtual {p0, v0, v3}, Landroid/widget/Editor$SelectionStartHandleView;->positionAtCursorOffset(IZ)V
+    const/4 v2, 0x0
 
-    .line 3707
+    invoke-virtual {p0, v0, v2}, Landroid/widget/Editor$SelectionStartHandleView;->positionAtCursorOffset(IZ)V
+
     return-void
 .end method
 
