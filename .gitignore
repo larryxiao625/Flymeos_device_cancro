@@ -1,3 +1,7 @@
 /board/*
 /autopatch/*
 /out/*
+overlay
+history_package
+*~
+*.pyc
