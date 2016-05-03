@@ -1,4 +1,4 @@
-.class final Lcom/android/server/BatteryService$FlymeInjector$1;
+.class final Lcom/android/server/BatteryService$FlymeInjector$FlymeBatteryLowWarningRunnable;
 .super Ljava/lang/Object;
 .source "BatteryService.java"
 
@@ -7,32 +7,34 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/BatteryService$FlymeInjector;->onBatteryLow(Lcom/android/server/BatteryService;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/server/BatteryService$FlymeInjector;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
+    accessFlags = 0x18
+    name = "FlymeBatteryLowWarningRunnable"
 .end annotation
 
 
 # instance fields
-.field final synthetic val$batteryService:Lcom/android/server/BatteryService;
+.field private mBatteryService:Lcom/android/server/BatteryService;
 
-.field final synthetic val$runlevel:I
+.field private mRunLevel:I
 
 
 # direct methods
-.method constructor <init>(ILcom/android/server/BatteryService;)V
+.method constructor <init>(Lcom/android/server/BatteryService;I)V
     .locals 0
+    .param p1, "batteryService"    # Lcom/android/server/BatteryService;
+    .param p2, "runLevel"    # I
 
     .prologue
-    iput p1, p0, Lcom/android/server/BatteryService$FlymeInjector$1;->val$runlevel:I
-
-    iput-object p2, p0, Lcom/android/server/BatteryService$FlymeInjector$1;->val$batteryService:Lcom/android/server/BatteryService;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/android/server/BatteryService$FlymeInjector$FlymeBatteryLowWarningRunnable;->mBatteryService:Lcom/android/server/BatteryService;
+
+    iput p2, p0, Lcom/android/server/BatteryService$FlymeInjector$FlymeBatteryLowWarningRunnable;->mRunLevel:I
 
     return-void
 .end method
@@ -52,11 +54,11 @@
     .local v0, "statusIntent":Landroid/content/Intent;
     const-string v1, "lowLevel"
 
-    iget v2, p0, Lcom/android/server/BatteryService$FlymeInjector$1;->val$runlevel:I
+    iget v2, p0, Lcom/android/server/BatteryService$FlymeInjector$FlymeBatteryLowWarningRunnable;->mRunLevel:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    iget-object v1, p0, Lcom/android/server/BatteryService$FlymeInjector$1;->val$batteryService:Lcom/android/server/BatteryService;
+    iget-object v1, p0, Lcom/android/server/BatteryService$FlymeInjector$FlymeBatteryLowWarningRunnable;->mBatteryService:Lcom/android/server/BatteryService;
 
     invoke-virtual {v1}, Lcom/android/server/BatteryService;->flymeGetFieldContext()Landroid/content/Context;
 

@@ -6011,7 +6011,7 @@
 
     invoke-static {v3, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-wide/32 v0, 0xdbba0
+    const-wide/32 v0, 0x493e0
 
     .local v0, "duration":J
     :goto_0

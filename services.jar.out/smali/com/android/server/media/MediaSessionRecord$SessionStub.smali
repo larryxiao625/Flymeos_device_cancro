@@ -327,7 +327,7 @@
     # setter for: Lcom/android/server/media/MediaSessionRecord;->mFlags:J
     invoke-static {v2, v4, v5}, Lcom/android/server/media/MediaSessionRecord;->access$902(Lcom/android/server/media/MediaSessionRecord;J)J
 
-    invoke-direct {p0}, Lcom/android/server/media/MediaSessionRecord$SessionStub;->flymeUpdateMediaSession()V
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/media/MediaSessionRecord$SessionStub;->flymeUpdateMediaSession()V
 
     .line 850
     iget-object v2, p0, Lcom/android/server/media/MediaSessionRecord$SessionStub;->this$0:Lcom/android/server/media/MediaSessionRecord;

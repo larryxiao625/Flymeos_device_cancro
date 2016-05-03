@@ -195,3 +195,4 @@ dalvik.vm.isa.arm.features=div
 dalvik.vm.lockprof.threshold=500
 net.bt.name=Android
 dalvik.vm.stack-trace-file=/data/anr/traces.txt
+ro.product.device=cancro

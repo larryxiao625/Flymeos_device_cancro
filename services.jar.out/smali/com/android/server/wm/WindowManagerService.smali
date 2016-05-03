@@ -10,11 +10,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/wm/WindowManagerService$FlymeInjector;,
         Lcom/android/server/wm/WindowManagerService$LocalService;,
         Lcom/android/server/wm/WindowManagerService$OnHardKeyboardStatusChangeListener;,
         Lcom/android/server/wm/WindowManagerService$H;,
         Lcom/android/server/wm/WindowManagerService$WindowChangeListener;,
+        Lcom/android/server/wm/WindowManagerService$FlymeInjector;,
         Lcom/android/server/wm/WindowManagerService$DragInputEventReceiver;,
         Lcom/android/server/wm/WindowManagerService$LayoutFields;,
         Lcom/android/server/wm/WindowManagerService$SettingsObserver;,
@@ -13754,7 +13754,7 @@
 
     iput v2, v1, Landroid/content/res/Configuration;->fontScale:F
 
-    invoke-static {p0}, Lcom/android/server/wm/WindowManagerService$FlymeInjector;->setFlymeConfigurationExt(Lcom/android/server/wm/WindowManagerService;)V
+    invoke-static/range {p0 .. p0}, Lcom/android/server/wm/WindowManagerService$FlymeInjector;->setFlymeConfigurationExt(Lcom/android/server/wm/WindowManagerService;)V
 
     .line 8679
     iget-object v1, p0, Lcom/android/server/wm/WindowManagerService;->mTempConfiguration:Landroid/content/res/Configuration;
@@ -15562,7 +15562,7 @@
 
     .line 10742
     .local v1, "focusChanged":I
-    invoke-static {p0}, Lcom/android/server/wm/WindowManagerService$FlymeInjector;->applyDarkStatusBarTheme(Lcom/android/server/wm/WindowManagerService;)V
+    invoke-static/range {p0 .. p0}, Lcom/android/server/wm/WindowManagerService$FlymeInjector;->applyDarkStatusBarTheme(Lcom/android/server/wm/WindowManagerService;)V
 
     if-eqz v2, :cond_2
 
@@ -15706,7 +15706,7 @@
 
     iput v5, v4, Landroid/content/res/Configuration;->fontScale:F
 
-    invoke-static {p0, p1}, Lcom/android/server/wm/WindowManagerService$FlymeInjector;->setFlymeConfigurationExt(Lcom/android/server/wm/WindowManagerService;Landroid/content/res/Configuration;)V
+    invoke-static/range {p0 .. p1}, Lcom/android/server/wm/WindowManagerService$FlymeInjector;->setFlymeConfigurationExt(Lcom/android/server/wm/WindowManagerService;Landroid/content/res/Configuration;)V
 
     iget-object v4, p0, Lcom/android/server/wm/WindowManagerService;->mTempConfiguration:Landroid/content/res/Configuration;
 
@@ -33318,7 +33318,7 @@
 .end method
 
 .method prepareDragSurface(Landroid/view/IWindow;Landroid/view/SurfaceSession;IIILandroid/view/Surface;)Landroid/os/IBinder;
-    .locals 20
+    .locals 18
     .param p1, "window"    # Landroid/view/IWindow;
     .param p2, "session"    # Landroid/view/SurfaceSession;
     .param p3, "flags"    # I
@@ -33329,25 +33329,25 @@
     .prologue
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
-    move-result v11
+    move-result v9
 
-    .local v11, "callerPid":I
+    .local v9, "callerPid":I
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
-    move-result-wide v16
+    move-result-wide v14
 
-    .local v16, "origId":J
-    const/16 v18, 0x0
+    .local v14, "origId":J
+    const/16 v16, 0x0
 
-    .local v18, "token":Landroid/os/IBinder;
+    .local v16, "token":Landroid/os/IBinder;
     :try_start_0
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/wm/WindowManagerService;->mWindowMap:Ljava/util/HashMap;
 
-    move-object/from16 v19, v0
+    move-object/from16 v17, v0
 
-    monitor-enter v19
+    monitor-enter v17
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
@@ -33357,294 +33357,294 @@
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/server/wm/WindowManagerService;->mDragState:Lcom/android/server/wm/DragState;
+    iget-object v3, v0, Lcom/android/server/wm/WindowManagerService;->mDragState:Lcom/android/server/wm/DragState;
 
-    if-nez v5, :cond_1
+    if-nez v3, :cond_1
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/WindowManagerService;->getDefaultDisplayContentLocked()Lcom/android/server/wm/DisplayContent;
 
-    move-result-object v13
+    move-result-object v11
 
-    .local v13, "displayContent":Lcom/android/server/wm/DisplayContent;
-    invoke-virtual {v13}, Lcom/android/server/wm/DisplayContent;->getDisplay()Landroid/view/Display;
-
-    move-result-object v12
-
-    .local v12, "display":Landroid/view/Display;
-    new-instance v4, Landroid/view/SurfaceControl;
-
-    const-string v6, "drag surface"
-
-    const/4 v9, -0x3
-
-    const/4 v10, 0x4
-
-    move-object/from16 v5, p2
-
-    move/from16 v7, p4
-
-    move/from16 v8, p5
-
-    invoke-direct/range {v4 .. v10}, Landroid/view/SurfaceControl;-><init>(Landroid/view/SurfaceSession;Ljava/lang/String;IIII)V
-
-    .local v4, "surface":Landroid/view/SurfaceControl;
-    invoke-virtual {v12}, Landroid/view/Display;->getLayerStack()I
-
-    move-result v5
-
-    invoke-virtual {v4, v5}, Landroid/view/SurfaceControl;->setLayerStack(I)V
-
-    move-object/from16 v0, p6
-
-    invoke-virtual {v0, v4}, Landroid/view/Surface;->copyFrom(Landroid/view/SurfaceControl;)V
-
-    invoke-interface/range {p1 .. p1}, Landroid/view/IWindow;->asBinder()Landroid/os/IBinder;
+    .local v11, "displayContent":Lcom/android/server/wm/DisplayContent;
+    invoke-virtual {v11}, Lcom/android/server/wm/DisplayContent;->getDisplay()Landroid/view/Display;
 
     move-result-object v10
 
-    .local v10, "winBinder":Landroid/os/IBinder;
-    new-instance v7, Landroid/os/Binder;
+    .local v10, "display":Landroid/view/Display;
+    new-instance v2, Landroid/view/SurfaceControl;
 
-    invoke-direct {v7}, Landroid/os/Binder;-><init>()V
+    const-string v4, "drag surface"
+
+    const/4 v7, -0x3
+
+    const/4 v8, 0x4
+
+    move-object/from16 v3, p2
+
+    move/from16 v5, p4
+
+    move/from16 v6, p5
+
+    invoke-direct/range {v2 .. v8}, Landroid/view/SurfaceControl;-><init>(Landroid/view/SurfaceSession;Ljava/lang/String;IIII)V
+
+    .local v2, "surface":Landroid/view/SurfaceControl;
+    invoke-virtual {v10}, Landroid/view/Display;->getLayerStack()I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Landroid/view/SurfaceControl;->setLayerStack(I)V
+
+    move-object/from16 v0, p6
+
+    invoke-virtual {v0, v2}, Landroid/view/Surface;->copyFrom(Landroid/view/SurfaceControl;)V
+
+    invoke-interface/range {p1 .. p1}, Landroid/view/IWindow;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v8
+
+    .local v8, "winBinder":Landroid/os/IBinder;
+    new-instance v5, Landroid/os/Binder;
+
+    invoke-direct {v5}, Landroid/os/Binder;-><init>()V
     :try_end_1
     .catch Landroid/view/Surface$OutOfResourcesException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_3
 
-    .end local v18    # "token":Landroid/os/IBinder;
-    .local v7, "token":Landroid/os/IBinder;
+    .end local v16    # "token":Landroid/os/IBinder;
+    .local v5, "token":Landroid/os/IBinder;
     :try_start_2
-    new-instance v5, Lcom/android/server/wm/MzDragState;
+    new-instance v3, Lcom/android/server/wm/MzDragState;
 
-    const/4 v9, 0x0
+    const/4 v7, 0x0
 
-    move-object/from16 v6, p0
+    move-object/from16 v4, p0
 
-    move-object v8, v4
+    move-object v6, v2
 
-    invoke-direct/range {v5 .. v10}, Lcom/android/server/wm/MzDragState;-><init>(Lcom/android/server/wm/WindowManagerService;Landroid/os/IBinder;Landroid/view/SurfaceControl;ILandroid/os/IBinder;)V
+    invoke-direct/range {v3 .. v8}, Lcom/android/server/wm/MzDragState;-><init>(Lcom/android/server/wm/WindowManagerService;Landroid/os/IBinder;Landroid/view/SurfaceControl;ILandroid/os/IBinder;)V
 
     move-object/from16 v0, p0
 
-    iput-object v5, v0, Lcom/android/server/wm/WindowManagerService;->mDragState:Lcom/android/server/wm/DragState;
+    iput-object v3, v0, Lcom/android/server/wm/WindowManagerService;->mDragState:Lcom/android/server/wm/DragState;
 
     .line 7582
     move-object/from16 v0, p0
 
-    move/from16 v1, p4
+    move/from16 v3, p4
 
-    move/from16 v2, p5
+    move/from16 v4, p5
 
-    invoke-static {v0, v1, v2}, Lcom/android/server/wm/WindowManagerService$FlymeInjector;->mzSetWidthAndHeight(Lcom/android/server/wm/WindowManagerService;II)V
+    invoke-static {v0, v3, v4}, Lcom/android/server/wm/WindowManagerService$FlymeInjector;->mzSetWidthAndHeight(Lcom/android/server/wm/WindowManagerService;II)V
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/server/wm/WindowManagerService;->mDragState:Lcom/android/server/wm/DragState;
+    iget-object v3, v0, Lcom/android/server/wm/WindowManagerService;->mDragState:Lcom/android/server/wm/DragState;
 
-    new-instance v18, Landroid/os/Binder;
+    new-instance v16, Landroid/os/Binder;
 
-    invoke-direct/range {v18 .. v18}, Landroid/os/Binder;-><init>()V
+    invoke-direct/range {v16 .. v16}, Landroid/os/Binder;-><init>()V
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v16
 
-    iput-object v0, v5, Lcom/android/server/wm/DragState;->mToken:Landroid/os/IBinder;
+    iput-object v0, v3, Lcom/android/server/wm/DragState;->mToken:Landroid/os/IBinder;
     :try_end_2
     .catch Landroid/view/Surface$OutOfResourcesException; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .end local v7    # "token":Landroid/os/IBinder;
-    .restart local v18    # "token":Landroid/os/IBinder;
+    .end local v5    # "token":Landroid/os/IBinder;
+    .restart local v16    # "token":Landroid/os/IBinder;
     :try_start_3
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
+    iget-object v3, v0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
-    const/16 v6, 0x14
+    const/16 v4, 0x14
 
-    invoke-virtual {v5, v6, v10}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(ILjava/lang/Object;)V
+    invoke-virtual {v3, v4, v8}, Lcom/android/server/wm/WindowManagerService$H;->removeMessages(ILjava/lang/Object;)V
 
     .line 7586
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
+    iget-object v3, v0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
-    const/16 v6, 0x14
+    const/16 v4, 0x14
 
-    invoke-virtual {v5, v6, v10}, Lcom/android/server/wm/WindowManagerService$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v3, v4, v8}, Lcom/android/server/wm/WindowManagerService$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
-    move-result-object v15
+    move-result-object v13
 
-    .local v15, "msg":Landroid/os/Message;
+    .local v13, "msg":Landroid/os/Message;
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
+    iget-object v3, v0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
-    const-wide/16 v8, 0x1388
+    const-wide/16 v6, 0x1388
 
-    invoke-virtual {v5, v15, v8, v9}, Lcom/android/server/wm/WindowManagerService$H;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v3, v13, v6, v7}, Lcom/android/server/wm/WindowManagerService$H;->sendMessageDelayed(Landroid/os/Message;J)Z
     :try_end_3
     .catch Landroid/view/Surface$OutOfResourcesException; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
-    move-object/from16 v7, v18
+    move-object/from16 v5, v16
 
-    .end local v4    # "surface":Landroid/view/SurfaceControl;
-    .end local v10    # "winBinder":Landroid/os/IBinder;
-    .end local v12    # "display":Landroid/view/Display;
-    .end local v13    # "displayContent":Lcom/android/server/wm/DisplayContent;
-    .end local v15    # "msg":Landroid/os/Message;
-    .end local v18    # "token":Landroid/os/IBinder;
-    .restart local v7    # "token":Landroid/os/IBinder;
+    .end local v2    # "surface":Landroid/view/SurfaceControl;
+    .end local v8    # "winBinder":Landroid/os/IBinder;
+    .end local v10    # "display":Landroid/view/Display;
+    .end local v11    # "displayContent":Lcom/android/server/wm/DisplayContent;
+    .end local v13    # "msg":Landroid/os/Message;
+    .end local v16    # "token":Landroid/os/IBinder;
+    .restart local v5    # "token":Landroid/os/IBinder;
     :cond_0
     :goto_0
     :try_start_4
-    monitor-exit v19
+    monitor-exit v17
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    invoke-static/range {v16 .. v17}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     invoke-static/range {p0 .. p0}, Lcom/android/server/wm/WindowManagerService$FlymeInjector;->mzRegisterReceivers(Lcom/android/server/wm/WindowManagerService;)V
 
-    return-object v7
+    return-object v5
 
-    .end local v7    # "token":Landroid/os/IBinder;
-    .restart local v18    # "token":Landroid/os/IBinder;
+    .end local v5    # "token":Landroid/os/IBinder;
+    .restart local v16    # "token":Landroid/os/IBinder;
     :cond_1
     :try_start_5
-    const-string v5, "WindowManager"
+    const-string v3, "WindowManager"
 
-    const-string v6, "Drag already in progress"
+    const-string v4, "Drag already in progress"
 
-    invoke-static {v5, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_5
     .catch Landroid/view/Surface$OutOfResourcesException; {:try_start_5 .. :try_end_5} :catch_0
     .catchall {:try_start_5 .. :try_end_5} :catchall_3
 
-    move-object/from16 v7, v18
+    move-object/from16 v5, v16
 
-    .end local v18    # "token":Landroid/os/IBinder;
-    .restart local v7    # "token":Landroid/os/IBinder;
+    .end local v16    # "token":Landroid/os/IBinder;
+    .restart local v5    # "token":Landroid/os/IBinder;
     goto :goto_0
 
-    .end local v7    # "token":Landroid/os/IBinder;
-    .restart local v18    # "token":Landroid/os/IBinder;
+    .end local v5    # "token":Landroid/os/IBinder;
+    .restart local v16    # "token":Landroid/os/IBinder;
     :catch_0
-    move-exception v14
+    move-exception v12
 
-    move-object/from16 v7, v18
+    move-object/from16 v5, v16
 
-    .end local v18    # "token":Landroid/os/IBinder;
-    .restart local v7    # "token":Landroid/os/IBinder;
-    .local v14, "e":Landroid/view/Surface$OutOfResourcesException;
+    .end local v16    # "token":Landroid/os/IBinder;
+    .restart local v5    # "token":Landroid/os/IBinder;
+    .local v12, "e":Landroid/view/Surface$OutOfResourcesException;
     :goto_1
     :try_start_6
-    const-string v5, "WindowManager"
+    const-string v3, "WindowManager"
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "Can\'t allocate drag surface w="
+    const-string v6, "Can\'t allocate drag surface w="
 
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v4
 
     move/from16 v0, p4
 
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v4
 
-    const-string v8, " h="
+    const-string v6, " h="
 
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v4
 
     move/from16 v0, p5
 
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v4
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v4
 
-    invoke-static {v5, v6, v14}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lcom/android/server/wm/WindowManagerService;->mDragState:Lcom/android/server/wm/DragState;
-
-    if-eqz v5, :cond_0
+    invoke-static {v3, v4, v12}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/server/wm/WindowManagerService;->mDragState:Lcom/android/server/wm/DragState;
+    iget-object v3, v0, Lcom/android/server/wm/WindowManagerService;->mDragState:Lcom/android/server/wm/DragState;
 
-    invoke-virtual {v5}, Lcom/android/server/wm/DragState;->reset()V
-
-    const/4 v5, 0x0
+    if-eqz v3, :cond_0
 
     move-object/from16 v0, p0
 
-    iput-object v5, v0, Lcom/android/server/wm/WindowManagerService;->mDragState:Lcom/android/server/wm/DragState;
+    iget-object v3, v0, Lcom/android/server/wm/WindowManagerService;->mDragState:Lcom/android/server/wm/DragState;
+
+    invoke-virtual {v3}, Lcom/android/server/wm/DragState;->reset()V
+
+    const/4 v3, 0x0
+
+    move-object/from16 v0, p0
+
+    iput-object v3, v0, Lcom/android/server/wm/WindowManagerService;->mDragState:Lcom/android/server/wm/DragState;
 
     goto :goto_0
 
-    .end local v14    # "e":Landroid/view/Surface$OutOfResourcesException;
+    .end local v12    # "e":Landroid/view/Surface$OutOfResourcesException;
     :catchall_0
-    move-exception v5
+    move-exception v3
 
     :goto_2
-    monitor-exit v19
+    monitor-exit v17
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     :try_start_7
-    throw v5
+    throw v3
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
     .line 7600
     :catchall_1
-    move-exception v5
+    move-exception v3
 
     :goto_3
-    invoke-static/range {v16 .. v17}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    throw v5
+    throw v3
 
-    .end local v7    # "token":Landroid/os/IBinder;
-    .restart local v18    # "token":Landroid/os/IBinder;
+    .end local v5    # "token":Landroid/os/IBinder;
+    .restart local v16    # "token":Landroid/os/IBinder;
     :catchall_2
-    move-exception v5
+    move-exception v3
 
-    move-object/from16 v7, v18
+    move-object/from16 v5, v16
 
-    .end local v18    # "token":Landroid/os/IBinder;
-    .restart local v7    # "token":Landroid/os/IBinder;
+    .end local v16    # "token":Landroid/os/IBinder;
+    .restart local v5    # "token":Landroid/os/IBinder;
     goto :goto_3
 
-    .end local v7    # "token":Landroid/os/IBinder;
-    .restart local v18    # "token":Landroid/os/IBinder;
+    .end local v5    # "token":Landroid/os/IBinder;
+    .restart local v16    # "token":Landroid/os/IBinder;
     :catchall_3
-    move-exception v5
+    move-exception v3
 
-    move-object/from16 v7, v18
+    move-object/from16 v5, v16
 
-    .end local v18    # "token":Landroid/os/IBinder;
-    .restart local v7    # "token":Landroid/os/IBinder;
+    .end local v16    # "token":Landroid/os/IBinder;
+    .restart local v5    # "token":Landroid/os/IBinder;
     goto :goto_2
 
-    .restart local v4    # "surface":Landroid/view/SurfaceControl;
-    .restart local v10    # "winBinder":Landroid/os/IBinder;
-    .restart local v12    # "display":Landroid/view/Display;
-    .restart local v13    # "displayContent":Lcom/android/server/wm/DisplayContent;
+    .restart local v2    # "surface":Landroid/view/SurfaceControl;
+    .restart local v8    # "winBinder":Landroid/os/IBinder;
+    .restart local v10    # "display":Landroid/view/Display;
+    .restart local v11    # "displayContent":Lcom/android/server/wm/DisplayContent;
     :catch_1
-    move-exception v14
+    move-exception v12
 
     goto :goto_1
 .end method
@@ -49796,7 +49796,7 @@
     .param p2, "w"    # Lcom/android/server/wm/WindowState;
 
     .prologue
-    invoke-static {p1}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1400(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+    invoke-virtual {p1}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->flymeGetFieldSyswin()Z
 
     move-result v0
 
@@ -49812,7 +49812,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-static {p1}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1700(Lcom/android/server/wm/WindowManagerService$LayoutFields;)J
+    invoke-virtual {p1}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->flymeGetFieldUserActivityTimeout()J
 
     move-result-wide v0
 
@@ -49826,11 +49826,11 @@
 
     iget-wide v0, v0, Landroid/view/WindowManager$LayoutParams;->userActivityTimeout:J
 
-    invoke-static {p1, v0, v1}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1702(Lcom/android/server/wm/WindowManagerService$LayoutFields;J)J
+    invoke-virtual {p1, v0, v1}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->flymeSetFieldUserActivityTimeout(J)V
 
     const/4 v0, 0x1
 
-    invoke-static {p1, v0}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1402(Lcom/android/server/wm/WindowManagerService$LayoutFields;Z)Z
+    invoke-virtual {p1, v0}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->flymeSetFieldSyswin(Z)V
 
     :cond_0
     return-void

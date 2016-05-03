@@ -107,9 +107,9 @@
 
     iget-object v1, p0, Lcom/android/server/power/Notifier$3;->this$0:Lcom/android/server/power/Notifier;
 
-    iget v2, p0, Lcom/android/server/power/Notifier$3;->val$reason:I
+    iget v3, p0, Lcom/android/server/power/Notifier$3;->val$reason:I
 
-    invoke-static {v1, v2}, Lcom/android/server/power/Notifier$FlymeInjector;->notifyAccessControlGotoSleep(Lcom/android/server/power/Notifier;I)V
+    invoke-static {v1, v3}, Lcom/android/server/power/Notifier$FlymeInjector;->notifyAccessControlGotoSleep(Lcom/android/server/power/Notifier;I)V
 
     return-void
 

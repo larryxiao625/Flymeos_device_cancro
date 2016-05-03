@@ -42,15 +42,14 @@
     .param p1, "event"    # Landroid/view/InputEvent;
 
     .prologue
-    iget-object v7, p0, Lcom/android/server/wm/WindowManagerService$DragInputEventReceiver;->this$0:Lcom/android/server/wm/WindowManagerService;
+    iget-object v0, p0, Lcom/android/server/wm/WindowManagerService$DragInputEventReceiver;->this$0:Lcom/android/server/wm/WindowManagerService;
 
-    invoke-static {p0, p1, v7}, Lcom/android/server/wm/WindowManagerService$FlymeInjector;->hookOnInputEvent(Lcom/android/server/wm/WindowManagerService$DragInputEventReceiver;Landroid/view/InputEvent;Lcom/android/server/wm/WindowManagerService;)Z
+    invoke-static {p0, p1, v0}, Lcom/android/server/wm/WindowManagerService$FlymeInjector;->hookOnInputEvent(Lcom/android/server/wm/WindowManagerService$DragInputEventReceiver;Landroid/view/InputEvent;Lcom/android/server/wm/WindowManagerService;)Z
 
-    move-result v7
+    move-result v0
 
-    if-eqz v7, :cond_0
+    if-eqz v0, :cond_0
 
-    :goto_0
     return-void
 
     :cond_0
@@ -107,7 +106,7 @@
 
     packed-switch v7, :pswitch_data_0
 
-    :goto_1
+    :goto_0
     :pswitch_0
     if-eqz v2, :cond_1
 
@@ -142,7 +141,8 @@
     :cond_2
     invoke-virtual {p0, p1, v3}, Lcom/android/server/wm/WindowManagerService$DragInputEventReceiver;->finishInputEvent(Landroid/view/InputEvent;Z)V
 
-    goto :goto_0
+    :goto_1
+    return-void
 
     .restart local v2    # "endDrag":Z
     .restart local v4    # "motionEvent":Landroid/view/MotionEvent;
@@ -170,7 +170,7 @@
     .line 752
     monitor-exit v8
 
-    goto :goto_1
+    goto :goto_0
 
     :catchall_0
     move-exception v7
@@ -206,7 +206,7 @@
 
     invoke-virtual {p0, p1, v3}, Lcom/android/server/wm/WindowManagerService$DragInputEventReceiver;->finishInputEvent(Landroid/view/InputEvent;Z)V
 
-    goto :goto_0
+    goto :goto_1
 
     .end local v1    # "e":Ljava/lang/Exception;
     .restart local v2    # "endDrag":Z
@@ -237,7 +237,7 @@
     .line 760
     monitor-exit v8
 
-    goto :goto_1
+    goto :goto_0
 
     :catchall_1
     move-exception v7
@@ -272,7 +272,7 @@
     :pswitch_3
     const/4 v2, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 774
     :catchall_3
@@ -285,11 +285,11 @@
 
     :try_start_a
     throw v7
+
+    nop
     :try_end_a
     .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_0
     .catchall {:try_start_a .. :try_end_a} :catchall_2
-
-    nop
 
     .line 741
     :pswitch_data_0

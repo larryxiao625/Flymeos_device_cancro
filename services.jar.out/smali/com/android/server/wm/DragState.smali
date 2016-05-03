@@ -339,7 +339,7 @@
 
     .line 223
     :cond_1
-    invoke-virtual {p0}, Lcom/android/server/wm/DragState;->mzSendDragStartedLw()V
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/DragState;->mzSendDragStartedLw()V
 
     iget-boolean v0, p0, Lcom/android/server/wm/DragState;->mDragInProgress:Z
 

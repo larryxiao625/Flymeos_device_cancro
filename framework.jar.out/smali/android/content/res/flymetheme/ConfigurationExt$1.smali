@@ -1,6 +1,6 @@
-.class final Lcom/meizu/statsos/UsageStatsProxy$Event$1;
+.class final Landroid/content/res/flymetheme/ConfigurationExt$1;
 .super Ljava/lang/Object;
-.source "UsageStatsProxy.java"
+.source "ConfigurationExt.java"
 
 # interfaces
 .implements Landroid/os/Parcelable$Creator;
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/meizu/statsos/UsageStatsProxy$Event;
+    value = Landroid/content/res/flymetheme/ConfigurationExt;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,7 +21,7 @@
         "Ljava/lang/Object;",
         "Landroid/os/Parcelable$Creator",
         "<",
-        "Lcom/meizu/statsos/UsageStatsProxy$Event;",
+        "Landroid/content/res/flymetheme/ConfigurationExt;",
         ">;"
     }
 .end annotation
@@ -39,14 +39,16 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Lcom/meizu/statsos/UsageStatsProxy$Event;
-    .locals 1
+.method public createFromParcel(Landroid/os/Parcel;)Landroid/content/res/flymetheme/ConfigurationExt;
+    .locals 2
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    new-instance v0, Lcom/meizu/statsos/UsageStatsProxy$Event;
+    new-instance v0, Landroid/content/res/flymetheme/ConfigurationExt;
 
-    invoke-direct {v0, p1}, Lcom/meizu/statsos/UsageStatsProxy$Event;-><init>(Landroid/os/Parcel;)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p1, v1}, Landroid/content/res/flymetheme/ConfigurationExt;-><init>(Landroid/os/Parcel;Landroid/content/res/flymetheme/ConfigurationExt$1;)V
 
     return-object v0
 .end method
@@ -56,19 +58,19 @@
     .param p1, "x0"    # Landroid/os/Parcel;
 
     .prologue
-    invoke-virtual {p0, p1}, Lcom/meizu/statsos/UsageStatsProxy$Event$1;->createFromParcel(Landroid/os/Parcel;)Lcom/meizu/statsos/UsageStatsProxy$Event;
+    invoke-virtual {p0, p1}, Landroid/content/res/flymetheme/ConfigurationExt$1;->createFromParcel(Landroid/os/Parcel;)Landroid/content/res/flymetheme/ConfigurationExt;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public newArray(I)[Lcom/meizu/statsos/UsageStatsProxy$Event;
+.method public newArray(I)[Landroid/content/res/flymetheme/ConfigurationExt;
     .locals 1
     .param p1, "size"    # I
 
     .prologue
-    new-array v0, p1, [Lcom/meizu/statsos/UsageStatsProxy$Event;
+    new-array v0, p1, [Landroid/content/res/flymetheme/ConfigurationExt;
 
     return-object v0
 .end method
@@ -78,7 +80,7 @@
     .param p1, "x0"    # I
 
     .prologue
-    invoke-virtual {p0, p1}, Lcom/meizu/statsos/UsageStatsProxy$Event$1;->newArray(I)[Lcom/meizu/statsos/UsageStatsProxy$Event;
+    invoke-virtual {p0, p1}, Landroid/content/res/flymetheme/ConfigurationExt$1;->newArray(I)[Landroid/content/res/flymetheme/ConfigurationExt;
 
     move-result-object v0
 

@@ -80,14 +80,7 @@
     .line 437
     :cond_0
     :try_start_0
-    iget-object v1, p0, Lcom/android/server/am/ServiceRecord$1;->this$0:Lcom/android/server/am/ServiceRecord;
-
-    # invokes: Lcom/android/server/am/ServiceRecord;->isFlymeFalse()Z
-    invoke-static {v1}, Lcom/android/server/am/ServiceRecord;->access$000(Lcom/android/server/am/ServiceRecord;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
+    goto/16 :goto_2
 
     iget-object v1, p0, Lcom/android/server/am/ServiceRecord$1;->val$localForegroundNoti:Landroid/app/Notification;
 
@@ -399,6 +392,7 @@
     .end local v11    # "ctx":Landroid/content/Context;
     .end local v12    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :cond_3
+    :goto_2
     const/4 v1, 0x1
 
     new-array v8, v1, [I

@@ -187,7 +187,7 @@
     iget-object v6, p0, Landroid/widget/Editor$SuggestionsPopupWindow$SuggestionSpanComparator;->this$1:Landroid/widget/Editor$SuggestionsPopupWindow;
 
     # getter for: Landroid/widget/Editor$SuggestionsPopupWindow;->mSpansLengths:Ljava/util/HashMap;
-    invoke-static {v6}, Landroid/widget/Editor$SuggestionsPopupWindow;->access$2200(Landroid/widget/Editor$SuggestionsPopupWindow;)Ljava/util/HashMap;
+    invoke-static {v6}, Landroid/widget/Editor$SuggestionsPopupWindow;->access$2100(Landroid/widget/Editor$SuggestionsPopupWindow;)Ljava/util/HashMap;
 
     move-result-object v6
 
@@ -204,7 +204,7 @@
     iget-object v6, p0, Landroid/widget/Editor$SuggestionsPopupWindow$SuggestionSpanComparator;->this$1:Landroid/widget/Editor$SuggestionsPopupWindow;
 
     # getter for: Landroid/widget/Editor$SuggestionsPopupWindow;->mSpansLengths:Ljava/util/HashMap;
-    invoke-static {v6}, Landroid/widget/Editor$SuggestionsPopupWindow;->access$2200(Landroid/widget/Editor$SuggestionsPopupWindow;)Ljava/util/HashMap;
+    invoke-static {v6}, Landroid/widget/Editor$SuggestionsPopupWindow;->access$2100(Landroid/widget/Editor$SuggestionsPopupWindow;)Ljava/util/HashMap;
 
     move-result-object v6
 

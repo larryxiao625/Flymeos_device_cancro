@@ -45,6 +45,8 @@
 
 .field private final mContext:Landroid/content/Context;
 
+.field mFlymeAccessControlManager:Lmeizu/security/AccessControlManager;
+
 .field private final mGoToSleepBroadcastDone:Landroid/content/BroadcastReceiver;
 
 .field private final mHandler:Lcom/android/server/power/Notifier$NotifierHandler;

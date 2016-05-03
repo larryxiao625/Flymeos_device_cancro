@@ -394,7 +394,7 @@
     :goto_0
     iput v2, p0, Lcom/android/server/BluetoothManagerService;->mSystemUiUid:I
 
-    invoke-direct {p0}, Lcom/android/server/BluetoothManagerService;->flymeRegisterReceiver()V
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/BluetoothManagerService;->flymeRegisterReceiver()V
 
     return-void
 
@@ -1110,7 +1110,7 @@
 
     .end local v1    # "intent":Landroid/content/Intent;
     :cond_2
-    invoke-direct {p0, p1, p2}, Lcom/android/server/BluetoothManagerService;->flymeChangeBluetoothName(II)V
+    invoke-direct/range {p0 .. p2}, Lcom/android/server/BluetoothManagerService;->flymeChangeBluetoothName(II)V
 
     return-void
 
@@ -1912,18 +1912,17 @@
 
     if-nez v0, :cond_0
 
-    .line 326
     const-string v0, "BluetoothManagerService"
 
     const-string v1, "invalid bluetooth name and address stored"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 332
     :goto_0
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/BluetoothManagerService;->initFlymeField()V
+
     return-void
 
-    .line 329
     :cond_0
     iget-object v0, p0, Lcom/android/server/BluetoothManagerService;->mContentResolver:Landroid/content/ContentResolver;
 
@@ -1982,8 +1981,6 @@
     move-result-object v1
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-direct {p0}, Lcom/android/server/BluetoothManagerService;->initFlymeField()V
 
     goto :goto_0
 .end method
@@ -3918,7 +3915,7 @@
 
     if-eq v6, v7, :cond_1
 
-    invoke-direct {p0}, Lcom/android/server/BluetoothManagerService;->checkIfCallerIsForegroundUser()Z
+    invoke-direct {p0}, Lcom/android/server/BluetoothManagerService;->hook_checkIfCallerIsForegroundUser()Z
 
     move-result v6
 
@@ -5069,17 +5066,6 @@
     return-void
 .end method
 
-.method static synthetic access$flyme(Lcom/android/server/BluetoothManagerService;Landroid/content/Intent;)V
-    .locals 0
-    .param p0, "x0"    # Lcom/android/server/BluetoothManagerService;
-    .param p1, "x1"    # Landroid/content/Intent;
-
-    .prologue
-    invoke-direct {p0, p1}, Lcom/android/server/BluetoothManagerService;->flymeProcessMeizuDeviceNamaChange(Landroid/content/Intent;)V
-
-    return-void
-.end method
-
 .method private flymeChangeAppIdByBluetooth(I)I
     .locals 1
     .param p1, "callingAppId"    # I
@@ -5159,7 +5145,7 @@
     goto :goto_0
 .end method
 
-.method private flymeProcessMeizuDeviceNamaChange(Landroid/content/Intent;)V
+.method flymeProcessMeizuDeviceNamaChange(Landroid/content/Intent;)V
     .locals 3
     .param p1, "intent"    # Landroid/content/Intent;
 

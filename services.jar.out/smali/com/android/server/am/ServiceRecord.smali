@@ -2220,24 +2220,3 @@
 
     goto :goto_0
 .end method
-
-.method static synthetic access$000(Lcom/android/server/am/ServiceRecord;)Z
-    .locals 1
-    .param p0, "x0"    # Lcom/android/server/am/ServiceRecord;
-
-    .prologue
-    invoke-direct {p0}, Lcom/android/server/am/ServiceRecord;->isFlymeFalse()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private isFlymeFalse()Z
-    .locals 1
-
-    .prologue
-    const/4 v0, 0x0
-
-    return v0
-.end method

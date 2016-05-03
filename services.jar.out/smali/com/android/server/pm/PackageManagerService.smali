@@ -6,11 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/pm/PackageManagerService$FlymePackageManagerServiceInjector;,
         Lcom/android/server/pm/PackageManagerService$DumpState;,
         Lcom/android/server/pm/PackageManagerService$ClearStorageConnection;,
         Lcom/android/server/pm/PackageManagerService$PackageRemovedInfo;,
         Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;,
+        Lcom/android/server/pm/PackageManagerService$FlymePackageManagerServiceInjector;,
         Lcom/android/server/pm/PackageManagerService$AsecInstallArgs;,
         Lcom/android/server/pm/PackageManagerService$FileInstallArgs;,
         Lcom/android/server/pm/PackageManagerService$InstallArgs;,
@@ -7369,7 +7369,7 @@
     :cond_5
     const/4 v11, 0x0
 
-    goto/16 :goto_1
+    goto :goto_1
 
     .line 3348
     .restart local v11    # "debug":Z
@@ -7601,9 +7601,7 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/android/server/pm/PackageManagerService$FlymePackageManagerServiceInjector;->getResolveInfo(Lcom/android/server/pm/PackageManagerService;Landroid/content/Intent;Ljava/lang/String;II)Landroid/content/pm/ResolveInfo;
 
-    move-result-object v0
-
-    move-object/from16 v16, v0
+    move-result-object v1
 
     goto/16 :goto_0
 .end method
@@ -19396,47 +19394,52 @@
 .end method
 
 .method private isPackageDeviceAdmin(Ljava/lang/String;I)Z
-    .locals 5
+    .locals 6
     .param p1, "packageName"    # Ljava/lang/String;
     .param p2, "userId"    # I
 
     .prologue
     const/4 v4, 0x0
 
-    const-string v3, "device_policy"
+    const/4 v3, 0x1
 
-    invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    const-string v5, "device_policy"
 
-    move-result-object v3
+    invoke-static {v5}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
-    invoke-static {v3}, Landroid/app/admin/IDevicePolicyManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/admin/IDevicePolicyManager;
+    move-result-object v5
+
+    invoke-static {v5}, Landroid/app/admin/IDevicePolicyManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/admin/IDevicePolicyManager;
 
     move-result-object v0
 
     .local v0, "dpm":Landroid/app/admin/IDevicePolicyManager;
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_2
 
     :try_start_0
     invoke-interface {v0, p1}, Landroid/app/admin/IDevicePolicyManager;->isDeviceOwner(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v5
 
-    if-eqz v3, :cond_1
+    if-eqz v5, :cond_0
 
     invoke-static {p0, v0, p1, p2}, Lcom/android/server/pm/PackageManagerService$FlymePackageManagerServiceInjector;->removeActiveAdminX(Lcom/android/server/pm/PackageManagerService;Landroid/app/admin/IDevicePolicyManager;Ljava/lang/String;I)V
 
-    :cond_0
+    const/4 v3, 0x0
+
+    return v3
+
     :goto_0
-    return v4
+    return v3
 
-    :cond_1
-    const/4 v3, -0x1
+    :cond_0
+    const/4 v5, -0x1
 
-    if-ne p2, v3, :cond_2
+    if-ne p2, v5, :cond_1
 
-    sget-object v3, Lcom/android/server/pm/PackageManagerService;->sUserManager:Lcom/android/server/pm/UserManagerService;
+    sget-object v5, Lcom/android/server/pm/PackageManagerService;->sUserManager:Lcom/android/server/pm/UserManagerService;
 
-    invoke-virtual {v3}, Lcom/android/server/pm/UserManagerService;->getUserIds()[I
+    invoke-virtual {v5}, Lcom/android/server/pm/UserManagerService;->getUserIds()[I
 
     move-result-object v2
 
@@ -19446,50 +19449,55 @@
 
     .local v1, "i":I
     :goto_2
-    array-length v3, v2
+    array-length v5, v2
 
-    if-ge v1, v3, :cond_0
+    if-ge v1, v5, :cond_2
 
-    aget v3, v2, v1
+    aget v5, v2, v1
 
-    invoke-interface {v0, p1, v3}, Landroid/app/admin/IDevicePolicyManager;->packageHasActiveAdmins(Ljava/lang/String;I)Z
+    invoke-interface {v0, p1, v5}, Landroid/app/admin/IDevicePolicyManager;->packageHasActiveAdmins(Ljava/lang/String;I)Z
 
-    move-result v3
+    move-result v5
 
-    if-eqz v3, :cond_3
+    if-nez v5, :cond_3
 
-    aget v3, v2, v1
+    add-int/lit8 v1, v1, 0x1
 
-    invoke-static {p0, v0, p1, v3}, Lcom/android/server/pm/PackageManagerService$FlymePackageManagerServiceInjector;->removeActiveAdminX(Lcom/android/server/pm/PackageManagerService;Landroid/app/admin/IDevicePolicyManager;Ljava/lang/String;I)V
-
-    goto :goto_0
+    goto :goto_2
 
     .end local v1    # "i":I
     .end local v2    # "users":[I
-    :catch_0
-    move-exception v3
+    :cond_1
+    const/4 v5, 0x1
 
-    goto :goto_0
+    new-array v2, v5, [I
 
-    :cond_2
-    const/4 v3, 0x1
+    const/4 v5, 0x0
 
-    new-array v2, v3, [I
-
-    const/4 v3, 0x0
-
-    aput p2, v2, v3
+    aput p2, v2, v5
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     .restart local v2    # "users":[I
     goto :goto_1
 
-    .restart local v1    # "i":I
-    :cond_3
-    add-int/lit8 v1, v1, 0x1
+    .end local v2    # "users":[I
+    :catch_0
+    move-exception v3
 
-    goto :goto_2
+    :cond_2
+    move v3, v4
+
+    goto :goto_0
+
+    :cond_3
+    aget v5, v2, v1
+
+    invoke-static {p0, v0, p1, v5}, Lcom/android/server/pm/PackageManagerService$FlymePackageManagerServiceInjector;->removeActiveAdminX(Lcom/android/server/pm/PackageManagerService;Landroid/app/admin/IDevicePolicyManager;Ljava/lang/String;I)V
+
+    const/4 v3, 0x0
+
+    return v3
 .end method
 
 .method private static isPrivilegedApp(Landroid/content/pm/PackageParser$Package;)Z
@@ -20934,7 +20942,7 @@
     .param p3, "total"    # I
 
     .prologue
-    invoke-static {p0, p1, p2, p3}, Lcom/android/server/pm/PackageManagerService$FlymePackageManagerServiceInjector;->performFlymeBootDexOpt(Lcom/android/server/pm/PackageManagerService;Landroid/content/pm/PackageParser$Package;II)Z
+    invoke-static/range {p0 .. p3}, Lcom/android/server/pm/PackageManagerService$FlymePackageManagerServiceInjector;->performFlymeBootDexOpt(Lcom/android/server/pm/PackageManagerService;Landroid/content/pm/PackageParser$Package;II)Z
 
     move-result v0
 
@@ -45777,13 +45785,13 @@
     .param p3, "userId"    # I
 
     .prologue
-    const/4 v8, 0x0
+    invoke-static/range {p1 .. p1}, Lcom/android/server/pm/PackageManagerService$FlymePackageManagerServiceInjector;->replaceResolverName(Landroid/content/ComponentName;)Landroid/content/ComponentName;
+
+    move-result-object p1
 
     const/4 v3, 0x0
 
-    invoke-static {p1}, Lcom/android/server/pm/PackageManagerService$FlymePackageManagerServiceInjector;->replaceResolverName(Landroid/content/ComponentName;)Landroid/content/ComponentName;
-
-    move-result-object p1
+    const/4 v8, 0x0
 
     sget-object v0, Lcom/android/server/pm/PackageManagerService;->sUserManager:Lcom/android/server/pm/UserManagerService;
 
@@ -45921,7 +45929,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-static {p0, p1}, Lcom/android/server/pm/PackageManagerService$FlymePackageManagerServiceInjector;->getAccessActivityInfo(Lcom/android/server/pm/PackageManagerService;Landroid/content/ComponentName;)Landroid/content/pm/ActivityInfo;
+    move-object v0, v8
+
+    invoke-static/range {p0 .. p1}, Lcom/android/server/pm/PackageManagerService$FlymePackageManagerServiceInjector;->getAccessActivityInfo(Lcom/android/server/pm/PackageManagerService;Landroid/content/ComponentName;)Landroid/content/pm/ActivityInfo;
 
     move-result-object v0
 

@@ -47,7 +47,7 @@
     iget-object v3, v3, Landroid/widget/Editor$SpanController;->this$0:Landroid/widget/Editor;
 
     # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-    invoke-static {v3}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-static {v3}, Landroid/widget/Editor;->access$600(Landroid/widget/Editor;)Landroid/widget/TextView;
 
     move-result-object v3
 
@@ -81,7 +81,7 @@
     const/4 v4, 0x1
 
     # invokes: Landroid/widget/Editor$SpanController;->sendEasySpanNotification(ILandroid/text/style/EasyEditSpan;)V
-    invoke-static {v3, v4, p1}, Landroid/widget/Editor$SpanController;->access$1100(Landroid/widget/Editor$SpanController;ILandroid/text/style/EasyEditSpan;)V
+    invoke-static {v3, v4, p1}, Landroid/widget/Editor$SpanController;->access$1000(Landroid/widget/Editor$SpanController;ILandroid/text/style/EasyEditSpan;)V
 
     .line 1954
     iget-object v3, p0, Landroid/widget/Editor$SpanController$2;->this$1:Landroid/widget/Editor$SpanController;
@@ -89,7 +89,7 @@
     iget-object v3, v3, Landroid/widget/Editor$SpanController;->this$0:Landroid/widget/Editor;
 
     # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-    invoke-static {v3}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-static {v3}, Landroid/widget/Editor;->access$600(Landroid/widget/Editor;)Landroid/widget/TextView;
 
     move-result-object v3
 

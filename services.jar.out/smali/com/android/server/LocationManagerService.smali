@@ -10140,9 +10140,7 @@
 
     .line 1821
     .local v12, "sanitizedRequest":Landroid/location/LocationRequest;
-    move-object/from16 v0, p0
-
-    invoke-direct {v0}, Lcom/android/server/LocationManagerService;->isFlymePermissionGranted()Z
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/LocationManagerService;->isFlymePermissionGranted()Z
 
     move-result v0
 
@@ -10416,11 +10414,11 @@
     move-result-object v11
 
     .local v11, "sanitizedRequest":Landroid/location/LocationRequest;
-    invoke-direct {p0}, Lcom/android/server/LocationManagerService;->isFlymePermissionGranted()Z
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/LocationManagerService;->isFlymePermissionGranted()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_3
+    if-eqz v0, :cond_3
 
     return-void
 

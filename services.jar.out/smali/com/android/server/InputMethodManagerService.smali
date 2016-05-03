@@ -3436,7 +3436,7 @@
     .locals 4
 
     .prologue
-    invoke-direct {p0}, Lcom/android/server/InputMethodManagerService;->flymeHideCurrentInputLocked()V
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/InputMethodManagerService;->flymeHideCurrentInputLocked()V
 
     new-instance v0, Landroid/content/Intent;
 
@@ -9362,9 +9362,9 @@
 
     iput-boolean v12, v0, Lcom/android/server/InputMethodManagerService;->mNotificationShown:Z
 
+    :cond_4
     invoke-direct/range {p0 .. p0}, Lcom/android/server/InputMethodManagerService;->showFlymeImeSwitcherNotificationIfNeeded()V
 
-    :cond_4
     move-object/from16 v0, p0
 
     invoke-direct {v0, v5}, Lcom/android/server/InputMethodManagerService;->publishImeSelectorCustomTile(Landroid/view/inputmethod/InputMethodInfo;)V

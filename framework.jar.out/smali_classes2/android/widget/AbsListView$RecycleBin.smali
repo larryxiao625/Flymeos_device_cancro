@@ -585,7 +585,7 @@
 
     .line 6563
     .local v2, "viewType":I
-    invoke-direct {p0, p1}, Landroid/widget/AbsListView$RecycleBin;->mzProcessScrapView(Landroid/view/View;)V
+    invoke-direct {p0, p1}, Landroid/widget/AbsListView$RecycleBin;->flymeProcessScrapView(Landroid/view/View;)V
 
     invoke-virtual {p0, v2}, Landroid/widget/AbsListView$RecycleBin;->shouldRecycleViewType(I)Z
 
@@ -1927,7 +1927,7 @@
     goto :goto_0
 .end method
 
-.method private mzProcessScrapView(Landroid/view/View;)V
+.method private flymeProcessScrapView(Landroid/view/View;)V
     .locals 3
     .param p1, "scrap"    # Landroid/view/View;
 

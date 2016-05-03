@@ -1,4 +1,4 @@
-.class final Lcom/android/server/BatteryService$FlymeInjector$2;
+.class final Lcom/android/server/BatteryService$FlymeInjector$FlymeBatteryOkayRunnable;
 .super Ljava/lang/Object;
 .source "BatteryService.java"
 
@@ -7,28 +7,29 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/BatteryService$FlymeInjector;->onBatteryLow(Lcom/android/server/BatteryService;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/server/BatteryService$FlymeInjector;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
+    accessFlags = 0x18
+    name = "FlymeBatteryOkayRunnable"
 .end annotation
 
 
 # instance fields
-.field final synthetic val$batteryService:Lcom/android/server/BatteryService;
+.field private mBatteryService:Lcom/android/server/BatteryService;
 
 
 # direct methods
 .method constructor <init>(Lcom/android/server/BatteryService;)V
     .locals 0
+    .param p1, "batteryService"    # Lcom/android/server/BatteryService;
 
     .prologue
-    iput-object p1, p0, Lcom/android/server/BatteryService$FlymeInjector$2;->val$batteryService:Lcom/android/server/BatteryService;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/android/server/BatteryService$FlymeInjector$FlymeBatteryOkayRunnable;->mBatteryService:Lcom/android/server/BatteryService;
 
     return-void
 .end method
@@ -50,7 +51,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    iget-object v1, p0, Lcom/android/server/BatteryService$FlymeInjector$2;->val$batteryService:Lcom/android/server/BatteryService;
+    iget-object v1, p0, Lcom/android/server/BatteryService$FlymeInjector$FlymeBatteryOkayRunnable;->mBatteryService:Lcom/android/server/BatteryService;
 
     invoke-virtual {v1}, Lcom/android/server/BatteryService;->flymeGetFieldContext()Landroid/content/Context;
 

@@ -14,10 +14,6 @@
 .end annotation
 
 
-# static fields
-.field private static mAcm:Lmeizu/security/AccessControlManager;
-
-
 # direct methods
 .method constructor <init>()V
     .locals 0
@@ -116,7 +112,7 @@
     if-nez v6, :cond_6
 
     :cond_0
-    sget-object v11, Lcom/android/server/am/ActivityStackSupervisor$FlymeInjector;->mAcm:Lmeizu/security/AccessControlManager;
+    iget-object v11, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFlymeAccessControlManager:Lmeizu/security/AccessControlManager;
 
     if-nez v11, :cond_1
 
@@ -128,7 +124,7 @@
 
     check-cast v11, Lmeizu/security/AccessControlManager;
 
-    sput-object v11, Lcom/android/server/am/ActivityStackSupervisor$FlymeInjector;->mAcm:Lmeizu/security/AccessControlManager;
+    iput-object v11, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFlymeAccessControlManager:Lmeizu/security/AccessControlManager;
 
     :cond_1
     iget-object v11, p0, Lcom/android/server/am/ActivityStackSupervisor;->mRealPm:Lcom/android/server/pm/PackageManagerService;
@@ -185,7 +181,7 @@
     move-result v3
 
     .local v3, "appAccessControl":I
-    sget-object v11, Lcom/android/server/am/ActivityStackSupervisor$FlymeInjector;->mAcm:Lmeizu/security/AccessControlManager;
+    iget-object v11, p0, Lcom/android/server/am/ActivityStackSupervisor;->mFlymeAccessControlManager:Lmeizu/security/AccessControlManager;
 
     move-object/from16 v0, p2
 

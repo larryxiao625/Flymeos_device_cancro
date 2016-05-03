@@ -1751,14 +1751,13 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 571
-    new-instance v77, Lcom/android/server/InputMethodManagerService;
+    new-instance v77, Lcom/android/server/MzInputMethodManagerService;
 
     move-object/from16 v0, v77
 
     move-object/from16 v1, v125
 
-    invoke-direct {v0, v3, v1}, Lcom/android/server/InputMethodManagerService;-><init>(Landroid/content/Context;Lcom/android/server/wm/WindowManagerService;)V
+    invoke-direct {v0, v3, v1}, Lcom/android/server/MzInputMethodManagerService;-><init>(Landroid/content/Context;Lcom/android/server/wm/WindowManagerService;)V
     :try_end_8
     .catch Ljava/lang/Throwable; {:try_start_8 .. :try_end_8} :catch_3
 
@@ -3068,13 +3067,13 @@
 
     invoke-virtual {v4, v5}, Lcom/android/server/SystemServiceManager;->startService(Ljava/lang/Class;)Lcom/android/server/SystemService;
 
-    .line 961
     :cond_1d
+    goto/16 :goto_28
+
     if-nez v64, :cond_1e
 
     if-nez v58, :cond_1e
 
-    .line 963
     :try_start_39
     const-string v4, "SystemServer"
 

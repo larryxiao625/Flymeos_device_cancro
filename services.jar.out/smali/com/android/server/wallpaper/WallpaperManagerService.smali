@@ -2349,7 +2349,7 @@
 
     invoke-interface {v2, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    invoke-direct {p0, p1}, Lcom/android/server/wallpaper/WallpaperManagerService;->flymeSendBroadcastAsUser(Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;)V
+    invoke-direct/range {p0 .. p1}, Lcom/android/server/wallpaper/WallpaperManagerService;->flymeSendBroadcastAsUser(Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;)V
 
     .line 1340
     invoke-interface {v2}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
@@ -4815,7 +4815,7 @@
     .local v1, "keyguardWallpaperInfoFile":Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
 
-    invoke-direct {p0, p1}, Lcom/android/server/wallpaper/WallpaperManagerService;->flymeOnRemoveUser(I)V
+    invoke-direct/range {p0 .. p1}, Lcom/android/server/wallpaper/WallpaperManagerService;->flymeOnRemoveUser(I)V
 
     monitor-exit v5
 
@@ -6399,7 +6399,7 @@
 
     iput-boolean v5, v4, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->imageWallpaperPending:Z
 
-    invoke-direct {p0}, Lcom/android/server/wallpaper/WallpaperManagerService;->flymeSetWallpaperSimultaneously()V
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/wallpaper/WallpaperManagerService;->flymeSetWallpaperSimultaneously()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 

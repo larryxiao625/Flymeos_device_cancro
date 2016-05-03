@@ -109,7 +109,7 @@
     iget-object v0, p0, Landroid/widget/Editor$PositionListener;->this$0:Landroid/widget/Editor;
 
     # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-    invoke-static {v0}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-static {v0}, Landroid/widget/Editor;->access$600(Landroid/widget/Editor;)Landroid/widget/TextView;
 
     move-result-object v0
 
@@ -140,7 +140,7 @@
     :goto_0
     iput-boolean v0, p0, Landroid/widget/Editor$PositionListener;->mPositionHasChanged:Z
 
-    invoke-direct {p0}, Landroid/widget/Editor$PositionListener;->updatePositionHasChanged()V
+    invoke-direct {p0}, Landroid/widget/Editor$PositionListener;->flymeUpdatePositionHasChanged()V
 
     iget-object v0, p0, Landroid/widget/Editor$PositionListener;->mTempCoords:[I
 
@@ -154,7 +154,7 @@
 
     iput v0, p0, Landroid/widget/Editor$PositionListener;->mPositionY:I
 
-    invoke-direct {p0}, Landroid/widget/Editor$PositionListener;->updatemScrollHasChanged()V
+    invoke-direct {p0}, Landroid/widget/Editor$PositionListener;->flymeUpdatemScrollHasChanged()V
 
     return-void
 
@@ -184,7 +184,7 @@
     iget-object v4, p0, Landroid/widget/Editor$PositionListener;->this$0:Landroid/widget/Editor;
 
     # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-    invoke-static {v4}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-static {v4}, Landroid/widget/Editor;->access$600(Landroid/widget/Editor;)Landroid/widget/TextView;
 
     move-result-object v4
 
@@ -412,7 +412,7 @@
     iget-object v2, p0, Landroid/widget/Editor$PositionListener;->this$0:Landroid/widget/Editor;
 
     # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-    invoke-static {v2}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-static {v2}, Landroid/widget/Editor;->access$600(Landroid/widget/Editor;)Landroid/widget/TextView;
 
     move-result-object v2
 
@@ -436,7 +436,7 @@
     goto :goto_0
 .end method
 
-.method private updatePositionHasChanged()V
+.method private flymeUpdatePositionHasChanged()V
     .locals 5
 
     .prologue
@@ -482,7 +482,7 @@
     return-void
 .end method
 
-.method private updatemScrollHasChanged()V
+.method private flymeUpdatemScrollHasChanged()V
     .locals 3
 
     .prologue
@@ -492,8 +492,7 @@
 
     iget-object v1, p0, Landroid/widget/Editor$PositionListener;->this$0:Landroid/widget/Editor;
 
-    # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-    invoke-static {v1}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-virtual {v1}, Landroid/widget/Editor;->flymeGetFieldTextView()Landroid/widget/TextView;
 
     move-result-object v1
 
@@ -505,8 +504,7 @@
 
     iget-object v0, p0, Landroid/widget/Editor$PositionListener;->this$0:Landroid/widget/Editor;
 
-    # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-    invoke-static {v0}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-virtual {v0}, Landroid/widget/Editor;->flymeGetFieldTextView()Landroid/widget/TextView;
 
     move-result-object v0
 
@@ -523,8 +521,7 @@
 
     iget-object v1, p0, Landroid/widget/Editor$PositionListener;->this$0:Landroid/widget/Editor;
 
-    # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-    invoke-static {v1}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-virtual {v1}, Landroid/widget/Editor;->flymeGetFieldTextView()Landroid/widget/TextView;
 
     move-result-object v1
 
@@ -536,8 +533,7 @@
 
     iget-object v0, p0, Landroid/widget/Editor$PositionListener;->this$0:Landroid/widget/Editor;
 
-    # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-    invoke-static {v0}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-virtual {v0}, Landroid/widget/Editor;->flymeGetFieldTextView()Landroid/widget/TextView;
 
     move-result-object v0
 

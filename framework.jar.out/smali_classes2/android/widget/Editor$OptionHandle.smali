@@ -1,4 +1,4 @@
-.class Landroid/widget/Editor$OptionHandle;
+.class final Landroid/widget/Editor$OptionHandle;
 .super Landroid/os/Handler;
 .source "Editor.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
+    accessFlags = 0x10
     name = "OptionHandle"
 .end annotation
 
@@ -19,7 +19,7 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/Editor;)V
+.method constructor <init>(Landroid/widget/Editor;)V
     .locals 0
 
     .prologue

@@ -7145,6 +7145,18 @@
     .line 3240
     .local v11, "drawDividers":Z
     :goto_2
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v10}, Landroid/widget/ListView;->getFlymeDividerHeight(I)I
+
+    move-result v10
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v11}, Landroid/widget/ListView;->getFlymeDrawDividers(Z)Z
+
+    move-result v11
+
     if-nez v11, :cond_1
 
     if-nez v13, :cond_1
@@ -16219,4 +16231,50 @@
 
     :cond_0
     return-void
+.end method
+
+.method private getFlymeDividerHeight(I)I
+    .locals 1
+    .param p1, "dividerHeight"    # I
+
+    .prologue
+    iget-boolean v0, p0, Landroid/widget/ListView;->mIsFlymeDividerInside:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/widget/ListView;->mDivider:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Landroid/widget/ListView;->mFlymeDividerH:I
+
+    if-lez v0, :cond_0
+
+    iget p1, p0, Landroid/widget/ListView;->mFlymeDividerH:I
+
+    :cond_0
+    return p1
+.end method
+
+.method private getFlymeDrawDividers(Z)Z
+    .locals 1
+    .param p1, "drawDividers"    # Z
+
+    .prologue
+    iget-boolean v0, p0, Landroid/widget/ListView;->mIsFlymeDividerInside:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/widget/ListView;->mDivider:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Landroid/widget/ListView;->mFlymeDividerH:I
+
+    if-lez v0, :cond_0
+
+    const/4 p1, 0x1
+
+    :cond_0
+    return p1
 .end method

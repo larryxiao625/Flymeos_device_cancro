@@ -14,10 +14,6 @@
 .end annotation
 
 
-# static fields
-.field private static mAccessControlManager:Lmeizu/security/AccessControlManager;
-
-
 # direct methods
 .method constructor <init>()V
     .locals 0
@@ -35,7 +31,7 @@
 
     .prologue
     :try_start_0
-    sget-object v1, Lcom/android/server/power/Notifier$FlymeInjector;->mAccessControlManager:Lmeizu/security/AccessControlManager;
+    iget-object v1, p0, Lcom/android/server/power/Notifier;->mFlymeAccessControlManager:Lmeizu/security/AccessControlManager;
 
     if-nez v1, :cond_0
 
@@ -51,10 +47,10 @@
 
     check-cast v1, Lmeizu/security/AccessControlManager;
 
-    sput-object v1, Lcom/android/server/power/Notifier$FlymeInjector;->mAccessControlManager:Lmeizu/security/AccessControlManager;
+    iput-object v1, p0, Lcom/android/server/power/Notifier;->mFlymeAccessControlManager:Lmeizu/security/AccessControlManager;
 
     :cond_0
-    sget-object v1, Lcom/android/server/power/Notifier$FlymeInjector;->mAccessControlManager:Lmeizu/security/AccessControlManager;
+    iget-object v1, p0, Lcom/android/server/power/Notifier;->mFlymeAccessControlManager:Lmeizu/security/AccessControlManager;
 
     if-eqz v1, :cond_1
 
@@ -64,7 +60,7 @@
     packed-switch p1, :pswitch_data_0
 
     :goto_0
-    sget-object v1, Lcom/android/server/power/Notifier$FlymeInjector;->mAccessControlManager:Lmeizu/security/AccessControlManager;
+    iget-object v1, p0, Lcom/android/server/power/Notifier;->mFlymeAccessControlManager:Lmeizu/security/AccessControlManager;
 
     invoke-virtual {v1, v0}, Lmeizu/security/AccessControlManager;->screenTurnedOff(I)V
     :try_end_0

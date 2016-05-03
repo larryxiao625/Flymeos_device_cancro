@@ -252,7 +252,7 @@
 
 .field public compatSmallestScreenWidthDp:I
 
-.field public configurationExt:Lframeworks/base/core/java/android/content/res/flymetheme/ConfigurationExt;
+.field public configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
 
 .field public densityDpi:I
 

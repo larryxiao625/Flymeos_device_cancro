@@ -1213,7 +1213,7 @@
 
     .line 448
     :cond_1
-    invoke-static {p0, p1}, Lcom/android/server/wm/InputMonitor$FlymeInjector;->setInputFocusLw(Lcom/android/server/wm/InputMonitor;Lcom/android/server/wm/WindowState;)V
+    invoke-static/range {p0 .. p1}, Lcom/android/server/wm/InputMonitor$FlymeInjector;->setInputFocusLw(Lcom/android/server/wm/InputMonitor;Lcom/android/server/wm/WindowState;)V
 
     return-void
 .end method

@@ -688,20 +688,12 @@
     .param p0, "template"    # Landroid/net/NetworkTemplate;
 
     .prologue
-    invoke-static {}, Lcom/android/server/net/NetworkPolicyManagerService;->mzIsTrue()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-static {p0}, Lcom/android/server/net/NetworkPolicyManagerService$FlymeInjector;->buildFlymeNetworkOverLimitIntent(Landroid/net/NetworkTemplate;)Landroid/content/Intent;
+    invoke-static/range {p0 .. p0}, Lcom/android/server/net/NetworkPolicyManagerService$FlymeInjector;->buildFlymeNetworkOverLimitIntent(Landroid/net/NetworkTemplate;)Landroid/content/Intent;
 
     move-result-object v0
 
-    :goto_0
     return-object v0
 
-    :cond_0
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
@@ -725,7 +717,7 @@
 
     invoke-virtual {v0, v1, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    goto :goto_0
+    return-object v0
 .end method
 
 .method private buildNotificationTag(Landroid/net/NetworkPolicy;I)Ljava/lang/String;
@@ -799,20 +791,12 @@
     .param p0, "template"    # Landroid/net/NetworkTemplate;
 
     .prologue
-    invoke-static {}, Lcom/android/server/net/NetworkPolicyManagerService;->mzIsTrue()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-static {p0}, Lcom/android/server/net/NetworkPolicyManagerService$FlymeInjector;->buildFlymeViewDataUsageIntent(Landroid/net/NetworkTemplate;)Landroid/content/Intent;
+    invoke-static/range {p0 .. p0}, Lcom/android/server/net/NetworkPolicyManagerService$FlymeInjector;->buildFlymeViewDataUsageIntent(Landroid/net/NetworkTemplate;)Landroid/content/Intent;
 
     move-result-object v0
 
-    :goto_0
     return-object v0
 
-    :cond_0
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
@@ -836,7 +820,7 @@
 
     invoke-virtual {v0, v1, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    goto :goto_0
+    return-object v0
 .end method
 
 .method private cancelNotification(Ljava/lang/String;)V
@@ -3573,7 +3557,7 @@
     .param p3, "persist"    # Z
 
     .prologue
-    invoke-static {p0, p1, p2}, Lcom/android/server/net/NetworkPolicyManagerService$FlymeInjector;->updateRulesForUidWifiAndMobileLocked(Lcom/android/server/net/NetworkPolicyManagerService;II)V
+    invoke-static/range {p0 .. p2}, Lcom/android/server/net/NetworkPolicyManagerService$FlymeInjector;->updateRulesForUidWifiAndMobileLocked(Lcom/android/server/net/NetworkPolicyManagerService;II)V
 
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mUidPolicy:Landroid/util/SparseIntArray;
 
@@ -7808,7 +7792,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v12, v2, v14, v15}, Lcom/android/server/net/NetworkPolicyManagerService;->enqueueNotification(Landroid/net/NetworkPolicy;IJ)V
+    invoke-direct {v0, v12, v2, v14, v15}, Lcom/android/server/net/NetworkPolicyManagerService;->flymeEnqueueNotification(Landroid/net/NetworkPolicy;IJ)V
 
     goto :goto_1
 
@@ -7863,9 +7847,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v12, v2, v14, v15}, Lcom/android/server/net/NetworkPolicyManagerService;->flymeEnqueueNotification(Landroid/net/NetworkPolicy;IJ)V
-
-    invoke-direct {v0, v12, v14, v15}, Lcom/android/server/net/NetworkPolicyManagerService;->flymeNotifyOverLimitLocked(Landroid/net/NetworkPolicy;J)V
+    invoke-direct {v0, v12, v2, v14, v15}, Lcom/android/server/net/NetworkPolicyManagerService;->enqueueNotification(Landroid/net/NetworkPolicy;IJ)V
 
     goto :goto_1
 
@@ -9289,13 +9271,4 @@
     move-exception v1
 
     goto :goto_0
-.end method
-
-.method private static mzIsTrue()Z
-    .locals 1
-
-    .prologue
-    const/4 v0, 0x1
-
-    return v0
 .end method

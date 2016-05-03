@@ -15,6 +15,8 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/BatteryService$FlymeInjector$FlymeBatteryOkayRunnable;,
+        Lcom/android/server/BatteryService$FlymeInjector$FlymeBatteryLowWarningRunnable;,
         Lcom/android/server/BatteryService$FlymeInjector$FlymeBootCompletedReceiver;
     }
 .end annotation
@@ -109,194 +111,198 @@
 .end method
 
 .method static onBatteryLow(Lcom/android/server/BatteryService;)V
-    .locals 11
+    .locals 13
     .param p0, "batteryService"    # Lcom/android/server/BatteryService;
 
     .prologue
-    const/16 v10, 0x14
+    const/16 v12, 0x14
 
-    const/4 v7, 0x0
+    const/4 v9, 0x0
 
-    const/4 v6, 0x1
+    const/4 v8, 0x1
 
     invoke-virtual {p0}, Lcom/android/server/BatteryService;->flymeGetFieldCriticalBatteryLevel()I
 
-    move-result v1
+    move-result v3
 
-    .local v1, "levelCritical":I
+    .local v3, "levelCritical":I
     invoke-virtual {p0}, Lcom/android/server/BatteryService;->flymeGetFieldPlugType()I
 
-    move-result v8
+    move-result v10
 
-    if-eqz v8, :cond_2
+    if-eqz v10, :cond_2
 
-    move v2, v6
+    move v4, v8
 
-    .local v2, "plugged":Z
+    .local v4, "plugged":Z
     :goto_0
     invoke-virtual {p0}, Lcom/android/server/BatteryService;->flymeGetFieldBatteryProps()Landroid/os/BatteryProperties;
 
-    move-result-object v8
+    move-result-object v10
 
-    iget v8, v8, Landroid/os/BatteryProperties;->batteryLevel:I
+    iget v10, v10, Landroid/os/BatteryProperties;->batteryLevel:I
 
-    if-gt v8, v10, :cond_3
+    if-gt v10, v12, :cond_3
 
-    if-nez v2, :cond_3
+    if-nez v4, :cond_3
 
     invoke-virtual {p0}, Lcom/android/server/BatteryService;->flymeGetFieldBatteryProps()Landroid/os/BatteryProperties;
 
-    move-result-object v8
+    move-result-object v10
 
-    iget v8, v8, Landroid/os/BatteryProperties;->batteryStatus:I
+    iget v10, v10, Landroid/os/BatteryProperties;->batteryStatus:I
 
-    if-eq v8, v6, :cond_3
+    if-eq v10, v8, :cond_3
 
-    sget-boolean v8, Lcom/android/server/BatteryService$FlymeInjector;->mSystemReady:Z
+    sget-boolean v10, Lcom/android/server/BatteryService$FlymeInjector;->mSystemReady:Z
 
-    if-eqz v8, :cond_3
+    if-eqz v10, :cond_3
 
-    move v4, v6
+    move v6, v8
 
-    .local v4, "sendBatteryLowWarningDialog":Z
+    .local v6, "sendBatteryLowWarningDialog":Z
     :goto_1
-    if-eqz v4, :cond_0
+    if-eqz v6, :cond_0
 
-    const/16 v5, 0x14
+    const/16 v7, 0x14
 
-    .local v5, "warningLevel":I
-    const/4 v0, 0x1
+    .local v7, "warningLevel":I
+    const/4 v2, 0x1
 
-    .local v0, "isBatteryLow":Z
+    .local v2, "isBatteryLow":Z
     invoke-virtual {p0}, Lcom/android/server/BatteryService;->flymeGetFieldBatteryProps()Landroid/os/BatteryProperties;
 
-    move-result-object v8
+    move-result-object v10
 
-    iget v8, v8, Landroid/os/BatteryProperties;->batteryLevel:I
+    iget v10, v10, Landroid/os/BatteryProperties;->batteryLevel:I
 
-    if-gt v8, v1, :cond_4
+    if-gt v10, v3, :cond_4
 
-    sget-boolean v8, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow5:Z
+    sget-boolean v10, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow5:Z
 
-    if-nez v8, :cond_4
+    if-nez v10, :cond_4
 
-    move v5, v1
+    move v7, v3
 
-    sput-boolean v6, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow5:Z
+    sput-boolean v8, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow5:Z
 
-    sput-boolean v6, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow10:Z
+    sput-boolean v8, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow10:Z
 
-    sput-boolean v6, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow20:Z
+    sput-boolean v8, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow20:Z
 
     :goto_2
-    if-eqz v0, :cond_0
+    if-eqz v2, :cond_0
 
-    sput-boolean v6, Lcom/android/server/BatteryService$FlymeInjector;->mSendBatteryLowWarningDialog:Z
+    sput-boolean v8, Lcom/android/server/BatteryService$FlymeInjector;->mSendBatteryLowWarningDialog:Z
 
-    move v3, v5
+    move v5, v7
 
-    .local v3, "runlevel":I
+    .local v5, "runlevel":I
+    new-instance v0, Lcom/android/server/BatteryService$FlymeInjector$FlymeBatteryLowWarningRunnable;
+
+    invoke-direct {v0, p0, v5}, Lcom/android/server/BatteryService$FlymeInjector$FlymeBatteryLowWarningRunnable;-><init>(Lcom/android/server/BatteryService;I)V
+
+    .local v0, "batteryLowWarningRunnable":Lcom/android/server/BatteryService$FlymeInjector$FlymeBatteryLowWarningRunnable;
     invoke-virtual {p0}, Lcom/android/server/BatteryService;->flymeGetFieldHandler()Landroid/os/Handler;
 
-    move-result-object v6
+    move-result-object v8
 
-    new-instance v8, Lcom/android/server/BatteryService$FlymeInjector$1;
+    invoke-virtual {v8, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    invoke-direct {v8, v3, p0}, Lcom/android/server/BatteryService$FlymeInjector$1;-><init>(ILcom/android/server/BatteryService;)V
-
-    invoke-virtual {v6, v8}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .end local v0    # "isBatteryLow":Z
-    .end local v3    # "runlevel":I
-    .end local v5    # "warningLevel":I
+    .end local v0    # "batteryLowWarningRunnable":Lcom/android/server/BatteryService$FlymeInjector$FlymeBatteryLowWarningRunnable;
+    .end local v2    # "isBatteryLow":Z
+    .end local v5    # "runlevel":I
+    .end local v7    # "warningLevel":I
     :cond_0
-    sget-boolean v6, Lcom/android/server/BatteryService$FlymeInjector;->mSendBatteryLowWarningDialog:Z
+    sget-boolean v8, Lcom/android/server/BatteryService$FlymeInjector;->mSendBatteryLowWarningDialog:Z
 
-    if-eqz v6, :cond_1
+    if-eqz v8, :cond_1
 
-    if-eqz v2, :cond_1
+    if-eqz v4, :cond_1
 
-    sput-boolean v7, Lcom/android/server/BatteryService$FlymeInjector;->mSendBatteryLowWarningDialog:Z
+    sput-boolean v9, Lcom/android/server/BatteryService$FlymeInjector;->mSendBatteryLowWarningDialog:Z
 
+    new-instance v1, Lcom/android/server/BatteryService$FlymeInjector$FlymeBatteryOkayRunnable;
+
+    invoke-direct {v1, p0}, Lcom/android/server/BatteryService$FlymeInjector$FlymeBatteryOkayRunnable;-><init>(Lcom/android/server/BatteryService;)V
+
+    .local v1, "batteryOkayRunnable":Lcom/android/server/BatteryService$FlymeInjector$FlymeBatteryOkayRunnable;
     invoke-virtual {p0}, Lcom/android/server/BatteryService;->flymeGetFieldHandler()Landroid/os/Handler;
 
-    move-result-object v6
+    move-result-object v8
 
-    new-instance v8, Lcom/android/server/BatteryService$FlymeInjector$2;
+    invoke-virtual {v8, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    invoke-direct {v8, p0}, Lcom/android/server/BatteryService$FlymeInjector$2;-><init>(Lcom/android/server/BatteryService;)V
+    sput-boolean v9, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow20:Z
 
-    invoke-virtual {v6, v8}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    sput-boolean v9, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow10:Z
 
-    sput-boolean v7, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow20:Z
+    sput-boolean v9, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow5:Z
 
-    sput-boolean v7, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow10:Z
-
-    sput-boolean v7, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow5:Z
-
+    .end local v1    # "batteryOkayRunnable":Lcom/android/server/BatteryService$FlymeInjector$FlymeBatteryOkayRunnable;
     :cond_1
     return-void
 
-    .end local v2    # "plugged":Z
-    .end local v4    # "sendBatteryLowWarningDialog":Z
+    .end local v4    # "plugged":Z
+    .end local v6    # "sendBatteryLowWarningDialog":Z
     :cond_2
-    move v2, v7
+    move v4, v9
 
     goto :goto_0
 
-    .restart local v2    # "plugged":Z
+    .restart local v4    # "plugged":Z
     :cond_3
-    move v4, v7
+    move v6, v9
 
     goto :goto_1
 
-    .restart local v0    # "isBatteryLow":Z
-    .restart local v4    # "sendBatteryLowWarningDialog":Z
-    .restart local v5    # "warningLevel":I
+    .restart local v2    # "isBatteryLow":Z
+    .restart local v6    # "sendBatteryLowWarningDialog":Z
+    .restart local v7    # "warningLevel":I
     :cond_4
     invoke-virtual {p0}, Lcom/android/server/BatteryService;->flymeGetFieldBatteryProps()Landroid/os/BatteryProperties;
 
-    move-result-object v8
+    move-result-object v10
 
-    iget v8, v8, Landroid/os/BatteryProperties;->batteryLevel:I
+    iget v10, v10, Landroid/os/BatteryProperties;->batteryLevel:I
 
-    const/16 v9, 0xa
+    const/16 v11, 0xa
 
-    if-ge v8, v9, :cond_5
+    if-ge v10, v11, :cond_5
 
-    sget-boolean v8, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow10:Z
+    sget-boolean v10, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow10:Z
 
-    if-nez v8, :cond_5
+    if-nez v10, :cond_5
 
-    const/16 v5, 0xa
+    const/16 v7, 0xa
 
-    sput-boolean v6, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow10:Z
+    sput-boolean v8, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow10:Z
 
-    sput-boolean v6, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow20:Z
+    sput-boolean v8, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow20:Z
 
     goto :goto_2
 
     :cond_5
     invoke-virtual {p0}, Lcom/android/server/BatteryService;->flymeGetFieldBatteryProps()Landroid/os/BatteryProperties;
 
-    move-result-object v8
+    move-result-object v10
 
-    iget v8, v8, Landroid/os/BatteryProperties;->batteryLevel:I
+    iget v10, v10, Landroid/os/BatteryProperties;->batteryLevel:I
 
-    if-ge v8, v10, :cond_6
+    if-ge v10, v12, :cond_6
 
-    sget-boolean v8, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow20:Z
+    sget-boolean v10, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow20:Z
 
-    if-nez v8, :cond_6
+    if-nez v10, :cond_6
 
-    const/16 v5, 0x14
+    const/16 v7, 0x14
 
-    sput-boolean v6, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow20:Z
+    sput-boolean v8, Lcom/android/server/BatteryService$FlymeInjector;->mBatteryLow20:Z
 
     goto :goto_2
 
     :cond_6
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     goto :goto_2
 .end method

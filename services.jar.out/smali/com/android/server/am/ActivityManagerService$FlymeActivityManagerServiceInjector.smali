@@ -103,8 +103,7 @@
     .prologue
     const/4 v0, 0x1
 
-    # invokes: Lcom/android/server/am/ActivityManagerService;->startUser(IZ)Z
-    invoke-static {p0, p1, v0}, Lcom/android/server/am/ActivityManagerService;->access$1600(Lcom/android/server/am/ActivityManagerService;IZ)Z
+    invoke-virtual {p0, p1, v0}, Lcom/android/server/am/ActivityManagerService;->flymeInvokeMethodStartUser(IZ)Z
 
     return-void
 .end method
