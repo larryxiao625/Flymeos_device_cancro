@@ -17,8 +17,10 @@ ro.build.user=root
 ro.build.host=Nian-VPS
 ro.build.tags=test-keys
 ro.build.flavor=cm_cancro-userdebug
+ro.product.model=MI 3W
 ro.product.brand=Xiaomi
 ro.product.name=cancro
+ro.product.device=cancro
 ro.product.board=MSM8974
 # ro.product.cpu.abi and ro.product.cpu.abi2 are obsolete,
 # use ro.product.cpu.abilist instead.
@@ -195,4 +197,3 @@ dalvik.vm.isa.arm.features=div
 dalvik.vm.lockprof.threshold=500
 net.bt.name=Android
 dalvik.vm.stack-trace-file=/data/anr/traces.txt
-ro.product.device=cancro
