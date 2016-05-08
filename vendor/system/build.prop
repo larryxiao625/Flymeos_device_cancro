@@ -16,7 +16,6 @@ ro.build.type=userdebug
 ro.build.user=root
 ro.build.host=Nian-VPS
 ro.build.tags=test-keys
-ro.product.model=cancro
 ro.build.flavor=cm_cancro-userdebug
 ro.product.brand=Xiaomi
 ro.product.name=cancro
