@@ -74,6 +74,8 @@
 
 
 # instance fields
+.field private mFlymeAutoStatusBarIcon:Z
+
 .field private mActiveChild:Landroid/view/Window;
 
 .field private mAppName:Ljava/lang/String;
@@ -93,8 +95,6 @@
 .field private mDestroyed:Z
 
 .field private mFeatures:I
-
-.field private mFlymeAutoStatusBarIcon:Z
 
 .field private mForcedWindowFlags:I
 
@@ -182,7 +182,7 @@
 
     iput v0, p0, Landroid/view/Window;->mFeatures:I
 
-    invoke-direct {p0}, Landroid/view/Window;->initFlymeExtraFields()V
+    invoke-direct/range {p0 .. p0}, Landroid/view/Window;->initFlymeExtraFields()V
 
     .line 454
     return-void

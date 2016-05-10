@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.view.IInputMethodClient"
 
-.field static final TRANSACTION_onBindMethod:I = 0x2
+.field static final TRANSACTION_onBindMethod_1:I = 0x2
 
 .field static final TRANSACTION_onUnbindMethod:I = 0x3
 
@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_setUserActionNotificationSequenceNumber:I = 0x5
 
-.field static final TRANSACTION_setUsingInputMethod:I = 0x1
+.field static final TRANSACTION_setUsingInputMethod_0:I = 0x1
 
 
 # direct methods

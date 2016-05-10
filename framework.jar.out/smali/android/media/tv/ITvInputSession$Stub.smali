@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_relayoutOverlayView:I = 0xb
 
-.field static final TRANSACTION_release:I = 0x1
+.field static final TRANSACTION_release_0:I = 0x1
 
 .field static final TRANSACTION_removeOverlayView:I = 0xc
 

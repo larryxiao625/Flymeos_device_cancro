@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_sendSessionModifyResponse:I = 0x8
 
-.field static final TRANSACTION_setCamera:I = 0x2
+.field static final TRANSACTION_setCamera_1:I = 0x2
 
 .field static final TRANSACTION_setDeviceOrientation:I = 0x5
 
@@ -44,7 +44,7 @@
 
 .field static final TRANSACTION_setPreviewSurface:I = 0x3
 
-.field static final TRANSACTION_setVideoCallback:I = 0x1
+.field static final TRANSACTION_setVideoCallback_0:I = 0x1
 
 .field static final TRANSACTION_setZoom:I = 0x6
 

@@ -48,7 +48,7 @@
 
 .field static final TRANSACTION_removeIcon:I = 0x2
 
-.field static final TRANSACTION_setIcon:I = 0x1
+.field static final TRANSACTION_setIcon_0:I = 0x1
 
 .field static final TRANSACTION_setImeWindowStatus:I = 0x9
 

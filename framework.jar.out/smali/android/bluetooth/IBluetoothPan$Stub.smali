@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.bluetooth.IBluetoothPan"
 
-.field static final TRANSACTION_connect:I = 0x3
+.field static final TRANSACTION_connect_2:I = 0x3
 
 .field static final TRANSACTION_disconnect:I = 0x4
 
@@ -38,7 +38,7 @@
 
 .field static final TRANSACTION_isTetheringOn_0:I = 0x1
 
-.field static final TRANSACTION_setBluetoothTethering:I = 0x2
+.field static final TRANSACTION_setBluetoothTethering_1:I = 0x2
 
 
 # direct methods

@@ -32,7 +32,7 @@
 
 .field static final TRANSACTION_dispatchWallpaperCommand:I = 0x5
 
-.field static final TRANSACTION_setDesiredSize:I = 0x1
+.field static final TRANSACTION_setDesiredSize_0:I = 0x1
 
 .field static final TRANSACTION_setDisplayPadding:I = 0x2
 

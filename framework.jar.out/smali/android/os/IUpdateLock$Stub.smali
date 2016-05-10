@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_acquireUpdateLock_0:I = 0x1
 
-.field static final TRANSACTION_releaseUpdateLock:I = 0x2
+.field static final TRANSACTION_releaseUpdateLock_1:I = 0x2
 
 
 # direct methods

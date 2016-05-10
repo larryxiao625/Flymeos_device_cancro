@@ -10,11 +10,11 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/widget/ListView$1;,
+        Landroid/widget/ListView$ArrowScrollFocusResult;,
         Landroid/widget/ListView$DividerPadding;,
         Landroid/widget/ListView$DividerFilter;,
         Landroid/widget/ListView$MzScrollSelectionRunnable;,
         Landroid/widget/ListView$OnDragSelectListener;,
-        Landroid/widget/ListView$ArrowScrollFocusResult;,
         Landroid/widget/ListView$FocusSelector;,
         Landroid/widget/ListView$FixedViewInfo;
     }
@@ -30,19 +30,7 @@
 
 
 # instance fields
-.field private mAreAllItemsSelectable:Z
-
-.field private final mArrowScrollFocusResult:Landroid/widget/ListView$ArrowScrollFocusResult;
-
-.field mDivider:Landroid/graphics/drawable/Drawable;
-
-.field mDividerHeight:I
-
-.field private mDividerIsOpaque:Z
-
 .field public mDividerPadding:Landroid/widget/ListView$DividerPadding;
-
-.field private mDividerPaint:Landroid/graphics/Paint;
 
 .field private mFlymeDividerFilterListener:Landroid/widget/ListView$DividerFilter;
 
@@ -84,6 +72,32 @@
 
 .field private mFlymeSelectToBottom:Z
 
+.field private mIsFlymeBeginDragSelect:Z
+
+.field private mIsFlymeCheckBoxAnim:Z
+
+.field private mIsFlymeDividerInside:Z
+
+.field private mIsFlymeOutOfDragRegion:Z
+
+.field private mIsFlymeOutOfListContent:Z
+
+.field protected mLastDownSelectPosition:I
+
+.field protected mLastUpSelectPosition:I
+
+.field private mAreAllItemsSelectable:Z
+
+.field private final mArrowScrollFocusResult:Landroid/widget/ListView$ArrowScrollFocusResult;
+
+.field mDivider:Landroid/graphics/drawable/Drawable;
+
+.field mDividerHeight:I
+
+.field private mDividerIsOpaque:Z
+
+.field private mDividerPaint:Landroid/graphics/Paint;
+
 .field private mFocusSelector:Landroid/widget/ListView$FocusSelector;
 
 .field private mFooterDividersEnabled:Z
@@ -114,21 +128,7 @@
 
 .field private mIsCacheColorOpaque:Z
 
-.field private mIsFlymeBeginDragSelect:Z
-
-.field private mIsFlymeCheckBoxAnim:Z
-
-.field private mIsFlymeDividerInside:Z
-
-.field private mIsFlymeOutOfDragRegion:Z
-
-.field private mIsFlymeOutOfListContent:Z
-
 .field private mItemsCanFocus:Z
-
-.field protected mLastDownSelectPosition:I
-
-.field protected mLastUpSelectPosition:I
 
 .field mOverScrollFooter:Landroid/graphics/drawable/Drawable;
 
@@ -337,7 +337,7 @@
 
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/ListView;->initFlymeExtraFields(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+    invoke-direct/range {p0 .. p4}, Landroid/widget/ListView;->initFlymeExtraFields(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
     return-void
 .end method
@@ -8328,15 +8328,15 @@
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_flyme_0
 
-    :goto_0
     return-void
 
-    :cond_0
+    :cond_flyme_0
+
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    goto :goto_0
+    return-void
 .end method
 
 .method drawOverscrollFooter(Landroid/graphics/Canvas;Landroid/graphics/drawable/Drawable;Landroid/graphics/Rect;)V
@@ -12355,7 +12355,7 @@
     :cond_1
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/AbsListView;->onSizeChanged(IIII)V
 
-    invoke-direct {p0}, Landroid/widget/ListView;->onFlymeSizeChanged()V
+    invoke-direct/range {p0 .. p0}, Landroid/widget/ListView;->onFlymeSizeChanged()V
 
     .line 1135
     return-void
@@ -12987,11 +12987,13 @@
 
 .method public bridge synthetic setAdapter(Landroid/widget/Adapter;)V
     .locals 0
+    .param p1, "x0"    # Landroid/widget/Adapter;
 
     .prologue
     .line 75
     check-cast p1, Landroid/widget/ListAdapter;
 
+    .end local p1    # "x0":Landroid/widget/Adapter;
     invoke-virtual {p0, p1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
     return-void
@@ -13291,7 +13293,7 @@
     :cond_1
     iput-boolean v0, p0, Landroid/widget/ListView;->mDividerIsOpaque:Z
 
-    invoke-direct {p0}, Landroid/widget/ListView;->setFlymeDivider()V
+    invoke-direct/range {p0 .. p0}, Landroid/widget/ListView;->setFlymeDivider()V
 
     .line 3443
     invoke-virtual {p0}, Landroid/widget/ListView;->requestLayout()V
@@ -13580,58 +13582,6 @@
 
     .line 924
     return-void
-.end method
-
-.method static synthetic access$200(Landroid/widget/ListView;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/ListView;
-
-    .prologue
-    iget v0, p0, Landroid/widget/ListView;->mScrollY:I
-
-    return v0
-.end method
-
-.method static synthetic access$300(Landroid/widget/ListView;IIIIIIIIZ)Z
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/ListView;
-    .param p1, "x1"    # I
-    .param p2, "x2"    # I
-    .param p3, "x3"    # I
-    .param p4, "x4"    # I
-    .param p5, "x5"    # I
-    .param p6, "x6"    # I
-    .param p7, "x7"    # I
-    .param p8, "x8"    # I
-    .param p9, "x9"    # Z
-
-    .prologue
-    invoke-virtual/range {p0 .. p9}, Landroid/widget/ListView;->overScrollBy(IIIIIIIIZ)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method static synthetic access$400(Landroid/widget/ListView;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/ListView;
-
-    .prologue
-    iget v0, p0, Landroid/widget/ListView;->mScrollY:I
-
-    return v0
-.end method
-
-.method static synthetic access$502(Landroid/widget/ListView;I)I
-    .locals 0
-    .param p0, "x0"    # Landroid/widget/ListView;
-    .param p1, "x1"    # I
-
-    .prologue
-    iput p1, p0, Landroid/widget/ListView;->mScrollY:I
-
-    return p1
 .end method
 
 .method private flymeContentFits()Z
@@ -14383,6 +14333,52 @@
     goto :goto_0
 .end method
 
+.method private getFlymeDividerHeight(I)I
+    .locals 1
+    .param p1, "dividerHeight"    # I
+
+    .prologue
+    iget-boolean v0, p0, Landroid/widget/ListView;->mIsFlymeDividerInside:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/widget/ListView;->mDivider:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Landroid/widget/ListView;->mFlymeDividerH:I
+
+    if-lez v0, :cond_0
+
+    iget p1, p0, Landroid/widget/ListView;->mFlymeDividerH:I
+
+    :cond_0
+    return p1
+.end method
+
+.method private getFlymeDrawDividers(Z)Z
+    .locals 1
+    .param p1, "drawDividers"    # Z
+
+    .prologue
+    iget-boolean v0, p0, Landroid/widget/ListView;->mIsFlymeDividerInside:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/widget/ListView;->mDivider:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Landroid/widget/ListView;->mFlymeDividerH:I
+
+    if-lez v0, :cond_0
+
+    const/4 p1, 0x1
+
+    :cond_0
+    return p1
+.end method
+
 .method private initFlymeExtraFields(Landroid/content/Context;Landroid/util/AttributeSet;II)V
     .locals 3
     .param p1, "context"    # Landroid/content/Context;
@@ -14694,6 +14690,45 @@
     invoke-virtual {p0}, Landroid/widget/ListView;->requestLayout()V
 
     :cond_3
+    return-void
+.end method
+
+.method flymeGetFieldScrollY()I
+    .locals 1
+
+    .prologue
+    iget v0, p0, Landroid/widget/ListView;->mScrollY:I
+
+    return v0
+.end method
+
+.method flymeInvokeMethodOverScrollBy(IIIIIIIIZ)Z
+    .locals 1
+    .param p1, "deltaX"    # I
+    .param p2, "deltaY"    # I
+    .param p3, "scrollX"    # I
+    .param p4, "scrollY"    # I
+    .param p5, "scrollRangeX"    # I
+    .param p6, "scrollRangeY"    # I
+    .param p7, "maxOverScrollX"    # I
+    .param p8, "maxOverScrollY"    # I
+    .param p9, "isTouchEvent"    # Z
+
+    .prologue
+    invoke-virtual/range {p0 .. p9}, Landroid/widget/ListView;->overScrollBy(IIIIIIIIZ)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method flymeSetFieldScrollY(I)V
+    .locals 0
+    .param p1, "scrollY"    # I
+
+    .prologue
+    iput p1, p0, Landroid/widget/ListView;->mScrollY:I
+
     return-void
 .end method
 
@@ -16231,50 +16266,4 @@
 
     :cond_0
     return-void
-.end method
-
-.method private getFlymeDividerHeight(I)I
-    .locals 1
-    .param p1, "dividerHeight"    # I
-
-    .prologue
-    iget-boolean v0, p0, Landroid/widget/ListView;->mIsFlymeDividerInside:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Landroid/widget/ListView;->mDivider:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_0
-
-    iget v0, p0, Landroid/widget/ListView;->mFlymeDividerH:I
-
-    if-lez v0, :cond_0
-
-    iget p1, p0, Landroid/widget/ListView;->mFlymeDividerH:I
-
-    :cond_0
-    return p1
-.end method
-
-.method private getFlymeDrawDividers(Z)Z
-    .locals 1
-    .param p1, "drawDividers"    # Z
-
-    .prologue
-    iget-boolean v0, p0, Landroid/widget/ListView;->mIsFlymeDividerInside:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Landroid/widget/ListView;->mDivider:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_0
-
-    iget v0, p0, Landroid/widget/ListView;->mFlymeDividerH:I
-
-    if-lez v0, :cond_0
-
-    const/4 p1, 0x1
-
-    :cond_0
-    return p1
 .end method

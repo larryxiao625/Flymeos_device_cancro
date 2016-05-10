@@ -32,13 +32,13 @@
 
 .field static final TRANSACTION_getOemUnlockEnabled:I = 0x7
 
-.field static final TRANSACTION_read:I = 0x2
+.field static final TRANSACTION_read_1:I = 0x2
 
 .field static final TRANSACTION_setOemUnlockEnabled:I = 0x6
 
 .field static final TRANSACTION_wipe:I = 0x3
 
-.field static final TRANSACTION_write:I = 0x1
+.field static final TRANSACTION_write_0:I = 0x1
 
 
 # direct methods

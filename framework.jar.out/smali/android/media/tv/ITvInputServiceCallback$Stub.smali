@@ -26,9 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.media.tv.ITvInputServiceCallback"
 
-.field static final TRANSACTION_addHardwareTvInput:I = 0x1
+.field static final TRANSACTION_addHardwareTvInput_0:I = 0x1
 
-.field static final TRANSACTION_addHdmiTvInput:I = 0x2
+.field static final TRANSACTION_addHdmiTvInput_1:I = 0x2
 
 .field static final TRANSACTION_removeTvInput:I = 0x3
 

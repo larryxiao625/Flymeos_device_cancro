@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field mFlymeData:Lcom/android/server/wallpaper/FlymeWallpaperService$FlymeWallpaperData;
+
 .field private callbacks:Landroid/os/RemoteCallbackList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -33,8 +35,6 @@
 .field imageWallpaperPending:Z
 
 .field lastDiedTime:J
-
-.field mFlymeData:Lcom/android/server/wallpaper/FlymeWallpaperService$FlymeWallpaperData;
 
 .field name:Ljava/lang/String;
 

@@ -9321,7 +9321,7 @@
 
     iget-object v12, v0, Lcom/android/server/InputMethodManagerService;->mNotificationManager:Landroid/app/NotificationManager;
 
-    if-eqz v12, :cond_4
+    if-eqz v12, :cond_flyme_0
 
     move-object/from16 v0, p0
 
@@ -9331,7 +9331,7 @@
 
     move-result v12
 
-    if-nez v12, :cond_4
+    if-nez v12, :cond_flyme_0
 
     .line 1635
     move-object/from16 v0, p0
@@ -9362,9 +9362,10 @@
 
     iput-boolean v12, v0, Lcom/android/server/InputMethodManagerService;->mNotificationShown:Z
 
-    :cond_4
+    :cond_flyme_0
     invoke-direct/range {p0 .. p0}, Lcom/android/server/InputMethodManagerService;->showFlymeImeSwitcherNotificationIfNeeded()V
 
+    :cond_4
     move-object/from16 v0, p0
 
     invoke-direct {v0, v5}, Lcom/android/server/InputMethodManagerService;->publishImeSelectorCustomTile(Landroid/view/inputmethod/InputMethodInfo;)V

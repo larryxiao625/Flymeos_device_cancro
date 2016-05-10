@@ -758,7 +758,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_0
+    if-eqz v6, :cond_flyme_0
 
     iget-object v6, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
 
@@ -780,13 +780,13 @@
 
     invoke-virtual {v6, v7, v8, v9, v10}, Landroid/graphics/Rect;->intersect(IIII)Z
 
-    :cond_0
+    :cond_flyme_0
     invoke-static/range {p0 .. p0}, Lcom/android/server/wm/WindowStateAnimator$FlymeInjector;->setSystemDecorRectTop(Lcom/android/server/wm/WindowStateAnimator;)V
 
     .line 1332
     iget-boolean v6, v4, Lcom/android/server/wm/WindowState;->mEnforceSizeCompat:Z
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_0
 
     iget v6, v4, Lcom/android/server/wm/WindowState;->mInvGlobalScale:F
 
@@ -794,7 +794,7 @@
 
     cmpl-float v6, v6, v7
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_0
 
     .line 1333
     iget v2, v4, Lcom/android/server/wm/WindowState;->mInvGlobalScale:F
@@ -874,7 +874,7 @@
 
     .line 1339
     .end local v2    # "scale":F
-    :cond_1
+    :cond_0
     return-void
 .end method
 
@@ -8272,7 +8272,7 @@
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 1429
     :catch_0

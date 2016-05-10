@@ -41,6 +41,10 @@
 
 
 # instance fields
+.field public mFlymeNotificationBuilder:Landroid/app/NotificationBuilderExt;
+
+.field private mFlymeSnoozeIntent:Landroid/app/PendingIntent;
+
 .field private mActions:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -81,10 +85,6 @@
 .field private mExtras:Landroid/os/Bundle;
 
 .field private mFlags:I
-
-.field public mFlymeNotificationBuilder:Landroid/app/NotificationBuilderExt;
-
-.field private mFlymeSnoozeIntent:Landroid/app/PendingIntent;
 
 .field private mFullScreenIntent:Landroid/app/PendingIntent;
 
@@ -252,7 +252,7 @@
     :cond_0
     iput-object v0, p0, Landroid/app/Notification$Builder;->mColorUtil:Lcom/android/internal/util/NotificationColorUtil;
 
-    invoke-direct {p0}, Landroid/app/Notification$Builder;->initFlymeExtraFields()V
+    invoke-direct/range {p0 .. p0}, Landroid/app/Notification$Builder;->initFlymeExtraFields()V
 
     .line 2065
     return-void
@@ -294,15 +294,18 @@
 
     move-result v7
 
-    if-nez v7, :cond_1
+    if-nez v7, :cond_2
 
+    .line 2081
     invoke-static {v6}, Landroid/app/Notification$Builder;->getNotificationStyleClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v4
 
+    .line 2082
     .local v4, "styleClass":Ljava/lang/Class;, "Ljava/lang/Class<+Landroid/app/Notification$Style;>;"
-    if-nez v4, :cond_0
+    if-nez v4, :cond_1
 
+    .line 2083
     const-string v7, "Notification"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -325,12 +328,15 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2099
     .end local v4    # "styleClass":Ljava/lang/Class;, "Ljava/lang/Class<+Landroid/app/Notification$Style;>;"
+    :cond_0
     :goto_0
     return-void
 
+    .line 2088
     .restart local v4    # "styleClass":Ljava/lang/Class;, "Ljava/lang/Class<+Landroid/app/Notification$Style;>;"
-    :cond_0
+    :cond_1
     const/4 v7, 0x0
 
     :try_start_0
@@ -362,13 +368,13 @@
 
     .end local v1    # "constructor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<+Landroid/app/Notification$Style;>;"
     .end local v4    # "styleClass":Ljava/lang/Class;, "Ljava/lang/Class<+Landroid/app/Notification$Style;>;"
-    :cond_1
-    if-eqz v3, :cond_2
+    :cond_2
+    if-eqz v3, :cond_flyme_0
 
     invoke-virtual {p0, v3}, Landroid/app/Notification$Builder;->setStyle(Landroid/app/Notification$Style;)Landroid/app/Notification$Builder;
 
-    :cond_2
-    invoke-direct {p0}, Landroid/app/Notification$Builder;->initFlymeExtraFields()V
+    :cond_flyme_0
+    invoke-direct/range {p0 .. p0}, Landroid/app/Notification$Builder;->initFlymeExtraFields()V
 
     goto :goto_0
 
@@ -637,7 +643,8 @@
     .param p1, "x1"    # I
 
     .prologue
-    invoke-direct {p0, p1}, Landroid/app/Notification$Builder;->applyStandardTemplateWithActionsFlyme(I)Landroid/widget/RemoteViews;
+    .line 1902
+    invoke-direct {p0, p1}, Landroid/app/Notification$Builder;->applyStandardTemplateWithActions(I)Landroid/widget/RemoteViews;
 
     move-result-object v0
 
@@ -778,6 +785,9 @@
     .param p1, "resId"    # I
 
     .prologue
+    .line 2817
+    const/4 v0, 0x1
+
     invoke-direct {p0, p1}, Landroid/app/Notification$Builder;->applyStandardTemplateFlyme(I)Landroid/widget/RemoteViews;
 
     move-result-object v0
@@ -1707,7 +1717,9 @@
     .locals 1
 
     .prologue
-    invoke-direct {p0}, Landroid/app/Notification$Builder;->getBaseLayoutResourceFlyme()I
+    const v0, #android:layout@notification_template_material_base#t
+
+    invoke-direct/range {p0 .. p0}, Landroid/app/Notification$Builder;->getBaseLayoutResourceFlyme()I
 
     move-result v0
 
@@ -1718,6 +1730,8 @@
     .locals 1
 
     .prologue
+    const v0, #android:layout@notification_template_material_big_base#t
+
     sget v0, Lcom/flyme/internal/R$layout;->notification_template_big_base:I
 
     return v0
@@ -1727,6 +1741,8 @@
     .locals 1
 
     .prologue
+    const v0, #android:layout@notification_template_material_big_picture#t
+
     sget v0, Lcom/flyme/internal/R$layout;->notification_template_big_picture:I
 
     return v0
@@ -1736,6 +1752,8 @@
     .locals 1
 
     .prologue
+    const v0, #android:layout@notification_template_material_big_text#t
+
     sget v0, Lcom/flyme/internal/R$layout;->notification_template_big_text:I
 
     return v0
@@ -1745,6 +1763,8 @@
     .locals 1
 
     .prologue
+    const v0, #android:layout@notification_template_material_inbox#t
+
     sget v0, Lcom/flyme/internal/R$layout;->notification_template_inbox:I
 
     return v0
@@ -2129,7 +2149,7 @@
 
     move-result v0
 
-    invoke-direct {p0, v0}, Landroid/app/Notification$Builder;->applyStandardTemplateWithActionsFlyme(I)Landroid/widget/RemoteViews;
+    invoke-virtual {p0, v0}, Landroid/app/Notification$Builder;->applyStandardTemplateWithActionsFlyme(I)Landroid/widget/RemoteViews;
 
     move-result-object v0
 
@@ -2188,7 +2208,7 @@
 
     move-result v0
 
-    invoke-direct {p0, v0}, Landroid/app/Notification$Builder;->applyStandardTemplateWithActionsFlyme(I)Landroid/widget/RemoteViews;
+    invoke-virtual {p0, v0}, Landroid/app/Notification$Builder;->applyStandardTemplateWithActionsFlyme(I)Landroid/widget/RemoteViews;
 
     move-result-object v0
 
@@ -3217,7 +3237,8 @@
 
     .line 3478
     :cond_2
-    invoke-direct {p0, p1}, Landroid/app/Notification$Builder;->restoreSnoozeIntentFromNotification(Landroid/app/Notification;)V
+
+    invoke-direct/range {p0 .. p1}, Landroid/app/Notification$Builder;->restoreSnoozeIntentFromNotification(Landroid/app/Notification;)V
 
     return-void
 .end method
@@ -4148,6 +4169,7 @@
 
     .line 3218
     :cond_4
+
     invoke-direct {p0, v0}, Landroid/app/Notification$Builder;->buildUnstyledFlyme(Landroid/app/Notification;)V
 
     return-object v0
@@ -5579,73 +5601,6 @@
     goto :goto_2
 .end method
 
-.method private applyStandardTemplateWithActionsFlyme(I)Landroid/widget/RemoteViews;
-    .locals 6
-    .param p1, "layoutId"    # I
-
-    .prologue
-    invoke-direct {p0, p1}, Landroid/app/Notification$Builder;->applyStandardTemplate(I)Landroid/widget/RemoteViews;
-
-    move-result-object v1
-
-    .local v1, "big":Landroid/widget/RemoteViews;
-    invoke-direct {p0, v1}, Landroid/app/Notification$Builder;->resetStandardTemplateWithActionsFlyme(Landroid/widget/RemoteViews;)V
-
-    iget-object v4, p0, Landroid/app/Notification$Builder;->mActions:Ljava/util/ArrayList;
-
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    .local v0, "N":I
-    if-lez v0, :cond_1
-
-    sget v4, Lcom/flyme/internal/R$id;->actions:I
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v1, v4, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
-
-    const/4 v4, 0x3
-
-    if-le v0, v4, :cond_0
-
-    const/4 v0, 0x3
-
-    :cond_0
-    const/4 v3, 0x0
-
-    .local v3, "i":I
-    :goto_0
-    if-ge v3, v0, :cond_1
-
-    iget-object v4, p0, Landroid/app/Notification$Builder;->mActions:Ljava/util/ArrayList;
-
-    invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/app/Notification$Action;
-
-    invoke-direct {p0, v4}, Landroid/app/Notification$Builder;->generateActionButtonFlyme(Landroid/app/Notification$Action;)Landroid/widget/RemoteViews;
-
-    move-result-object v2
-
-    .local v2, "button":Landroid/widget/RemoteViews;
-    sget v4, Lcom/flyme/internal/R$id;->actions:I
-
-    invoke-virtual {v1, v4, v2}, Landroid/widget/RemoteViews;->addView(ILandroid/widget/RemoteViews;)V
-
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    .end local v2    # "button":Landroid/widget/RemoteViews;
-    .end local v3    # "i":I
-    :cond_1
-    return-object v1
-.end method
-
 .method private buildUnstyledFlyme(Landroid/app/Notification;)V
     .locals 2
     .param p1, "dst"    # Landroid/app/Notification;
@@ -6012,6 +5967,94 @@
     iput-object v0, p0, Landroid/app/Notification$Builder;->mFlymeSnoozeIntent:Landroid/app/PendingIntent;
 
     return-void
+.end method
+
+.method applyStandardTemplateWithActionsFlyme(I)Landroid/widget/RemoteViews;
+    .locals 6
+    .param p1, "layoutId"    # I
+
+    .prologue
+    invoke-direct {p0, p1}, Landroid/app/Notification$Builder;->applyStandardTemplate(I)Landroid/widget/RemoteViews;
+
+    move-result-object v1
+
+    .local v1, "big":Landroid/widget/RemoteViews;
+    invoke-direct {p0, v1}, Landroid/app/Notification$Builder;->resetStandardTemplateWithActionsFlyme(Landroid/widget/RemoteViews;)V
+
+    iget-object v4, p0, Landroid/app/Notification$Builder;->mActions:Ljava/util/ArrayList;
+
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    .local v0, "N":I
+    if-lez v0, :cond_1
+
+    sget v4, Lcom/flyme/internal/R$id;->actions:I
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v1, v4, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+
+    const/4 v4, 0x3
+
+    if-le v0, v4, :cond_0
+
+    const/4 v0, 0x3
+
+    :cond_0
+    const/4 v3, 0x0
+
+    .local v3, "i":I
+    :goto_0
+    if-ge v3, v0, :cond_1
+
+    iget-object v4, p0, Landroid/app/Notification$Builder;->mActions:Ljava/util/ArrayList;
+
+    invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/app/Notification$Action;
+
+    invoke-direct {p0, v4}, Landroid/app/Notification$Builder;->generateActionButtonFlyme(Landroid/app/Notification$Action;)Landroid/widget/RemoteViews;
+
+    move-result-object v2
+
+    .local v2, "button":Landroid/widget/RemoteViews;
+    sget v4, Lcom/flyme/internal/R$id;->actions:I
+
+    invoke-virtual {v1, v4, v2}, Landroid/widget/RemoteViews;->addView(ILandroid/widget/RemoteViews;)V
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    .end local v2    # "button":Landroid/widget/RemoteViews;
+    .end local v3    # "i":I
+    :cond_1
+    return-object v1
+.end method
+
+.method flymeGetFieldContext()Landroid/content/Context;
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Landroid/app/Notification$Builder;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method flymeInvokeMethodProcessLegacyText(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    .locals 1
+    .param p1, "charSequence"    # Ljava/lang/CharSequence;
+
+    .prologue
+    invoke-direct {p0, p1}, Landroid/app/Notification$Builder;->processLegacyText(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public setSnoozeIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;

@@ -13,7 +13,7 @@ sdkInfo:
 sharedLibrary: false
 unknownFiles: {}
 usesFramework: null
-version: 2.1.0-1e8d95-SNAPSHOT
+version: 2.1.1-6ce5c2-SNAPSHOT
 versionInfo:
   versionCode: '22'
-  versionName: 5.1.1-4cbd6837f4
+  versionName: 5.1.1-630faae5f9

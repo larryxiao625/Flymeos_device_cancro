@@ -32,11 +32,11 @@
 
 .field static final TRANSACTION_finish:I = 0x4
 
-.field static final TRANSACTION_getDspModuleProperties:I = 0x8
+.field static final TRANSACTION_getDspModuleProperties_7:I = 0x8
 
 .field static final TRANSACTION_getKeyphraseSoundModel:I = 0x5
 
-.field static final TRANSACTION_isEnrolledForKeyphrase:I = 0x9
+.field static final TRANSACTION_isEnrolledForKeyphrase_8:I = 0x9
 
 .field static final TRANSACTION_startRecognition:I = 0xa
 

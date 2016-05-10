@@ -15,6 +15,10 @@
 
 
 # static fields
+.field public static final CONFIG_THEME:I = 0x4000
+
+.field public static final CONFIG_TYPEFACE:I = 0x8000
+
 .field public static final CONFIG_DENSITY:I = 0x1000
 
 .field public static final CONFIG_FONT_SCALE:I = 0x40000000
@@ -43,15 +47,11 @@
 
 .field public static final CONFIG_SMALLEST_SCREEN_SIZE:I = 0x800
 
-.field public static final CONFIG_THEME:I = 0x4000
-
 .field public static final CONFIG_THEME_FONT:I = 0x200000
 
 .field public static final CONFIG_THEME_RESOURCE:I = 0x100000
 
 .field public static final CONFIG_TOUCHSCREEN:I = 0x8
-
-.field public static final CONFIG_TYPEFACE:I = 0x8000
 
 .field public static final CONFIG_UI_MODE:I = 0x200
 
@@ -160,6 +160,8 @@
 
 
 # instance fields
+.field public mFlymeActivityInfo:Landroid/content/ActivityInfoExt;
+
 .field public configChanges:I
 
 .field public documentLaunchMode:I
@@ -167,8 +169,6 @@
 .field public flags:I
 
 .field public launchMode:I
-
-.field public mFlymeActivityInfo:Landroid/content/ActivityInfoExt;
 
 .field public maxRecents:I
 
@@ -250,7 +250,7 @@
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->uiOptions:I
 
-    invoke-static {p0}, Landroid/content/pm/ActivityInfo$FlymeInjector;->createFlymeActivityInfo(Landroid/content/pm/ActivityInfo;)V
+    invoke-static/range {p0 .. p0}, Landroid/content/pm/ActivityInfo$FlymeInjector;->createFlymeActivityInfo(Landroid/content/pm/ActivityInfo;)V
 
     return-void
 .end method
@@ -318,7 +318,7 @@
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->maxRecents:I
 
-    invoke-static {p0, p1}, Landroid/content/pm/ActivityInfo$FlymeInjector;->copyFromActivityInfo(Landroid/content/pm/ActivityInfo;Landroid/content/pm/ActivityInfo;)V
+    invoke-static/range {p0 .. p1}, Landroid/content/pm/ActivityInfo$FlymeInjector;->copyFromActivityInfo(Landroid/content/pm/ActivityInfo;Landroid/content/pm/ActivityInfo;)V
 
     return-void
 .end method
@@ -416,7 +416,7 @@
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->maxRecents:I
 
-    invoke-static {p0, p1}, Landroid/content/pm/ActivityInfo$FlymeInjector;->readFromParcel(Landroid/content/pm/ActivityInfo;Landroid/os/Parcel;)V
+    invoke-static/range {p0 .. p1}, Landroid/content/pm/ActivityInfo$FlymeInjector;->readFromParcel(Landroid/content/pm/ActivityInfo;Landroid/os/Parcel;)V
 
     return-void
 .end method
@@ -1003,7 +1003,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-static {p0, p1}, Landroid/content/pm/ActivityInfo$FlymeInjector;->writeToParcel(Landroid/content/pm/ActivityInfo;Landroid/os/Parcel;)V
+    invoke-static/range {p0 .. p1}, Landroid/content/pm/ActivityInfo$FlymeInjector;->writeToParcel(Landroid/content/pm/ActivityInfo;Landroid/os/Parcel;)V
 
     return-void
 .end method

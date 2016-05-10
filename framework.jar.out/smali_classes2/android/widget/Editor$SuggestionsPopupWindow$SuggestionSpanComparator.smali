@@ -187,7 +187,7 @@
     iget-object v6, p0, Landroid/widget/Editor$SuggestionsPopupWindow$SuggestionSpanComparator;->this$1:Landroid/widget/Editor$SuggestionsPopupWindow;
 
     # getter for: Landroid/widget/Editor$SuggestionsPopupWindow;->mSpansLengths:Ljava/util/HashMap;
-    invoke-static {v6}, Landroid/widget/Editor$SuggestionsPopupWindow;->access$2100(Landroid/widget/Editor$SuggestionsPopupWindow;)Ljava/util/HashMap;
+    invoke-static {v6}, Landroid/widget/Editor$SuggestionsPopupWindow;->access$2200(Landroid/widget/Editor$SuggestionsPopupWindow;)Ljava/util/HashMap;
 
     move-result-object v6
 
@@ -204,7 +204,7 @@
     iget-object v6, p0, Landroid/widget/Editor$SuggestionsPopupWindow$SuggestionSpanComparator;->this$1:Landroid/widget/Editor$SuggestionsPopupWindow;
 
     # getter for: Landroid/widget/Editor$SuggestionsPopupWindow;->mSpansLengths:Ljava/util/HashMap;
-    invoke-static {v6}, Landroid/widget/Editor$SuggestionsPopupWindow;->access$2100(Landroid/widget/Editor$SuggestionsPopupWindow;)Ljava/util/HashMap;
+    invoke-static {v6}, Landroid/widget/Editor$SuggestionsPopupWindow;->access$2200(Landroid/widget/Editor$SuggestionsPopupWindow;)Ljava/util/HashMap;
 
     move-result-object v6
 
@@ -225,13 +225,17 @@
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
+    .param p1, "x0"    # Ljava/lang/Object;
+    .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
     .line 2439
     check-cast p1, Landroid/text/style/SuggestionSpan;
 
+    .end local p1    # "x0":Ljava/lang/Object;
     check-cast p2, Landroid/text/style/SuggestionSpan;
 
+    .end local p2    # "x1":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2}, Landroid/widget/Editor$SuggestionsPopupWindow$SuggestionSpanComparator;->compare(Landroid/text/style/SuggestionSpan;Landroid/text/style/SuggestionSpan;)I
 
     move-result v0

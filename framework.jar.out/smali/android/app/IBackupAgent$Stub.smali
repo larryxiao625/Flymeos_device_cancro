@@ -26,13 +26,13 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.IBackupAgent"
 
-.field static final TRANSACTION_doBackupFiles_6:I = 0x7
+.field static final TRANSACTION_doBackupFiles:I = 0x7
 
 .field static final TRANSACTION_doBackup_0:I = 0x1
 
 .field static final TRANSACTION_doFullBackup_2:I = 0x3
 
-.field static final TRANSACTION_doRestoreFile_3:I = 0x4
+.field static final TRANSACTION_doRestoreFile:I = 0x4
 
 .field static final TRANSACTION_doRestoreFinished_4:I = 0x5
 

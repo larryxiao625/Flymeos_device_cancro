@@ -36,7 +36,7 @@
 
 .field static final TRANSACTION_registerCallback:I = 0x7
 
-.field static final TRANSACTION_start_0:I = 0x1
+.field static final TRANSACTION_start:I = 0x1
 
 .field static final TRANSACTION_stop:I = 0x2
 

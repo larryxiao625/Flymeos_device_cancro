@@ -58,19 +58,19 @@
 
 .field static final TRANSACTION_getSyncAutomaticallyAsUser:I = 0xb
 
-.field static final TRANSACTION_getSyncStatus:I = 0x1d
-
 .field static final TRANSACTION_getSyncStatusAsUser:I = 0x1e
 
-.field static final TRANSACTION_isSyncActive:I = 0x1c
+.field static final TRANSACTION_getSyncStatus_28:I = 0x1d
 
-.field static final TRANSACTION_isSyncPending:I = 0x1f
+.field static final TRANSACTION_isSyncActive_27:I = 0x1c
 
 .field static final TRANSACTION_isSyncPendingAsUser:I = 0x20
 
+.field static final TRANSACTION_isSyncPending_30:I = 0x1f
+
 .field static final TRANSACTION_notifyChange:I = 0x3
 
-.field static final TRANSACTION_registerContentObserver:I = 0x2
+.field static final TRANSACTION_registerContentObserver_1:I = 0x2
 
 .field static final TRANSACTION_removePeriodicSync:I = 0x10
 

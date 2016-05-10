@@ -9,10 +9,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/widget/AutoCompleteTextView$FlymeInjector;,
         Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;,
         Landroid/widget/AutoCompleteTextView$PassThroughClickListener;,
         Landroid/widget/AutoCompleteTextView$OnDismissListener;,
+        Landroid/widget/AutoCompleteTextView$FlymeInjector;,
         Landroid/widget/AutoCompleteTextView$Validator;,
         Landroid/widget/AutoCompleteTextView$DropDownItemClickListener;,
         Landroid/widget/AutoCompleteTextView$MyWatcher;
@@ -29,6 +29,10 @@
 
 
 # instance fields
+.field mFlymeFilterComplete:Z
+
+.field mIsFlymeMmsFirstFileter:Z
+
 .field private mAdapter:Landroid/widget/ListAdapter;
 
 .field private mBlockCompletion:Z
@@ -39,15 +43,11 @@
 
 .field private mFilter:Landroid/widget/Filter;
 
-.field mFlymeFilterComplete:Z
-
 .field private mHintResource:I
 
 .field private mHintText:Ljava/lang/CharSequence;
 
 .field private mHintView:Landroid/widget/TextView;
-
-.field mIsFlymeMmsFirstFileter:Z
 
 .field private mItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
 
@@ -148,7 +148,7 @@
 
     iput-object v2, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
-    invoke-static {p0, p1, p2, p3, p4}, Landroid/widget/AutoCompleteTextView$FlymeInjector;->initFlymeExtraFields(Landroid/widget/AutoCompleteTextView;Landroid/content/Context;Landroid/util/AttributeSet;II)V
+    invoke-static/range {p0 .. p4}, Landroid/widget/AutoCompleteTextView$FlymeInjector;->initFlymeExtraFields(Landroid/widget/AutoCompleteTextView;Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
     iget-object v2, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
@@ -649,7 +649,7 @@
 
     .line 972
     .local v1, "enoughToFilter":Z
-    invoke-static {p0}, Landroid/widget/AutoCompleteTextView$FlymeInjector;->updateFlymeDropDownForFilter(Landroid/widget/AutoCompleteTextView;)V
+    invoke-static/range {p0 .. p0}, Landroid/widget/AutoCompleteTextView$FlymeInjector;->updateFlymeDropDownForFilter(Landroid/widget/AutoCompleteTextView;)V
 
     if-gtz p1, :cond_2
 
@@ -873,32 +873,37 @@
 .end method
 
 .method public enoughToFilter()Z
-    .locals 3
+    .locals 2
 
     .prologue
+    iget-boolean v0, p0, Landroid/widget/AutoCompleteTextView;->mIsFlymeMmsFirstFileter:Z
+
+    if-eqz v0, :cond_flyme_0
+
     const/4 v0, 0x1
 
-    iget-boolean v1, p0, Landroid/widget/AutoCompleteTextView;->mIsFlymeMmsFirstFileter:Z
+    return v0
 
-    if-eqz v1, :cond_1
+    :cond_flyme_0
 
-    :cond_0
+    invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->getText()Landroid/text/Editable;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/text/Editable;->length()I
+
+    move-result v0
+
+    iget v1, p0, Landroid/widget/AutoCompleteTextView;->mThreshold:I
+
+    if-lt v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
     :goto_0
     return v0
 
-    :cond_1
-    invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->getText()Landroid/text/Editable;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/text/Editable;->length()I
-
-    move-result v1
-
-    iget v2, p0, Landroid/widget/AutoCompleteTextView;->mThreshold:I
-
-    if-ge v1, v2, :cond_0
-
+    :cond_0
     const/4 v0, 0x0
 
     goto :goto_0

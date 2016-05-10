@@ -100,11 +100,13 @@
 # virtual methods
 .method public bridge synthetic post([Ljava/lang/Object;)V
     .locals 0
+    .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
     .line 530
     check-cast p1, [Ljava/lang/Void;
 
+    .end local p1    # "x0":[Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/view/ViewDebug$2;->post([Ljava/lang/Void;)V
 
     return-void
@@ -148,11 +150,13 @@
 
 .method public bridge synthetic run([Ljava/lang/Object;)V
     .locals 0
+    .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
     .line 530
     check-cast p1, [Ljava/lang/Void;
 
+    .end local p1    # "x0":[Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/view/ViewDebug$2;->run([Ljava/lang/Void;)V
 
     return-void

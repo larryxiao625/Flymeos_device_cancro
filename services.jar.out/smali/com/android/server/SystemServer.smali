@@ -2015,6 +2015,7 @@
     invoke-static {v4, v0}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
 
     invoke-static {}, Lcom/android/server/SystemServer$FlymeInjector;->addFlymeStatusBarManagerService()V
+
     :try_end_13
     .catch Ljava/lang/Throwable; {:try_start_13 .. :try_end_13} :catch_47
 
@@ -2104,6 +2105,7 @@
     invoke-static {v4, v7}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
 
     invoke-static/range {p0 .. p0}, Lcom/android/server/SystemServer$FlymeInjector;->addNetworkManagementServiceFlyme(Lcom/android/server/SystemServer;)V
+
     :try_end_16
     .catch Ljava/lang/Throwable; {:try_start_16 .. :try_end_16} :catch_c
 
@@ -3068,7 +3070,8 @@
     invoke-virtual {v4, v5}, Lcom/android/server/SystemServiceManager;->startService(Ljava/lang/Class;)Lcom/android/server/SystemService;
 
     :cond_1d
-    goto/16 :goto_28
+
+    goto/16 :goto_flyme_0
 
     if-nez v64, :cond_1e
 
@@ -3158,6 +3161,7 @@
     .end local v74    # "gestureService":Lcom/android/server/gesture/GestureService;
     .restart local v73    # "gestureService":Lcom/android/server/gesture/GestureService;
     :cond_1f
+    :goto_flyme_0
     :goto_28
     move-object/from16 v0, p0
 
@@ -3262,7 +3266,14 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    #new-instance v112, Lcom/android/server/ThemeService;
+
+    #move-object/from16 v0, v112
+
+    #invoke-direct {v0, v3}, Lcom/android/server/ThemeService;-><init>(Landroid/content/Context;)V
+
     const/16 v112, 0x0
+
     :try_end_3d
     .catch Ljava/lang/Throwable; {:try_start_3d .. :try_end_3d} :catch_26
 
@@ -3273,6 +3284,8 @@
     const-string v4, "themes"
 
     move-object/from16 v0, v112
+
+    #invoke-static {v4, v0}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
     :try_end_3e
     .catch Ljava/lang/Throwable; {:try_start_3e .. :try_end_3e} :catch_39
 
@@ -5774,8 +5787,6 @@
     return-void
 .end method
 
-
-# virtual methods
 .method flymeGetFieldPackageManagerService()Lcom/android/server/pm/PackageManagerService;
     .locals 1
 

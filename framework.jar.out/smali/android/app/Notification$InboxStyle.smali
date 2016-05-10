@@ -19,9 +19,8 @@
     }
 .end annotation
 
-
 # instance fields
-.field private mFlymeSimSlots:Ljava/util/ArrayList;
+.field mFlymeSimSlots:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
@@ -61,7 +60,7 @@
 
     iput-object v0, p0, Landroid/app/Notification$InboxStyle;->mTexts:Ljava/util/ArrayList;
 
-    invoke-static {p0}, Landroid/app/Notification$InboxStyle$FlymeInjector;->initFlymeExtFields(Landroid/app/Notification$InboxStyle;)V
+    invoke-static/range {p0 .. p0}, Landroid/app/Notification$InboxStyle$FlymeInjector;->initFlymeExtFields(Landroid/app/Notification$InboxStyle;)V
 
     .line 4017
     return-void
@@ -360,17 +359,23 @@
 
     invoke-virtual {p0, v1}, Landroid/app/Notification$InboxStyle;->makeBigContentViewFlyme(Landroid/widget/RemoteViews;)V
 
+    .line 4122
     return-object v1
 
+    .line 4110
     :cond_4
     const/16 v11, 0x8
 
     goto :goto_3
 
+    .line 4113
     :cond_5
     const/16 v11, 0x8
 
     goto :goto_4
+
+    .line 4084
+    nop
 
     :array_0
     .array-data 4
@@ -417,7 +422,7 @@
 
     invoke-virtual {p1, v2, v1}, Landroid/os/Bundle;->putCharSequenceArray(Ljava/lang/String;[Ljava/lang/CharSequence;)V
 
-    invoke-static {p0, p1}, Landroid/app/Notification$InboxStyle$FlymeInjector;->addFlymeExtras(Landroid/app/Notification$InboxStyle;Landroid/os/Bundle;)V
+    invoke-static/range {p0 .. p1}, Landroid/app/Notification$InboxStyle$FlymeInjector;->addFlymeExtras(Landroid/app/Notification$InboxStyle;Landroid/os/Bundle;)V
 
     .line 4056
     return-void
@@ -437,7 +442,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-static {p0}, Landroid/app/Notification$InboxStyle$FlymeInjector;->addFlymeLine(Landroid/app/Notification$InboxStyle;)V
+    invoke-static/range {p0 .. p0}, Landroid/app/Notification$InboxStyle$FlymeInjector;->addFlymeLine(Landroid/app/Notification$InboxStyle;)V
 
     return-object p0
 .end method
@@ -518,27 +523,6 @@
     invoke-virtual {p0, v0}, Landroid/app/Notification$InboxStyle;->internalSetSummaryText(Ljava/lang/CharSequence;)V
 
     return-object p0
-.end method
-
-.method static synthetic access$2100(Landroid/app/Notification$InboxStyle;)Ljava/util/ArrayList;
-    .locals 1
-    .param p0, "x0"    # Landroid/app/Notification$InboxStyle;
-
-    .prologue
-    iget-object v0, p0, Landroid/app/Notification$InboxStyle;->mFlymeSimSlots:Ljava/util/ArrayList;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2102(Landroid/app/Notification$InboxStyle;Ljava/util/ArrayList;)Ljava/util/ArrayList;
-    .locals 0
-    .param p0, "x0"    # Landroid/app/Notification$InboxStyle;
-    .param p1, "x1"    # Ljava/util/ArrayList;
-
-    .prologue
-    iput-object p1, p0, Landroid/app/Notification$InboxStyle;->mFlymeSimSlots:Ljava/util/ArrayList;
-
-    return-object p1
 .end method
 
 .method public addLine(Ljava/lang/CharSequence;I)Landroid/app/Notification$InboxStyle;
@@ -658,8 +642,7 @@
 
     iget-object v2, v0, Landroid/app/Notification$InboxStyle;->mBuilder:Landroid/app/Notification$Builder;
 
-    # getter for: Landroid/app/Notification$Builder;->mContext:Landroid/content/Context;
-    invoke-static {v2}, Landroid/app/Notification$Builder;->access$1000(Landroid/app/Notification$Builder;)Landroid/content/Context;
+    invoke-virtual {v2}, Landroid/app/Notification$Builder;->flymeGetFieldContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -687,8 +670,7 @@
 
     iget-object v2, v0, Landroid/app/Notification$InboxStyle;->mBuilder:Landroid/app/Notification$Builder;
 
-    # getter for: Landroid/app/Notification$Builder;->mContext:Landroid/content/Context;
-    invoke-static {v2}, Landroid/app/Notification$Builder;->access$1000(Landroid/app/Notification$Builder;)Landroid/content/Context;
+    invoke-virtual {v2}, Landroid/app/Notification$Builder;->flymeGetFieldContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -775,8 +757,7 @@
 
     move-object/from16 v0, v16
 
-    # invokes: Landroid/app/Notification$Builder;->processLegacyText(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-    invoke-static {v3, v0}, Landroid/app/Notification$Builder;->access$900(Landroid/app/Notification$Builder;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-virtual {v3, v0}, Landroid/app/Notification$Builder;->flymeInvokeMethodProcessLegacyText(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v3
 

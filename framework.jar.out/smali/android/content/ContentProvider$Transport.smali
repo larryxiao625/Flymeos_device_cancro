@@ -252,7 +252,6 @@
     move-result v0
 
     .line 465
-    .line 474
     :goto_0
     return v0
 
@@ -274,28 +273,27 @@
     .end annotation
 
     .prologue
+    iget-object v0, p0, Landroid/content/ContentProvider$Transport;->this$0:Landroid/content/ContentProvider;
+
+    invoke-virtual {v0, p2, p3}, Landroid/content/ContentProvider;->enforceWritePermissionInner(Landroid/net/Uri;Landroid/os/IBinder;)V
+
+    invoke-direct/range {p0 .. p1}, Landroid/content/ContentProvider$Transport;->hook_enforceWritePermission(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
     const/4 v0, 0x0
 
-    iget-object v1, p0, Landroid/content/ContentProvider$Transport;->this$0:Landroid/content/ContentProvider;
-
-    invoke-virtual {v1, p2, p3}, Landroid/content/ContentProvider;->enforceWritePermissionInner(Landroid/net/Uri;Landroid/os/IBinder;)V
-
-    invoke-direct {p0, p1}, Landroid/content/ContentProvider$Transport;->hook_enforceWritePermission(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    :cond_0
-    :goto_0
     return v0
 
-    :cond_1
-    iget v1, p0, Landroid/content/ContentProvider$Transport;->mWriteOp:I
+    :cond_flyme_0
 
-    const/4 v2, -0x1
+    iget v0, p0, Landroid/content/ContentProvider$Transport;->mWriteOp:I
 
-    if-eq v1, v2, :cond_0
+    const/4 v1, -0x1
+
+    if-eq v0, v1, :cond_0
 
     iget-object v0, p0, Landroid/content/ContentProvider$Transport;->mAppOpsManager:Landroid/app/AppOpsManager;
 
@@ -308,6 +306,13 @@
     invoke-virtual {v0, v1, v2, p1}, Landroid/app/AppOpsManager;->noteOp(IILjava/lang/String;)I
 
     move-result v0
+
+    .line 474
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

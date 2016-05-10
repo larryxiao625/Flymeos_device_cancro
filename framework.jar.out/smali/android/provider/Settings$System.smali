@@ -717,6 +717,10 @@
     .end annotation
 .end field
 
+.field public static final WAKELOCK_BLOCKING_ENABLED:Ljava/lang/String; = "wakelock_blocking_enabled"
+
+.field public static final WAKELOCK_BLOCKING_LIST:Ljava/lang/String; = "wakelock_blocking_list"
+
 .field public static final WALLPAPER_ACTIVITY:Ljava/lang/String; = "wallpaper_activity"
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -1631,7 +1635,7 @@
 
     sput-object v4, Landroid/provider/Settings$System;->DEFAULT_ALARM_ALERT_URI:Landroid/net/Uri;
 
-    .line 3580
+    .line 3592
     const/16 v4, 0x4e
 
     new-array v4, v4, [Ljava/lang/String;
@@ -2096,7 +2100,7 @@
 
     sput-object v4, Landroid/provider/Settings$System;->SETTINGS_TO_BACKUP:[Ljava/lang/String;
 
-    .line 3666
+    .line 3678
     const/4 v4, 0x5
 
     new-array v4, v4, [Ljava/lang/String;

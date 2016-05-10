@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_onGetPacketCount_4:I = 0x5
 
-.field static final TRANSACTION_onGetPacketErrorCount:I = 0x6
+.field static final TRANSACTION_onGetPacketErrorCount_5:I = 0x6
 
 .field static final TRANSACTION_onGetVideoQuality_2:I = 0x3
 

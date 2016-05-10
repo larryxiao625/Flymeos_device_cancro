@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.policy.IKeyguardStateCallback"
 
-.field static final TRANSACTION_onInputRestrictedStateChanged:I = 0x3
+.field static final TRANSACTION_onInputRestrictedStateChanged_2:I = 0x3
 
 .field static final TRANSACTION_onShowingStateChanged_0:I = 0x1
 

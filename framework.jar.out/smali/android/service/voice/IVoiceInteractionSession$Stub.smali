@@ -30,9 +30,9 @@
 
 .field static final TRANSACTION_destroy:I = 0x4
 
-.field static final TRANSACTION_taskFinished:I = 0x2
+.field static final TRANSACTION_taskFinished_1:I = 0x2
 
-.field static final TRANSACTION_taskStarted:I = 0x1
+.field static final TRANSACTION_taskStarted_0:I = 0x1
 
 
 # direct methods

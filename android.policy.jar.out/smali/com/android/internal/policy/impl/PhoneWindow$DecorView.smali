@@ -25,6 +25,10 @@
 
 
 # instance fields
+.field mFlymeDragInStatusBar:Z
+
+.field mFlymeStatusBarRect:Landroid/graphics/Rect;
+
 .field private mActionMode:Landroid/view/ActionMode;
 
 .field private mActionModePopup:Landroid/widget/PopupWindow;
@@ -46,10 +50,6 @@
 .field private final mDrawingBounds:Landroid/graphics/Rect;
 
 .field private final mFeatureId:I
-
-.field mFlymeDragInStatusBar:Z
-
-.field mFlymeStatusBarRect:Landroid/graphics/Rect;
 
 .field private final mFrameOffsets:Landroid/graphics/Rect;
 
@@ -2556,7 +2556,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_5
+    if-nez v6, :cond_4
 
     .line 2329
     iget-object v6, p0, Lcom/android/internal/policy/impl/PhoneWindow$DecorView;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
@@ -2567,11 +2567,11 @@
 
     .line 2330
     .local v1, "cb":Landroid/view/Window$Callback;
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_5
 
     iget v6, p0, Lcom/android/internal/policy/impl/PhoneWindow$DecorView;->mFeatureId:I
 
-    if-gez v6, :cond_6
+    if-gez v6, :cond_5
 
     invoke-interface {v1, p1}, Landroid/view/Window$Callback;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
@@ -2583,19 +2583,20 @@
 
     move-result v6
 
-    if-eqz v6, :cond_4
+    if-eqz v6, :cond_flyme_0
 
     const/4 v6, 0x1
 
     return v6
 
-    :cond_4
+    :cond_flyme_0
+
     if-nez v2, :cond_0
 
     .end local v1    # "cb":Landroid/view/Window$Callback;
     .end local v2    # "handled":Z
-    :cond_5
-    if-eqz v3, :cond_7
+    :cond_4
+    if-eqz v3, :cond_6
 
     iget-object v5, p0, Lcom/android/internal/policy/impl/PhoneWindow$DecorView;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
 
@@ -2613,7 +2614,7 @@
 
     .line 2330
     .restart local v1    # "cb":Landroid/view/Window$Callback;
-    :cond_6
+    :cond_5
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v2
@@ -2622,7 +2623,7 @@
 
     .line 2337
     .end local v1    # "cb":Landroid/view/Window$Callback;
-    :cond_7
+    :cond_6
     iget-object v5, p0, Lcom/android/internal/policy/impl/PhoneWindow$DecorView;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
 
     iget v6, p0, Lcom/android/internal/policy/impl/PhoneWindow$DecorView;->mFeatureId:I
@@ -5152,7 +5153,7 @@
 
     const/4 v3, 0x4
 
-    if-ne v2, v3, :cond_2
+    if-ne v2, v3, :cond_1
 
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
@@ -5161,31 +5162,32 @@
     .local v0, "action":I
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindow$DecorView;->mActionMode:Landroid/view/ActionMode;
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_1
 
     invoke-static/range {p0 .. p1}, Lcom/android/internal/policy/impl/PhoneWindow$FlymeInjector;->flymeSuperDispatchKeyEvent(Lcom/android/internal/policy/impl/PhoneWindow$DecorView;Landroid/view/KeyEvent;)Z
 
     move-result v2
 
-    if-nez v2, :cond_0
+    if-nez v2, :cond_flyme_0
 
     const/4 v2, 0x1
 
     return v2
 
-    :cond_0
-    if-ne v0, v1, :cond_1
+    :cond_flyme_0
+
+    if-ne v0, v1, :cond_0
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindow$DecorView;->mActionMode:Landroid/view/ActionMode;
 
     invoke-virtual {v2}, Landroid/view/ActionMode;->finish()V
 
     .end local v0    # "action":I
-    :cond_1
+    :cond_0
     :goto_0
     return v1
 
-    :cond_2
+    :cond_1
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v1

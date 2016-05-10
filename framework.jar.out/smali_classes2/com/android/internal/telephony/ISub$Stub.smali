@@ -52,7 +52,7 @@
 
 .field static final TRANSACTION_getAllSubInfoCount:I = 0x2
 
-.field static final TRANSACTION_getAllSubInfoList:I = 0x1
+.field static final TRANSACTION_getAllSubInfoList_0:I = 0x1
 
 .field static final TRANSACTION_getDefaultDataSubId:I = 0x14
 
@@ -88,7 +88,7 @@
 
 .field static final TRANSACTION_setDisplayName:I = 0xb
 
-.field static final TRANSACTION_setDisplayNameUsingSrc:I = 0xc
+.field static final TRANSACTION_setDisplayNameUsingSrc_11:I = 0xc
 
 .field static final TRANSACTION_setDisplayNumber:I = 0xd
 

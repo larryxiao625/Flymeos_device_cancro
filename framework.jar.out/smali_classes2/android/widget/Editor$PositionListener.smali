@@ -18,9 +18,13 @@
 
 
 # instance fields
-.field private final MAXIMUM_NUMBER_OF_LISTENERS:I
-
 .field public mAttached:Z
+
+.field public mTextViewHeight:I
+
+.field public mTextViewWidth:I
+
+.field private final MAXIMUM_NUMBER_OF_LISTENERS:I
 
 .field private mCanMove:[Z
 
@@ -37,10 +41,6 @@
 .field private mScrollHasChanged:Z
 
 .field final mTempCoords:[I
-
-.field public mTextViewHeight:I
-
-.field public mTextViewWidth:I
 
 .field final synthetic this$0:Landroid/widget/Editor;
 
@@ -109,7 +109,7 @@
     iget-object v0, p0, Landroid/widget/Editor$PositionListener;->this$0:Landroid/widget/Editor;
 
     # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-    invoke-static {v0}, Landroid/widget/Editor;->access$600(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-static {v0}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
 
     move-result-object v0
 
@@ -140,7 +140,7 @@
     :goto_0
     iput-boolean v0, p0, Landroid/widget/Editor$PositionListener;->mPositionHasChanged:Z
 
-    invoke-direct {p0}, Landroid/widget/Editor$PositionListener;->flymeUpdatePositionHasChanged()V
+    invoke-direct/range {p0 .. p0}, Landroid/widget/Editor$PositionListener;->flymeUpdatePositionHasChanged()V
 
     iget-object v0, p0, Landroid/widget/Editor$PositionListener;->mTempCoords:[I
 
@@ -154,7 +154,7 @@
 
     iput v0, p0, Landroid/widget/Editor$PositionListener;->mPositionY:I
 
-    invoke-direct {p0}, Landroid/widget/Editor$PositionListener;->flymeUpdatemScrollHasChanged()V
+    invoke-direct/range {p0 .. p0}, Landroid/widget/Editor$PositionListener;->flymeUpdatemScrollHasChanged()V
 
     return-void
 
@@ -184,7 +184,7 @@
     iget-object v4, p0, Landroid/widget/Editor$PositionListener;->this$0:Landroid/widget/Editor;
 
     # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-    invoke-static {v4}, Landroid/widget/Editor;->access$600(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-static {v4}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
 
     move-result-object v4
 
@@ -412,7 +412,7 @@
     iget-object v2, p0, Landroid/widget/Editor$PositionListener;->this$0:Landroid/widget/Editor;
 
     # getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-    invoke-static {v2}, Landroid/widget/Editor;->access$600(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-static {v2}, Landroid/widget/Editor;->access$700(Landroid/widget/Editor;)Landroid/widget/TextView;
 
     move-result-object v2
 

@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_notifyRelroCreationCompleted_0:I = 0x1
 
-.field static final TRANSACTION_waitForRelroCreationCompleted:I = 0x2
+.field static final TRANSACTION_waitForRelroCreationCompleted_1:I = 0x2
 
 
 # direct methods

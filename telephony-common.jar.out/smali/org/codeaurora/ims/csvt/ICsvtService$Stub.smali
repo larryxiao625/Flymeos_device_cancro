@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_dial_0:I = 0x1
 
-.field static final TRANSACTION_fallBack:I = 0x5
+.field static final TRANSACTION_fallBack_4:I = 0x5
 
 .field static final TRANSACTION_getCallForwardingOption_8:I = 0x9
 
@@ -46,7 +46,7 @@
 
 .field static final TRANSACTION_registerListener:I = 0xd
 
-.field static final TRANSACTION_rejectCall:I = 0x4
+.field static final TRANSACTION_rejectCall_3:I = 0x4
 
 .field static final TRANSACTION_setCallForwardingOption_9:I = 0xa
 

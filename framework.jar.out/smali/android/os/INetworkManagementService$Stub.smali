@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.os.INetworkManagementService"
 
-.field static final TRANSACTION_addIdleTimer:I = 0x33
+.field static final TRANSACTION_addIdleTimer_50:I = 0x33
 
 .field static final TRANSACTION_addInterfaceToLocalNetwork:I = 0x52
 

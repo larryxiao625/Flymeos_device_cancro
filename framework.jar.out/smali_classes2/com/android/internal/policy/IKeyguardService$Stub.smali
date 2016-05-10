@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_addStateMonitorCallback_8:I = 0x9
 
-.field static final TRANSACTION_dismiss:I = 0xa
+.field static final TRANSACTION_dismiss_9:I = 0xa
 
 .field static final TRANSACTION_dispatch:I = 0x14
 

@@ -11,11 +11,11 @@
 
 
 # instance fields
+.field private mFlymeTextColor:Landroid/content/res/ColorStateList;
+
 .field private mBackground:Landroid/graphics/drawable/Drawable;
 
 .field private mCheckBox:Landroid/widget/CheckBox;
-
-.field private mFlymeTextColor:Landroid/content/res/ColorStateList;
 
 .field private mForceShowIcon:Z
 
@@ -386,7 +386,7 @@
 
     iput-object v0, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mShortcutView:Landroid/widget/TextView;
 
-    invoke-direct {p0}, Lcom/android/internal/view/menu/ListMenuItemView;->initFlymeShortCut()V
+    invoke-direct/range {p0 .. p0}, Lcom/android/internal/view/menu/ListMenuItemView;->initFlymeShortCut()V
 
     .line 96
     return-void
@@ -493,9 +493,9 @@
     .param p1, "checkable"    # Z
 
     .prologue
-    const/16 v3, 0x8
+    invoke-direct/range {p0 .. p0}, Lcom/android/internal/view/menu/ListMenuItemView;->setFlymeTextColor()V
 
-    invoke-direct {p0}, Lcom/android/internal/view/menu/ListMenuItemView;->setFlymeTextColor()V
+    const/16 v3, 0x8
 
     .line 130
     if-nez p1, :cond_1
@@ -664,7 +664,7 @@
     :goto_0
     invoke-virtual {v0, p1}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
-    invoke-direct {p0}, Lcom/android/internal/view/menu/ListMenuItemView;->setFlymeTextColor()V
+    invoke-direct/range {p0 .. p0}, Lcom/android/internal/view/menu/ListMenuItemView;->setFlymeTextColor()V
 
     return-void
 

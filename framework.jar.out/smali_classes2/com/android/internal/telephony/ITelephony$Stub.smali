@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_call:I = 0x2
 
-.field static final TRANSACTION_checkCarrierPrivilegesForPackage:I = 0x69
+.field static final TRANSACTION_checkCarrierPrivilegesForPackage_104:I = 0x69
 
 .field static final TRANSACTION_dial:I = 0x1
 
@@ -56,7 +56,7 @@
 
 .field static final TRANSACTION_endCallForSubscriber:I = 0x5
 
-.field static final TRANSACTION_getActivePhoneTypeForSubscriber:I = 0x32
+.field static final TRANSACTION_getActivePhoneTypeForSubscriber_49:I = 0x32
 
 .field static final TRANSACTION_getActivePhoneType_48:I = 0x31
 
@@ -64,9 +64,9 @@
 
 .field static final TRANSACTION_getAllCellInfoUsingSubId:I = 0x49
 
-.field static final TRANSACTION_getAtr:I = 0x71
-
 .field static final TRANSACTION_getAtrUsingSubId:I = 0x72
+
+.field static final TRANSACTION_getAtr_112:I = 0x71
 
 .field static final TRANSACTION_getCalculatedPreferredNetworkType:I = 0x5e
 
@@ -76,11 +76,11 @@
 
 .field static final TRANSACTION_getCarrierPackageNamesForIntent_105:I = 0x6a
 
-.field static final TRANSACTION_getCarrierPrivilegeStatus_103:I = 0x68
-
-.field static final TRANSACTION_getCdmaEriIconIndex:I = 0x33
+.field static final TRANSACTION_getCarrierPrivilegeStatus:I = 0x68
 
 .field static final TRANSACTION_getCdmaEriIconIndexForSubscriber:I = 0x34
+
+.field static final TRANSACTION_getCdmaEriIconIndex_50:I = 0x33
 
 .field static final TRANSACTION_getCdmaEriIconMode:I = 0x35
 
@@ -116,7 +116,7 @@
 
 .field static final TRANSACTION_getLine1NumberForDisplay_107:I = 0x6c
 
-.field static final TRANSACTION_getLteOnCdmaModeForSubscriber:I = 0x47
+.field static final TRANSACTION_getLteOnCdmaModeForSubscriber_70:I = 0x47
 
 .field static final TRANSACTION_getLteOnCdmaMode_69:I = 0x46
 
@@ -142,9 +142,9 @@
 
 .field static final TRANSACTION_getVoiceNetworkTypeForSubscriber:I = 0x42
 
-.field static final TRANSACTION_handlePinMmi:I = 0x1a
-
 .field static final TRANSACTION_handlePinMmiForSubscriber_26:I = 0x1b
+
+.field static final TRANSACTION_handlePinMmi_25:I = 0x1a
 
 .field static final TRANSACTION_hasIccCard:I = 0x44
 
@@ -156,11 +156,11 @@
 
 .field static final TRANSACTION_iccExchangeSimIO:I = 0x57
 
-.field static final TRANSACTION_iccExchangeSimIOUsingSubId:I = 0x58
-
-.field static final TRANSACTION_iccOpenLogicalChannel:I = 0x4f
+.field static final TRANSACTION_iccExchangeSimIOUsingSubId_87:I = 0x58
 
 .field static final TRANSACTION_iccOpenLogicalChannelUsingSubId:I = 0x50
+
+.field static final TRANSACTION_iccOpenLogicalChannel_78:I = 0x4f
 
 .field static final TRANSACTION_iccTransmitApduBasicChannelUsingSubId:I = 0x56
 
@@ -170,7 +170,7 @@
 
 .field static final TRANSACTION_iccTransmitApduLogicalChannel_82:I = 0x53
 
-.field static final TRANSACTION_invokeOemRilRequestRaw:I = 0x70
+.field static final TRANSACTION_invokeOemRilRequestRaw_111:I = 0x70
 
 .field static final TRANSACTION_isDataConnectivityPossible:I = 0x29
 
@@ -182,9 +182,9 @@
 
 .field static final TRANSACTION_isImsRegistered:I = 0x77
 
-.field static final TRANSACTION_isOffhook:I = 0x9
-
 .field static final TRANSACTION_isOffhookForSubscriber:I = 0xa
+
+.field static final TRANSACTION_isOffhook_8:I = 0x9
 
 .field static final TRANSACTION_isRadioOn:I = 0xf
 
@@ -200,15 +200,15 @@
 
 .field static final TRANSACTION_needMobileRadioShutdown:I = 0x73
 
-.field static final TRANSACTION_needsOtaServiceProvisioning:I = 0x39
+.field static final TRANSACTION_needsOtaServiceProvisioning_56:I = 0x39
 
-.field static final TRANSACTION_nvReadItem:I = 0x5a
+.field static final TRANSACTION_nvReadItem_89:I = 0x5a
 
-.field static final TRANSACTION_nvResetConfig:I = 0x5d
+.field static final TRANSACTION_nvResetConfig_92:I = 0x5d
 
-.field static final TRANSACTION_nvWriteCdmaPrl_91:I = 0x5c
+.field static final TRANSACTION_nvWriteCdmaPrl:I = 0x5c
 
-.field static final TRANSACTION_nvWriteItem:I = 0x5b
+.field static final TRANSACTION_nvWriteItem_90:I = 0x5b
 
 .field static final TRANSACTION_revokeProtectedSmsAddress:I = 0x4d
 
@@ -242,25 +242,25 @@
 
 .field static final TRANSACTION_supplyPin:I = 0x12
 
-.field static final TRANSACTION_supplyPinForSubscriber:I = 0x13
+.field static final TRANSACTION_supplyPinForSubscriber_18:I = 0x13
 
-.field static final TRANSACTION_supplyPinReportResult:I = 0x16
+.field static final TRANSACTION_supplyPinReportResultForSubscriber_22:I = 0x17
 
-.field static final TRANSACTION_supplyPinReportResultForSubscriber:I = 0x17
-
-.field static final TRANSACTION_supplyPuk:I = 0x14
+.field static final TRANSACTION_supplyPinReportResult_21:I = 0x16
 
 .field static final TRANSACTION_supplyPukForSubscriber:I = 0x15
 
-.field static final TRANSACTION_supplyPukReportResult:I = 0x18
+.field static final TRANSACTION_supplyPukReportResultForSubscriber_24:I = 0x19
 
-.field static final TRANSACTION_supplyPukReportResultForSubscriber:I = 0x19
+.field static final TRANSACTION_supplyPukReportResult_23:I = 0x18
+
+.field static final TRANSACTION_supplyPuk_19:I = 0x14
 
 .field static final TRANSACTION_toggleLTE:I = 0x3
 
-.field static final TRANSACTION_toggleRadioOnOff:I = 0x1c
-
 .field static final TRANSACTION_toggleRadioOnOffForSubscriber:I = 0x1d
+
+.field static final TRANSACTION_toggleRadioOnOff_27:I = 0x1c
 
 .field static final TRANSACTION_updateServiceLocation:I = 0x21
 

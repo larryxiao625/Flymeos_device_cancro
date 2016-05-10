@@ -7,9 +7,9 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/app/LoadedApk$1;,
-        Landroid/app/LoadedApk$FlymeInjector;,
         Landroid/app/LoadedApk$ServiceDispatcher;,
         Landroid/app/LoadedApk$ReceiverDispatcher;,
+        Landroid/app/LoadedApk$FlymeInjector;,
         Landroid/app/LoadedApk$WarningContextClassLoader;
     }
 .end annotation
@@ -988,6 +988,8 @@
     goto :goto_1
 .end method
 
+
+# virtual methods
 .method public forgetReceiverDispatcher(Landroid/content/Context;Landroid/content/BroadcastReceiver;)Landroid/content/IIntentReceiver;
     .locals 8
     .param p1, "context"    # Landroid/content/Context;
@@ -3453,8 +3455,6 @@
     return-void
 .end method
 
-
-# virtual methods
 .method flymeInvokeMethodRewriteRValues(Ljava/lang/ClassLoader;Ljava/lang/String;I)V
     .locals 0
     .param p1, "cl"    # Ljava/lang/ClassLoader;

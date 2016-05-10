@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_focusGained_0:I = 0x1
 
-.field static final TRANSACTION_focusLost:I = 0x2
+.field static final TRANSACTION_focusLost_1:I = 0x2
 
 
 # direct methods

@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.hardware.IConsumerIrService"
 
-.field static final TRANSACTION_getCarrierFrequencies:I = 0x3
+.field static final TRANSACTION_getCarrierFrequencies_2:I = 0x3
 
 .field static final TRANSACTION_hasIrEmitter_0:I = 0x1
 

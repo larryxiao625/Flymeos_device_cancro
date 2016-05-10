@@ -134,13 +134,17 @@
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
+    .param p1, "x0"    # Ljava/lang/Object;
+    .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
     .line 301
     check-cast p1, Lcom/android/internal/os/ProcessCpuTracker$Stats;
 
+    .end local p1    # "x0":Ljava/lang/Object;
     check-cast p2, Lcom/android/internal/os/ProcessCpuTracker$Stats;
 
+    .end local p2    # "x1":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2}, Lcom/android/internal/os/ProcessCpuTracker$1;->compare(Lcom/android/internal/os/ProcessCpuTracker$Stats;Lcom/android/internal/os/ProcessCpuTracker$Stats;)I
 
     move-result v0

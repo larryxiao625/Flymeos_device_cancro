@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_onCaptureStarted:I = 0x3
 
-.field static final TRANSACTION_onDeviceError:I = 0x1
+.field static final TRANSACTION_onDeviceError_0:I = 0x1
 
 .field static final TRANSACTION_onDeviceIdle:I = 0x2
 

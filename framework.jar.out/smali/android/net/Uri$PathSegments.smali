@@ -79,6 +79,7 @@
 # virtual methods
 .method public bridge synthetic get(I)Ljava/lang/Object;
     .locals 1
+    .param p1, "x0"    # I
 
     .prologue
     .line 969

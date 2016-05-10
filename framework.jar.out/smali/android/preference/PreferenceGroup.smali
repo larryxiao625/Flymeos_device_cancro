@@ -174,11 +174,13 @@
 
 .method public bridge synthetic addItemFromInflater(Ljava/lang/Object;)V
     .locals 0
+    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 45
     check-cast p1, Landroid/preference/Preference;
 
+    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/preference/PreferenceGroup;->addItemFromInflater(Landroid/preference/Preference;)V
 
     return-void
@@ -644,7 +646,7 @@
 
     invoke-virtual {p1, p0, v0}, Landroid/preference/Preference;->onParentChanged(Landroid/preference/Preference;Z)V
 
-    invoke-direct {p0, p1}, Landroid/preference/PreferenceGroup;->flymeSetPreferenceEnabled(Landroid/preference/Preference;)V
+    invoke-direct/range {p0 .. p1}, Landroid/preference/PreferenceGroup;->flymeSetPreferenceEnabled(Landroid/preference/Preference;)V
 
     const/4 v0, 0x1
 

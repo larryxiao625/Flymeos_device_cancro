@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_getSummaryForAllUid:I = 0x3
 
-.field static final TRANSACTION_getSummaryForNetwork:I = 0x1
+.field static final TRANSACTION_getSummaryForNetwork_0:I = 0x1
 
 
 # direct methods

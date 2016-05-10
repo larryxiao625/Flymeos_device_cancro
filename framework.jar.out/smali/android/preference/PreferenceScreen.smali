@@ -17,9 +17,9 @@
 
 
 # instance fields
-.field private mDialog:Landroid/app/Dialog;
-
 .field mFlymeShowBottomDivider:Z
+
+.field private mDialog:Landroid/app/Dialog;
 
 .field private mListView:Landroid/widget/ListView;
 
@@ -37,7 +37,7 @@
 
     invoke-direct {p0, p1, p2, v0}, Landroid/preference/PreferenceGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    invoke-static {p0}, Landroid/preference/PreferenceScreen$FlymeInjector;->initFlymeExtraFields(Landroid/preference/PreferenceScreen;)V
+    invoke-static/range {p0 .. p0}, Landroid/preference/PreferenceScreen$FlymeInjector;->initFlymeExtraFields(Landroid/preference/PreferenceScreen;)V
 
     return-void
 .end method
@@ -183,7 +183,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    invoke-static {p0, p1}, Landroid/preference/PreferenceScreen$FlymeInjector;->flymeBindListView(Landroid/preference/PreferenceScreen;Landroid/widget/ListView;)V
+    invoke-static/range {p0 .. p1}, Landroid/preference/PreferenceScreen$FlymeInjector;->flymeBindListView(Landroid/preference/PreferenceScreen;Landroid/widget/ListView;)V
 
     invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->onAttachedToActivity()V
 

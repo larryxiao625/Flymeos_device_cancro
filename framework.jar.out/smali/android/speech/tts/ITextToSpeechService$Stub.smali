@@ -40,21 +40,21 @@
 
 .field static final TRANSACTION_isSpeaking:I = 0x5
 
-.field static final TRANSACTION_loadLanguage:I = 0xb
+.field static final TRANSACTION_loadLanguage_10:I = 0xb
 
 .field static final TRANSACTION_loadVoice:I = 0xe
 
-.field static final TRANSACTION_playAudio:I = 0x3
+.field static final TRANSACTION_playAudio_2:I = 0x3
 
-.field static final TRANSACTION_playSilence:I = 0x4
+.field static final TRANSACTION_playSilence_3:I = 0x4
 
-.field static final TRANSACTION_setCallback:I = 0xc
+.field static final TRANSACTION_setCallback_11:I = 0xc
 
-.field static final TRANSACTION_speak:I = 0x1
+.field static final TRANSACTION_speak_0:I = 0x1
 
 .field static final TRANSACTION_stop:I = 0x6
 
-.field static final TRANSACTION_synthesizeToFileDescriptor:I = 0x2
+.field static final TRANSACTION_synthesizeToFileDescriptor_1:I = 0x2
 
 
 # direct methods

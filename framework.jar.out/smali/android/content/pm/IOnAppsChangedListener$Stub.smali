@@ -26,11 +26,11 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.content.pm.IOnAppsChangedListener"
 
-.field static final TRANSACTION_onPackageAdded:I = 0x2
+.field static final TRANSACTION_onPackageAdded_1:I = 0x2
 
 .field static final TRANSACTION_onPackageChanged:I = 0x3
 
-.field static final TRANSACTION_onPackageRemoved:I = 0x1
+.field static final TRANSACTION_onPackageRemoved_0:I = 0x1
 
 .field static final TRANSACTION_onPackagesAvailable:I = 0x4
 

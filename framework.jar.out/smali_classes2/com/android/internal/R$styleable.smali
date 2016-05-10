@@ -15,6 +15,7 @@
 
 
 # static fields
+
 .field public static final AbsListView:[I
 
 .field public static final AbsListView_cacheColorHint:I = 0x6
@@ -339,8 +340,6 @@
 
 .field public static final AndroidManifestActivity_name:I = 0x3
 
-.field public static final AndroidManifestActivity_needAccessControl:I = 0x27
-
 .field public static final AndroidManifestActivity_noHistory:I = 0x15
 
 .field public static final AndroidManifestActivity_parentActivityName:I = 0x1b
@@ -350,6 +349,8 @@
 .field public static final AndroidManifestActivity_persistableMode:I = 0x20
 
 .field public static final AndroidManifestActivity_primaryUserOnly:I = 0x26
+
+.field public static final AndroidManifestActivity_needAccessControl:I = 0x27
 
 .field public static final AndroidManifestActivity_process:I = 0x7
 
@@ -4676,7 +4677,10 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->AndroidManifestAction:[I
 
-    const/16 v0, 0x28
+    .line 24615
+    const/16 v0, 0x27
+
+    add-int/lit8 v0, v0, 0x1
 
     new-array v0, v0, [I
 
@@ -6992,7 +6996,7 @@
         #android:attr@relinquishTaskIdentity#t
         #android:attr@resumeWhilePausing#t
         #android:^attr-private@primaryUserOnly#t
-        0x11600b4
+        #android:^attr-private@needAccessControl#t
     .end array-data
 
     .line 25838

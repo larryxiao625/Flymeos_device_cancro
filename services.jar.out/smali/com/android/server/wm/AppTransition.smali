@@ -13,7 +13,6 @@
     }
 .end annotation
 
-
 # static fields
 .field private static final APP_STATE_IDLE:I = 0x0
 

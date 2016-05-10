@@ -32,7 +32,7 @@
 
 .field static final TRANSACTION_flush:I = 0x7
 
-.field static final TRANSACTION_getSupportedActivities:I = 0x1
+.field static final TRANSACTION_getSupportedActivities_0:I = 0x1
 
 .field static final TRANSACTION_isActivitySupported:I = 0x2
 

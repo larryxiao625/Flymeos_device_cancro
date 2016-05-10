@@ -32,6 +32,10 @@
 
 
 # instance fields
+.field private mFlymeDividerFilter:Z
+
+.field protected mPreferenceView:Landroid/view/View;
+
 .field private mBaseMethodCalled:Z
 
 .field private mCanRecycleLayout:Z
@@ -58,8 +62,6 @@
 .field private mEnabled:Z
 
 .field private mExtras:Landroid/os/Bundle;
-
-.field private mFlymeDividerFilter:Z
 
 .field private mFragment:Ljava/lang/String;
 
@@ -88,8 +90,6 @@
 .field private mPersistent:Z
 
 .field private mPreferenceManager:Landroid/preference/PreferenceManager;
-
-.field protected mPreferenceView:Landroid/view/View;
 
 .field private mRequiresKey:Z
 
@@ -418,9 +418,12 @@
     iput-boolean v5, p0, Landroid/preference/Preference;->mCanRecycleLayout:Z
 
     :cond_1
-    invoke-direct {p0}, Landroid/preference/Preference;->flymeShouldRecycle()V
+
+    invoke-direct/range {p0 .. p0}, Landroid/preference/Preference;->flymeShouldRecycle()V
 
     return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -861,11 +864,13 @@
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 1
+    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 80
     check-cast p1, Landroid/preference/Preference;
 
+    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/preference/Preference;->compareTo(Landroid/preference/Preference;)I
 
     move-result v0
@@ -1604,6 +1609,10 @@
 
     iget-boolean v0, p0, Landroid/preference/Preference;->mDependencyMet:Z
 
+    #if-eqz v0, :cond_0
+
+    #iget-boolean v0, p0, Landroid/preference/Preference;->mParentDependencyMet:Z
+
     if-eqz v0, :cond_0
 
     const/4 v0, 0x1
@@ -1944,7 +1953,8 @@
     invoke-direct {p0, p1, v6}, Landroid/preference/Preference;->setEnabledStateOnViews(Landroid/view/View;Z)V
 
     :cond_7
-    invoke-virtual {p0, p1}, Landroid/preference/Preference;->setPreferenceView(Landroid/view/View;)V
+
+    invoke-virtual/range {p0 .. p1}, Landroid/preference/Preference;->setPreferenceView(Landroid/view/View;)V
 
     return-void
 

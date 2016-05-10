@@ -997,23 +997,12 @@
 
     .line 750
     .local v0, "imiLabel":Ljava/lang/CharSequence;
-    invoke-static {}, Lcom/android/internal/inputmethod/InputMethodUtils;->isTrue()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
     invoke-static {p0, p1, p2, v0}, Lcom/android/internal/inputmethod/InputMethodUtils;->getFlymeImeAndSubtypeDisplayName(Landroid/content/Context;Landroid/view/inputmethod/InputMethodInfo;Landroid/view/inputmethod/InputMethodSubtype;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .end local v0    # "imiLabel":Ljava/lang/CharSequence;
-    :cond_0
-    :goto_0
     return-object v0
 
-    .restart local v0    # "imiLabel":Ljava/lang/CharSequence;
-    :cond_1
     if-eqz p2, :cond_0
 
     const/4 v1, 0x2
@@ -1044,20 +1033,23 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
 
     const-string v1, ""
 
-    :goto_1
+    :goto_0
     aput-object v1, v2, v3
 
     invoke-static {v2}, Landroid/text/TextUtils;->concat([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    goto :goto_0
+    .end local v0    # "imiLabel":Ljava/lang/CharSequence;
+    :cond_0
+    return-object v0
 
-    :cond_2
+    .restart local v0    # "imiLabel":Ljava/lang/CharSequence;
+    :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1076,7 +1068,7 @@
 
     move-result-object v1
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method private static getImplicitlyApplicableSubtypesLocked(Landroid/content/res/Resources;Landroid/view/inputmethod/InputMethodInfo;)Ljava/util/ArrayList;
@@ -2513,8 +2505,6 @@
     .end annotation
 
     .prologue
-    const/4 v1, 0x1
-
     const/4 v0, 0x0
 
     .line 390
@@ -2529,66 +2519,72 @@
     :cond_1
     invoke-static {p1}, Lcom/android/internal/inputmethod/InputMethodUtils;->isSystemIme(Landroid/view/inputmethod/InputMethodInfo;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
-    invoke-static {p1}, Lcom/android/internal/inputmethod/InputMethodUtils;->isBuildExtAndDefaultIME(Landroid/view/inputmethod/InputMethodInfo;)Z
+    invoke-static/range {p1 .. p1}, Lcom/android/internal/inputmethod/InputMethodUtils;->isBuildExtAndDefaultIME(Landroid/view/inputmethod/InputMethodInfo;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_flyme_0
 
-    move v0, v1
+    const/4 v1, 0x1
 
-    goto :goto_0
+    return v1
 
-    :cond_2
+    :cond_flyme_0
+
+    .line 396
     invoke-virtual {p1}, Landroid/view/inputmethod/InputMethodInfo;->getIsDefaultResourceId()I
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_3
+    if-eqz v1, :cond_2
 
+    .line 398
     :try_start_0
     invoke-virtual {p1, p2}, Landroid/view/inputmethod/InputMethodInfo;->isDefault(Landroid/content/Context;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_3
+    if-eqz v1, :cond_2
 
     invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget-object v2, v2, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
+    iget-object v1, v1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
-    invoke-virtual {v2}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    sget-object v3, Lcom/android/internal/inputmethod/InputMethodUtils;->SUBTYPE_MODE_ANY:Ljava/lang/String;
+    sget-object v2, Lcom/android/internal/inputmethod/InputMethodUtils;->SUBTYPE_MODE_ANY:Ljava/lang/String;
 
-    invoke-static {p1, v2, v3}, Lcom/android/internal/inputmethod/InputMethodUtils;->containsSubtypeOf(Landroid/view/inputmethod/InputMethodInfo;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v1, v2}, Lcom/android/internal/inputmethod/InputMethodUtils;->containsSubtypeOf(Landroid/view/inputmethod/InputMethodInfo;Ljava/lang/String;Ljava/lang/String;)Z
     :try_end_0
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_3
+    if-eqz v1, :cond_2
 
-    move v0, v1
+    .line 401
+    const/4 v0, 0x1
 
     goto :goto_0
 
+    .line 403
     :catch_0
     move-exception v1
 
-    :cond_3
+    .line 406
+    :cond_2
     invoke-virtual {p1}, Landroid/view/inputmethod/InputMethodInfo;->getSubtypeCount()I
 
     move-result v1
@@ -3089,15 +3085,6 @@
     invoke-static {p0, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
-
-    return v0
-.end method
-
-.method private static isTrue()Z
-    .locals 1
-
-    .prologue
-    const/4 v0, 0x1
 
     return v0
 .end method

@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/app/ContextImpl$FlymeAccessControlServiceFetcher;,
         Landroid/app/ContextImpl$ApplicationContentResolver;,
         Landroid/app/ContextImpl$StaticServiceFetcher;,
+        Landroid/app/ContextImpl$FlymeAccessControlServiceFetcher;,
         Landroid/app/ContextImpl$ServiceFetcher;
     }
 .end annotation
@@ -6462,7 +6462,7 @@
 
     .local v3, "resolvedType":Ljava/lang/String;
     :try_start_0
-    invoke-direct {p0, p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
+    invoke-direct/range {p0 .. p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
 
     invoke-virtual {p1}, Landroid/content/Intent;->prepareToLeaveProcess()V
 
@@ -6533,7 +6533,7 @@
 
     .local v3, "resolvedType":Ljava/lang/String;
     :try_start_0
-    invoke-direct {p0, p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
+    invoke-direct/range {p0 .. p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
 
     invoke-virtual {p1}, Landroid/content/Intent;->prepareToLeaveProcess()V
 
@@ -6605,7 +6605,7 @@
 
     .local v3, "resolvedType":Ljava/lang/String;
     :try_start_0
-    invoke-direct {p0, p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
+    invoke-direct/range {p0 .. p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
 
     invoke-virtual {p1}, Landroid/content/Intent;->prepareToLeaveProcess()V
 
@@ -6673,7 +6673,7 @@
 
     .local v3, "resolvedType":Ljava/lang/String;
     :try_start_0
-    invoke-direct {p0, p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
+    invoke-direct/range {p0 .. p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
 
     invoke-virtual {p1}, Landroid/content/Intent;->prepareToLeaveProcess()V
 
@@ -6742,7 +6742,7 @@
 
     .local v3, "resolvedType":Ljava/lang/String;
     :try_start_0
-    invoke-direct {p0, p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
+    invoke-direct/range {p0 .. p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
 
     invoke-virtual {p1}, Landroid/content/Intent;->prepareToLeaveProcess()V
 
@@ -6813,7 +6813,7 @@
 
     .local v3, "resolvedType":Ljava/lang/String;
     :try_start_0
-    invoke-direct {p0, p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
+    invoke-direct/range {p0 .. p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
 
     invoke-virtual {p1}, Landroid/content/Intent;->prepareToLeaveProcess()V
 
@@ -6940,7 +6940,7 @@
 
     .local v3, "resolvedType":Ljava/lang/String;
     :try_start_0
-    invoke-direct {p0, p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
+    invoke-direct/range {p0 .. p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
 
     invoke-virtual {p1}, Landroid/content/Intent;->prepareToLeaveProcess()V
 
@@ -7138,7 +7138,7 @@
 
     .local v3, "resolvedType":Ljava/lang/String;
     :try_start_0
-    invoke-direct {p0, p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
+    invoke-direct/range {p0 .. p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
 
     invoke-virtual {p1}, Landroid/content/Intent;->prepareToLeaveProcess()V
 
@@ -7284,7 +7284,7 @@
 
     .local v3, "resolvedType":Ljava/lang/String;
     :try_start_0
-    invoke-direct {p0, p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
+    invoke-direct/range {p0 .. p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
 
     invoke-virtual {p1}, Landroid/content/Intent;->prepareToLeaveProcess()V
 
@@ -7352,7 +7352,7 @@
 
     .local v3, "resolvedType":Ljava/lang/String;
     :try_start_0
-    invoke-direct {p0, p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
+    invoke-direct/range {p0 .. p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
 
     invoke-virtual {p1}, Landroid/content/Intent;->prepareToLeaveProcess()V
 
@@ -7477,7 +7477,7 @@
 
     .local v3, "resolvedType":Ljava/lang/String;
     :try_start_0
-    invoke-direct {p0, p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
+    invoke-direct/range {p0 .. p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
 
     invoke-virtual {p1}, Landroid/content/Intent;->prepareToLeaveProcess()V
 
@@ -7637,7 +7637,7 @@
 
     .local v3, "resolvedType":Ljava/lang/String;
     :try_start_0
-    invoke-direct {p0, p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
+    invoke-direct/range {p0 .. p1}, Landroid/app/ContextImpl;->flymeEnforceSendBroadcastPermission(Landroid/content/Intent;)V
 
     invoke-virtual {p1}, Landroid/content/Intent;->prepareToLeaveProcess()V
 

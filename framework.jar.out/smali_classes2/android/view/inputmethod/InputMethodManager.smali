@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/view/inputmethod/InputMethodManager$FlymeInjector;,
-        Landroid/view/inputmethod/InputMethodManager$InputShownChangeListener;,
         Landroid/view/inputmethod/InputMethodManager$PendingEvent;,
         Landroid/view/inputmethod/InputMethodManager$ImeInputEventSender;,
+        Landroid/view/inputmethod/InputMethodManager$FlymeInjector;,
+        Landroid/view/inputmethod/InputMethodManager$InputShownChangeListener;,
         Landroid/view/inputmethod/InputMethodManager$FinishedInputEventCallback;,
         Landroid/view/inputmethod/InputMethodManager$ControlledInputConnectionWrapper;,
         Landroid/view/inputmethod/InputMethodManager$H;
@@ -18,6 +18,16 @@
 
 
 # static fields
+.field public static final ID_IME_DEFAULT_INDIA:Ljava/lang/String; = "com.syntellia.fleksy.keyboard/.Fleksy"
+
+.field public static final ID_IME_IFLYTEK:Ljava/lang/String; = "com.iflytek.inputmethod/.FlyIME"
+
+.field public static final ID_IME_INTL:Ljava/lang/String; = "com.cootek.smartinputv5/com.cootek.smartinput5.TouchPalIME"
+
+.field public static final ID_IME_MEIZU:Ljava/lang/String; = "com.meizu.flyme.input/com.meizu.input.MzInputService"
+
+.field public static final OLD_ID_IME_MEIZU:Ljava/lang/String; = "com.baidu.input_mz/com.meizu.input.MzInputService"
+
 .field public static final CONTROL_START_INITIAL:I = 0x100
 
 .field public static final CONTROL_WINDOW_FIRST:I = 0x4
@@ -38,14 +48,6 @@
 
 .field public static final HIDE_NOT_ALWAYS:I = 0x2
 
-.field public static final ID_IME_DEFAULT_INDIA:Ljava/lang/String; = "com.syntellia.fleksy.keyboard/.Fleksy"
-
-.field public static final ID_IME_IFLYTEK:Ljava/lang/String; = "com.iflytek.inputmethod/.FlyIME"
-
-.field public static final ID_IME_INTL:Ljava/lang/String; = "com.cootek.smartinputv5/com.cootek.smartinput5.TouchPalIME"
-
-.field public static final ID_IME_MEIZU:Ljava/lang/String; = "com.meizu.flyme.input/com.meizu.input.MzInputService"
-
 .field static final INPUT_METHOD_NOT_RESPONDING_TIMEOUT:J = 0x9c4L
 
 .field static final MSG_BIND:I = 0x2
@@ -65,8 +67,6 @@
 .field static final MSG_UNBIND:I = 0x3
 
 .field private static final NOT_AN_ACTION_NOTIFICATION_SEQUENCE_NUMBER:I = -0x1
-
-.field public static final OLD_ID_IME_MEIZU:Ljava/lang/String; = "com.baidu.input_mz/com.meizu.input.MzInputService"
 
 .field static final PENDING_EVENT_COUNTER:Ljava/lang/String; = "aq:imm"
 
@@ -90,6 +90,37 @@
 
 
 # instance fields
+.field mFlymeHandler:Landroid/os/Handler;
+
+.field mFlymeInputMethodManagerService:Lcom/android/internal/view/MzIInputMethodManager;
+
+.field mFlymeInputShown:Z
+
+.field mFlymeInputShownChangeListenerList:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Landroid/view/inputmethod/InputMethodManager$InputShownChangeListener;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field mFlymeInputTheme:Ljava/lang/String;
+
+.field mFlymePrivateImeOptionsMap:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field mActive:Z
 
 .field mBindSequence:I
@@ -123,37 +154,6 @@
 .field mCursorSelStart:I
 
 .field final mDummyInputConnection:Landroid/view/inputmethod/InputConnection;
-
-.field mFlymeHandler:Landroid/os/Handler;
-
-.field mFlymeInputMethodManagerService:Lcom/android/internal/view/MzIInputMethodManager;
-
-.field mFlymeInputShown:Z
-
-.field mFlymeInputShownChangeListenerList:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Landroid/view/inputmethod/InputMethodManager$InputShownChangeListener;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field mFlymeInputTheme:Ljava/lang/String;
-
-.field mFlymePrivateImeOptionsMap:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
 
 .field mFullscreenMode:Z
 
@@ -331,7 +331,7 @@
 
     iput-object v0, p0, Landroid/view/inputmethod/InputMethodManager;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
-    invoke-static {p0}, Landroid/view/inputmethod/InputMethodManager$FlymeInjector;->initFlymeExtFields(Landroid/view/inputmethod/InputMethodManager;)V
+    invoke-static/range {p0 .. p0}, Landroid/view/inputmethod/InputMethodManager$FlymeInjector;->initFlymeExtFields(Landroid/view/inputmethod/InputMethodManager;)V
 
     .line 612
     return-void
@@ -818,6 +818,8 @@
     goto :goto_0
 .end method
 
+
+# virtual methods
 .method public checkFocus()V
     .locals 2
 
@@ -4608,7 +4610,7 @@
 
     iput-boolean v1, p0, Landroid/view/inputmethod/InputMethodManager;->mServedConnecting:Z
 
-    invoke-static {p0}, Landroid/view/inputmethod/InputMethodManager$FlymeInjector;->adjustEditorInfo(Landroid/view/inputmethod/InputMethodManager;)V
+    invoke-static/range {p0 .. p0}, Landroid/view/inputmethod/InputMethodManager$FlymeInjector;->adjustEditorInfo(Landroid/view/inputmethod/InputMethodManager;)V
 
     invoke-direct {p0}, Landroid/view/inputmethod/InputMethodManager;->notifyInputConnectionFinished()V
 
@@ -5844,7 +5846,8 @@
     invoke-virtual {p0}, Landroid/view/inputmethod/InputMethodManager;->finishInputLocked()V
 
     :cond_0
-    invoke-static {p0}, Landroid/view/inputmethod/InputMethodManager$FlymeInjector;->windowDismissed(Landroid/view/inputmethod/InputMethodManager;)V
+
+    invoke-static/range {p0 .. p0}, Landroid/view/inputmethod/InputMethodManager$FlymeInjector;->windowDismissed(Landroid/view/inputmethod/InputMethodManager;)V
 
     monitor-exit v1
 
@@ -5860,8 +5863,6 @@
     throw v0
 .end method
 
-
-# virtual methods
 .method public addInputShownChangeListener(Landroid/view/inputmethod/InputMethodManager$InputShownChangeListener;)V
     .locals 1
     .param p1, "l"    # Landroid/view/inputmethod/InputMethodManager$InputShownChangeListener;

@@ -522,16 +522,16 @@
 
     iput-object v3, v2, Landroid/widget/Toast$TN;->mNextView:Landroid/view/View;
 
-    invoke-static {p0}, Landroid/widget/Toast$FlymeInjector;->checkSameMsg(Landroid/widget/Toast;)Z
+    invoke-static/range {p0 .. p0}, Landroid/widget/Toast$FlymeInjector;->checkSameMsg(Landroid/widget/Toast;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_flyme_0
 
-    :goto_0
     return-void
 
-    :cond_1
+    :cond_flyme_0
+
     :try_start_0
     iget v3, p0, Landroid/widget/Toast;->mDuration:I
 
@@ -539,8 +539,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    .line 127
+    :goto_0
+    return-void
 
+    .line 124
     :catch_0
     move-exception v3
 

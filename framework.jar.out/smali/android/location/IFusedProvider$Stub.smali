@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.location.IFusedProvider"
 
-.field static final TRANSACTION_onFusedLocationHardwareChange:I = 0x1
+.field static final TRANSACTION_onFusedLocationHardwareChange_0:I = 0x1
 
 
 # direct methods

@@ -7,10 +7,10 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/app/Instrumentation$1;,
-        Landroid/app/Instrumentation$FlymeRecommendActivity;,
         Landroid/app/Instrumentation$Idler;,
         Landroid/app/Instrumentation$ActivityGoing;,
         Landroid/app/Instrumentation$ActivityWaiter;,
+        Landroid/app/Instrumentation$FlymeRecommendActivity;,
         Landroid/app/Instrumentation$SyncRunnable;,
         Landroid/app/Instrumentation$EmptyRunnable;,
         Landroid/app/Instrumentation$InstrumentationThread;,
@@ -1511,7 +1511,7 @@
 .end method
 
 .method public execStartActivity(Landroid/content/Context;Landroid/os/IBinder;Landroid/os/IBinder;Landroid/app/Activity;Landroid/content/Intent;ILandroid/os/Bundle;)Landroid/app/Instrumentation$ActivityResult;
-    .locals 16
+    .locals 17
     .param p1, "who"    # Landroid/content/Context;
     .param p2, "contextThread"    # Landroid/os/IBinder;
     .param p3, "token"    # Landroid/os/IBinder;
@@ -1687,34 +1687,36 @@
 
     invoke-interface/range {v2 .. v12}, Landroid/app/IActivityManager;->startActivity(Landroid/app/IApplicationThread;Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/os/IBinder;Ljava/lang/String;IILandroid/app/ProfilerInfo;Landroid/os/Bundle;)I
 
-    move-result v12
+    move-result v16
 
-    .local v12, "result":I
-    move-object/from16 v4, p0
+    .local v16, "result":I
+    move-object/from16 v8, p0
 
-    move-object/from16 v5, p1
+    move-object/from16 v9, p1
 
-    move-object/from16 v6, p2
+    move-object/from16 v10, p2
 
-    move-object/from16 v7, p3
+    move-object/from16 v11, p3
 
-    move-object/from16 v8, p4
+    move-object/from16 v12, p4
 
-    move-object/from16 v9, p5
+    move-object/from16 v13, p5
 
-    move/from16 v10, p6
+    move/from16 v14, p6
 
-    move-object/from16 v11, p7
+    move-object/from16 v15, p7
 
-    invoke-direct/range {v4 .. v12}, Landroid/app/Instrumentation;->flymeStartRecommendActivity(Landroid/content/Context;Landroid/os/IBinder;Landroid/os/IBinder;Landroid/app/Activity;Landroid/content/Intent;ILandroid/os/Bundle;I)V
+    invoke-direct/range {v8 .. v16}, Landroid/app/Instrumentation;->flymeStartRecommendActivity(Landroid/content/Context;Landroid/os/IBinder;Landroid/os/IBinder;Landroid/app/Activity;Landroid/content/Intent;ILandroid/os/Bundle;I)V
 
-    move-object/from16 v0, p5
+    move/from16 v0, v16
 
-    invoke-static {v12, v0}, Landroid/app/Instrumentation;->checkStartActivityResult(ILjava/lang/Object;)V
+    move-object/from16 v1, p5
+
+    invoke-static {v0, v1}, Landroid/app/Instrumentation;->checkStartActivityResult(ILjava/lang/Object;)V
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .end local v12    # "result":I
+    .end local v16    # "result":I
     :goto_4
     const/4 v2, 0x0
 

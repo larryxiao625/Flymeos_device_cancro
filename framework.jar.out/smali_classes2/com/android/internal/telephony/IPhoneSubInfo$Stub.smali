@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_getCompleteVoiceMailNumberForSubscriber:I = 0x16
 
-.field static final TRANSACTION_getDeviceIdForPhone:I = 0x3
+.field static final TRANSACTION_getDeviceIdForPhone_2:I = 0x3
 
 .field static final TRANSACTION_getDeviceId_0:I = 0x1
 
@@ -74,7 +74,7 @@
 
 .field static final TRANSACTION_getMsisdnForSubscriber:I = 0x12
 
-.field static final TRANSACTION_getNaiForSubscriber:I = 0x2
+.field static final TRANSACTION_getNaiForSubscriber_1:I = 0x2
 
 .field static final TRANSACTION_getSubscriberId:I = 0x7
 

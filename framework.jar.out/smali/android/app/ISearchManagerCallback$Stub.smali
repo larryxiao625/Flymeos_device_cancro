@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.ISearchManagerCallback"
 
-.field static final TRANSACTION_onCancel_1:I = 0x2
+.field static final TRANSACTION_onCancel:I = 0x2
 
 .field static final TRANSACTION_onDismiss_0:I = 0x1
 

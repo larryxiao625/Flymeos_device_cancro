@@ -29,6 +29,8 @@
 
 
 # instance fields
+.field mFlymeAccessControlManager:Lmeizu/security/AccessControlManager;
+
 .field private final mActivityManagerInternal:Landroid/app/ActivityManagerInternal;
 
 .field private mActualInteractiveState:I
@@ -44,8 +46,6 @@
 .field private mBroadcastedInteractiveState:I
 
 .field private final mContext:Landroid/content/Context;
-
-.field mFlymeAccessControlManager:Lmeizu/security/AccessControlManager;
 
 .field private final mGoToSleepBroadcastDone:Landroid/content/BroadcastReceiver;
 
@@ -895,6 +895,8 @@
     return-void
 .end method
 
+
+# virtual methods
 .method public onUserActivity(II)V
     .locals 4
     .param p1, "event"    # I
@@ -1349,8 +1351,6 @@
     return-void
 .end method
 
-
-# virtual methods
 .method flymeGetFieldContext()Landroid/content/Context;
     .locals 1
 

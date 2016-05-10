@@ -30,9 +30,9 @@
 
 .field static final TRANSACTION_getProperty:I = 0x3
 
-.field static final TRANSACTION_registerListener:I = 0x1
+.field static final TRANSACTION_registerListener_0:I = 0x1
 
-.field static final TRANSACTION_unregisterListener:I = 0x2
+.field static final TRANSACTION_unregisterListener_1:I = 0x2
 
 
 # direct methods

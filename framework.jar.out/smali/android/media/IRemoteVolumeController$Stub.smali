@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.media.IRemoteVolumeController"
 
-.field static final TRANSACTION_remoteVolumeChanged:I = 0x1
+.field static final TRANSACTION_remoteVolumeChanged_0:I = 0x1
 
 .field static final TRANSACTION_updateRemoteController:I = 0x2
 

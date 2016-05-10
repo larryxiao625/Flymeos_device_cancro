@@ -1530,6 +1530,8 @@
     goto :goto_0
 .end method
 
+
+# virtual methods
 .method public getDisplayMessageBody()Ljava/lang/String;
     .locals 1
 
@@ -2029,8 +2031,6 @@
     goto :goto_0
 .end method
 
-
-# virtual methods
 .method public getDestinationAddress()Ljava/lang/String;
     .locals 1
 

@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_attachEngine:I = 0x1
 
-.field static final TRANSACTION_engineShown:I = 0x2
+.field static final TRANSACTION_engineShown_1:I = 0x2
 
 .field static final TRANSACTION_setWallpaper:I = 0x3
 

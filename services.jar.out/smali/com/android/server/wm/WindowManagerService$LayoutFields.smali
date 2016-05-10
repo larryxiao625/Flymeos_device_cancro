@@ -293,8 +293,6 @@
     return p1
 .end method
 
-
-# virtual methods
 .method flymeGetFieldSyswin()Z
     .locals 1
 

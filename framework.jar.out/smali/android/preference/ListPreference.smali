@@ -435,7 +435,7 @@
 
     invoke-virtual {p1, v3, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    invoke-direct {p0, p1}, Landroid/preference/ListPreference;->flymeRemoveNegativeButton(Landroid/app/AlertDialog$Builder;)V
+    invoke-direct/range {p0 .. p1}, Landroid/preference/ListPreference;->flymeRemoveNegativeButton(Landroid/app/AlertDialog$Builder;)V
 
     return-void
 .end method

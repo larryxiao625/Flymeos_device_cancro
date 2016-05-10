@@ -52,9 +52,9 @@
 
 .field static final TRANSACTION_onRectangleOnScreenRequested:I = 0x1d
 
-.field static final TRANSACTION_outOfMemory_7:I = 0x8
+.field static final TRANSACTION_outOfMemory:I = 0x8
 
-.field static final TRANSACTION_performDeferredDestroy_6:I = 0x7
+.field static final TRANSACTION_performDeferredDestroy:I = 0x7
 
 .field static final TRANSACTION_performDrag:I = 0x11
 
@@ -62,7 +62,7 @@
 
 .field static final TRANSACTION_prepareDrag:I = 0x10
 
-.field static final TRANSACTION_relayout_5:I = 0x6
+.field static final TRANSACTION_relayout:I = 0x6
 
 .field static final TRANSACTION_remove:I = 0x5
 
@@ -72,9 +72,9 @@
 
 .field static final TRANSACTION_setInTouchMode:I = 0xd
 
-.field static final TRANSACTION_setInsets:I = 0xa
+.field static final TRANSACTION_setInsets_9:I = 0xa
 
-.field static final TRANSACTION_setTransparentRegion_8:I = 0x9
+.field static final TRANSACTION_setTransparentRegion:I = 0x9
 
 .field static final TRANSACTION_setUniverseTransform:I = 0x1c
 

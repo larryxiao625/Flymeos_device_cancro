@@ -19128,6 +19128,7 @@
     return-void
 .end method
 
+
 .method private setFlymeThemeResource(Landroid/app/LoadedApk;Landroid/content/res/Resources;)V
     .locals 1
     .param p1, "pkgInfo"    # Landroid/app/LoadedApk;

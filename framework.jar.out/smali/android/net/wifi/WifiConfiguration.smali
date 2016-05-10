@@ -9,10 +9,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/net/wifi/WifiConfiguration$FlymeInjector;,
         Landroid/net/wifi/WifiConfiguration$Visibility;,
         Landroid/net/wifi/WifiConfiguration$Status;,
         Landroid/net/wifi/WifiConfiguration$GroupCipher;,
+        Landroid/net/wifi/WifiConfiguration$FlymeInjector;,
         Landroid/net/wifi/WifiConfiguration$PairwiseCipher;,
         Landroid/net/wifi/WifiConfiguration$AuthAlgorithm;,
         Landroid/net/wifi/WifiConfiguration$Protocol;,
@@ -137,19 +137,21 @@
 
 
 # instance fields
-.field public BSSID:Ljava/lang/String;
-
 .field public BandMode:I
 
-.field public FQDN:Ljava/lang/String;
-
 .field public HexSSID:Ljava/lang/String;
+
+.field public adhocMode:Ljava/lang/String;
+
+.field public preSharedKeyEncry:Ljava/lang/String;
+
+.field public BSSID:Ljava/lang/String;
+
+.field public FQDN:Ljava/lang/String;
 
 .field public SIMNum:I
 
 .field public SSID:Ljava/lang/String;
-
-.field public adhocMode:Ljava/lang/String;
 
 .field public allowedAuthAlgorithms:Ljava/util/BitSet;
 
@@ -274,8 +276,6 @@
 .field public peerWifiConfiguration:Ljava/lang/String;
 
 .field public preSharedKey:Ljava/lang/String;
-
-.field public preSharedKeyEncry:Ljava/lang/String;
 
 .field public priority:I
 
@@ -600,7 +600,7 @@
 
     iput v4, p0, Landroid/net/wifi/WifiConfiguration;->SIMNum:I
 
-    invoke-static {p0}, Landroid/net/wifi/WifiConfiguration$FlymeInjector;->initFlymeExtraFields(Landroid/net/wifi/WifiConfiguration;)V
+    invoke-static/range {p0 .. p0}, Landroid/net/wifi/WifiConfiguration$FlymeInjector;->initFlymeExtraFields(Landroid/net/wifi/WifiConfiguration;)V
 
     return-void
 .end method
@@ -1058,7 +1058,7 @@
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->numNoInternetAccessReports:I
 
-    invoke-static {p0, p1}, Landroid/net/wifi/WifiConfiguration$FlymeInjector;->initFlymeExtraFields(Landroid/net/wifi/WifiConfiguration;Landroid/net/wifi/WifiConfiguration;)V
+    invoke-static/range {p0 .. p1}, Landroid/net/wifi/WifiConfiguration$FlymeInjector;->initFlymeExtraFields(Landroid/net/wifi/WifiConfiguration;Landroid/net/wifi/WifiConfiguration;)V
 
     .end local v0    # "i":I
     :cond_5
@@ -5055,7 +5055,7 @@
 
     invoke-static {p1, v4}, Landroid/net/wifi/WifiConfiguration;->writeBitSet(Landroid/os/Parcel;Ljava/util/BitSet;)V
 
-    invoke-static {p0, p1}, Landroid/net/wifi/WifiConfiguration$FlymeInjector;->writeFlymeExtraFields(Landroid/net/wifi/WifiConfiguration;Landroid/os/Parcel;)V
+    invoke-static/range {p0 .. p1}, Landroid/net/wifi/WifiConfiguration$FlymeInjector;->writeFlymeExtraFields(Landroid/net/wifi/WifiConfiguration;Landroid/os/Parcel;)V
 
     iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->enterpriseConfig:Landroid/net/wifi/WifiEnterpriseConfig;
 

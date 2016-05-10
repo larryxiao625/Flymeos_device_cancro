@@ -106,11 +106,11 @@
 
 .field static final TRANSACTION_registerRemoteControlDisplay_47:I = 0x30
 
-.field static final TRANSACTION_registerRemoteController:I = 0x31
+.field static final TRANSACTION_registerRemoteController_48:I = 0x31
 
 .field static final TRANSACTION_reloadAudioSettings:I = 0x24
 
-.field static final TRANSACTION_remoteControlDisplayUsesBitmapSize:I = 0x33
+.field static final TRANSACTION_remoteControlDisplayUsesBitmapSize_50:I = 0x33
 
 .field static final TRANSACTION_remoteControlDisplayWantsPlaybackPositionSync_51:I = 0x34
 
@@ -164,13 +164,13 @@
 
 .field static final TRANSACTION_shouldVibrate:I = 0x1d
 
-.field static final TRANSACTION_startBluetoothScoVirtualCall:I = 0x36
+.field static final TRANSACTION_startBluetoothScoVirtualCall_53:I = 0x36
 
 .field static final TRANSACTION_startBluetoothSco_52:I = 0x35
 
 .field static final TRANSACTION_startWatchingRoutes:I = 0x3e
 
-.field static final TRANSACTION_stopBluetoothSco:I = 0x37
+.field static final TRANSACTION_stopBluetoothSco_54:I = 0x37
 
 .field static final TRANSACTION_unloadSoundEffects:I = 0x23
 

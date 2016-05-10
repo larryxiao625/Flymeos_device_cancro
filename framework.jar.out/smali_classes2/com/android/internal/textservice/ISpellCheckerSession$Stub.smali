@@ -32,7 +32,7 @@
 
 .field static final TRANSACTION_onGetSentenceSuggestionsMultiple:I = 0x2
 
-.field static final TRANSACTION_onGetSuggestionsMultiple:I = 0x1
+.field static final TRANSACTION_onGetSuggestionsMultiple_0:I = 0x1
 
 
 # direct methods

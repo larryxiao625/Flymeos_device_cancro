@@ -42,6 +42,8 @@
     return-void
 .end method
 
+
+# virtual methods
 .method findExpandedIndex()V
     .locals 6
 
@@ -223,6 +225,7 @@
 
 .method public bridge synthetic getItem(I)Ljava/lang/Object;
     .locals 1
+    .param p1, "x0"    # I
 
     .prologue
     .line 221
@@ -251,11 +254,11 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    const/4 v3, 0x0
-
-    invoke-direct {p0, p1, p2, p3}, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->flymeGetConvertView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    invoke-direct/range {p0 .. p3}, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->flymeGetConvertView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object p2
+
+    const/4 v3, 0x0
 
     .line 253
     if-nez p2, :cond_0
@@ -341,8 +344,6 @@
     return-object p2
 .end method
 
-
-# virtual methods
 .method public areAllItemsEnabled()Z
     .locals 1
 

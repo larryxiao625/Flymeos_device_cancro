@@ -48,40 +48,40 @@
     .param p4, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 1055
+    .line 1065
     iput-object p1, p0, Landroid/os/PowerManager$WakeLock;->this$0:Landroid/os/PowerManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1043
+    .line 1053
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/os/PowerManager$WakeLock;->mRefCounted:Z
 
-    .line 1049
+    .line 1059
     new-instance v0, Landroid/os/PowerManager$WakeLock$1;
 
     invoke-direct {v0, p0}, Landroid/os/PowerManager$WakeLock$1;-><init>(Landroid/os/PowerManager$WakeLock;)V
 
     iput-object v0, p0, Landroid/os/PowerManager$WakeLock;->mReleaser:Ljava/lang/Runnable;
 
-    .line 1056
+    .line 1066
     iput p2, p0, Landroid/os/PowerManager$WakeLock;->mFlags:I
 
-    .line 1057
+    .line 1067
     iput-object p3, p0, Landroid/os/PowerManager$WakeLock;->mTag:Ljava/lang/String;
 
-    .line 1058
+    .line 1068
     iput-object p4, p0, Landroid/os/PowerManager$WakeLock;->mPackageName:Ljava/lang/String;
 
-    .line 1059
+    .line 1069
     new-instance v0, Landroid/os/Binder;
 
     invoke-direct {v0}, Landroid/os/Binder;-><init>()V
 
     iput-object v0, p0, Landroid/os/PowerManager$WakeLock;->mToken:Landroid/os/IBinder;
 
-    .line 1060
+    .line 1070
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -110,7 +110,7 @@
 
     iput-object v0, p0, Landroid/os/PowerManager$WakeLock;->mTraceName:Ljava/lang/String;
 
-    .line 1061
+    .line 1071
     return-void
 .end method
 
@@ -118,7 +118,7 @@
     .locals 7
 
     .prologue
-    .line 1127
+    .line 1137
     iget-boolean v0, p0, Landroid/os/PowerManager$WakeLock;->mRefCounted:Z
 
     if-eqz v0, :cond_0
@@ -131,7 +131,7 @@
 
     if-nez v0, :cond_1
 
-    .line 1134
+    .line 1144
     :cond_0
     iget-object v0, p0, Landroid/os/PowerManager$WakeLock;->this$0:Landroid/os/PowerManager;
 
@@ -141,7 +141,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 1135
+    .line 1145
     const-wide/32 v0, 0x20000
 
     iget-object v2, p0, Landroid/os/PowerManager$WakeLock;->mTraceName:Ljava/lang/String;
@@ -150,7 +150,7 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/os/Trace;->asyncTraceBegin(JLjava/lang/String;I)V
 
-    .line 1137
+    .line 1147
     :try_start_0
     iget-object v0, p0, Landroid/os/PowerManager$WakeLock;->this$0:Landroid/os/PowerManager;
 
@@ -172,17 +172,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1141
+    .line 1151
     :goto_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/os/PowerManager$WakeLock;->mHeld:Z
 
-    .line 1143
+    .line 1153
     :cond_1
     return-void
 
-    .line 1139
+    .line 1149
     :catch_0
     move-exception v0
 
@@ -195,22 +195,22 @@
     .locals 2
 
     .prologue
-    .line 1104
+    .line 1114
     iget-object v1, p0, Landroid/os/PowerManager$WakeLock;->mToken:Landroid/os/IBinder;
 
     monitor-enter v1
 
-    .line 1105
+    .line 1115
     :try_start_0
     invoke-direct {p0}, Landroid/os/PowerManager$WakeLock;->acquireLocked()V
 
-    .line 1106
+    .line 1116
     monitor-exit v1
 
-    .line 1107
+    .line 1117
     return-void
 
-    .line 1106
+    .line 1116
     :catchall_0
     move-exception v0
 
@@ -226,16 +226,16 @@
     .param p1, "timeout"    # J
 
     .prologue
-    .line 1120
+    .line 1130
     iget-object v1, p0, Landroid/os/PowerManager$WakeLock;->mToken:Landroid/os/IBinder;
 
     monitor-enter v1
 
-    .line 1121
+    .line 1131
     :try_start_0
     invoke-direct {p0}, Landroid/os/PowerManager$WakeLock;->acquireLocked()V
 
-    .line 1122
+    .line 1132
     iget-object v0, p0, Landroid/os/PowerManager$WakeLock;->this$0:Landroid/os/PowerManager;
 
     iget-object v0, v0, Landroid/os/PowerManager;->mHandler:Landroid/os/Handler;
@@ -244,13 +244,13 @@
 
     invoke-virtual {v0, v2, p1, p2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1123
+    .line 1133
     monitor-exit v1
 
-    .line 1124
+    .line 1134
     return-void
 
-    .line 1123
+    .line 1133
     :catchall_0
     move-exception v0
 
@@ -270,18 +270,18 @@
     .end annotation
 
     .prologue
-    .line 1065
+    .line 1075
     iget-object v1, p0, Landroid/os/PowerManager$WakeLock;->mToken:Landroid/os/IBinder;
 
     monitor-enter v1
 
-    .line 1066
+    .line 1076
     :try_start_0
     iget-boolean v0, p0, Landroid/os/PowerManager$WakeLock;->mHeld:Z
 
     if-eqz v0, :cond_0
 
-    .line 1067
+    .line 1077
     const-string v0, "PowerManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -306,7 +306,7 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1068
+    .line 1078
     const-wide/32 v2, 0x20000
 
     iget-object v0, p0, Landroid/os/PowerManager$WakeLock;->mTraceName:Ljava/lang/String;
@@ -317,7 +317,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1070
+    .line 1080
     :try_start_1
     iget-object v0, p0, Landroid/os/PowerManager$WakeLock;->this$0:Landroid/os/PowerManager;
 
@@ -332,16 +332,16 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1074
+    .line 1084
     :cond_0
     :goto_0
     :try_start_2
     monitor-exit v1
 
-    .line 1075
+    .line 1085
     return-void
 
-    .line 1074
+    .line 1084
     :catchall_0
     move-exception v0
 
@@ -351,7 +351,7 @@
 
     throw v0
 
-    .line 1071
+    .line 1081
     :catch_0
     move-exception v0
 
@@ -362,12 +362,12 @@
     .locals 2
 
     .prologue
-    .line 1194
+    .line 1204
     iget-object v1, p0, Landroid/os/PowerManager$WakeLock;->mToken:Landroid/os/IBinder;
 
     monitor-enter v1
 
-    .line 1195
+    .line 1205
     :try_start_0
     iget-boolean v0, p0, Landroid/os/PowerManager$WakeLock;->mHeld:Z
 
@@ -375,7 +375,7 @@
 
     return v0
 
-    .line 1196
+    .line 1206
     :catchall_0
     move-exception v0
 
@@ -390,12 +390,12 @@
     .locals 1
 
     .prologue
-    .line 1154
+    .line 1164
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/os/PowerManager$WakeLock;->release(I)V
 
-    .line 1155
+    .line 1165
     return-void
 .end method
 
@@ -404,12 +404,12 @@
     .param p1, "flags"    # I
 
     .prologue
-    .line 1170
+    .line 1180
     iget-object v1, p0, Landroid/os/PowerManager$WakeLock;->mToken:Landroid/os/IBinder;
 
     monitor-enter v1
 
-    .line 1171
+    .line 1181
     :try_start_0
     iget-boolean v0, p0, Landroid/os/PowerManager$WakeLock;->mRefCounted:Z
 
@@ -423,7 +423,7 @@
 
     if-nez v0, :cond_1
 
-    .line 1172
+    .line 1182
     :cond_0
     iget-object v0, p0, Landroid/os/PowerManager$WakeLock;->this$0:Landroid/os/PowerManager;
 
@@ -433,12 +433,12 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 1173
+    .line 1183
     iget-boolean v0, p0, Landroid/os/PowerManager$WakeLock;->mHeld:Z
 
     if-eqz v0, :cond_1
 
-    .line 1174
+    .line 1184
     const-wide/32 v2, 0x20000
 
     iget-object v0, p0, Landroid/os/PowerManager$WakeLock;->mTraceName:Ljava/lang/String;
@@ -449,7 +449,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1176
+    .line 1186
     :try_start_1
     iget-object v0, p0, Landroid/os/PowerManager$WakeLock;->this$0:Landroid/os/PowerManager;
 
@@ -462,20 +462,20 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1179
+    .line 1189
     :goto_0
     const/4 v0, 0x0
 
     :try_start_2
     iput-boolean v0, p0, Landroid/os/PowerManager$WakeLock;->mHeld:Z
 
-    .line 1182
+    .line 1192
     :cond_1
     iget v0, p0, Landroid/os/PowerManager$WakeLock;->mCount:I
 
     if-gez v0, :cond_2
 
-    .line 1183
+    .line 1193
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -502,7 +502,7 @@
 
     throw v0
 
-    .line 1185
+    .line 1195
     :catchall_0
     move-exception v0
 
@@ -518,10 +518,10 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 1186
+    .line 1196
     return-void
 
-    .line 1177
+    .line 1187
     :catch_0
     move-exception v0
 
@@ -533,10 +533,10 @@
     .param p1, "tag"    # Ljava/lang/String;
 
     .prologue
-    .line 1246
+    .line 1256
     iput-object p1, p0, Landroid/os/PowerManager$WakeLock;->mHistoryTag:Ljava/lang/String;
 
-    .line 1247
+    .line 1257
     return-void
 .end method
 
@@ -545,22 +545,22 @@
     .param p1, "value"    # Z
 
     .prologue
-    .line 1091
+    .line 1101
     iget-object v1, p0, Landroid/os/PowerManager$WakeLock;->mToken:Landroid/os/IBinder;
 
     monitor-enter v1
 
-    .line 1092
+    .line 1102
     :try_start_0
     iput-boolean p1, p0, Landroid/os/PowerManager$WakeLock;->mRefCounted:Z
 
-    .line 1093
+    .line 1103
     monitor-exit v1
 
-    .line 1094
+    .line 1104
     return-void
 
-    .line 1093
+    .line 1103
     :catchall_0
     move-exception v0
 
@@ -576,10 +576,10 @@
     .param p1, "tag"    # Ljava/lang/String;
 
     .prologue
-    .line 1241
+    .line 1251
     iput-object p1, p0, Landroid/os/PowerManager$WakeLock;->mTag:Ljava/lang/String;
 
-    .line 1242
+    .line 1252
     return-void
 .end method
 
@@ -588,7 +588,7 @@
     .param p1, "state"    # Z
 
     .prologue
-    .line 1251
+    .line 1261
     if-eqz p1, :cond_0
 
     iget v0, p0, Landroid/os/PowerManager$WakeLock;->mFlags:I
@@ -599,11 +599,11 @@
 
     iput v0, p0, Landroid/os/PowerManager$WakeLock;->mFlags:I
 
-    .line 1253
+    .line 1263
     :goto_0
     return-void
 
-    .line 1252
+    .line 1262
     :cond_0
     iget v0, p0, Landroid/os/PowerManager$WakeLock;->mFlags:I
 
@@ -621,12 +621,12 @@
     .param p1, "ws"    # Landroid/os/WorkSource;
 
     .prologue
-    .line 1211
+    .line 1221
     iget-object v2, p0, Landroid/os/PowerManager$WakeLock;->mToken:Landroid/os/IBinder;
 
     monitor-enter v2
 
-    .line 1212
+    .line 1222
     if-eqz p1, :cond_0
 
     :try_start_0
@@ -636,28 +636,28 @@
 
     if-nez v1, :cond_0
 
-    .line 1213
+    .line 1223
     const/4 p1, 0x0
 
-    .line 1217
+    .line 1227
     :cond_0
     if-nez p1, :cond_4
 
-    .line 1218
+    .line 1228
     iget-object v1, p0, Landroid/os/PowerManager$WakeLock;->mWorkSource:Landroid/os/WorkSource;
 
     if-eqz v1, :cond_3
 
     const/4 v0, 0x1
 
-    .line 1219
+    .line 1229
     .local v0, "changed":Z
     :goto_0
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/os/PowerManager$WakeLock;->mWorkSource:Landroid/os/WorkSource;
 
-    .line 1230
+    .line 1240
     :cond_1
     :goto_1
     if-eqz v0, :cond_2
@@ -668,7 +668,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 1232
+    .line 1242
     :try_start_1
     iget-object v1, p0, Landroid/os/PowerManager$WakeLock;->this$0:Landroid/os/PowerManager;
 
@@ -685,32 +685,32 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1236
+    .line 1246
     :cond_2
     :goto_2
     :try_start_2
     monitor-exit v2
 
-    .line 1237
+    .line 1247
     return-void
 
-    .line 1218
+    .line 1228
     .end local v0    # "changed":Z
     :cond_3
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 1220
+    .line 1230
     :cond_4
     iget-object v1, p0, Landroid/os/PowerManager$WakeLock;->mWorkSource:Landroid/os/WorkSource;
 
     if-nez v1, :cond_5
 
-    .line 1221
+    .line 1231
     const/4 v0, 0x1
 
-    .line 1222
+    .line 1232
     .restart local v0    # "changed":Z
     new-instance v1, Landroid/os/WorkSource;
 
@@ -720,7 +720,7 @@
 
     goto :goto_1
 
-    .line 1236
+    .line 1246
     .end local v0    # "changed":Z
     :catchall_0
     move-exception v1
@@ -731,7 +731,7 @@
 
     throw v1
 
-    .line 1224
+    .line 1234
     :cond_5
     :try_start_3
     iget-object v1, p0, Landroid/os/PowerManager$WakeLock;->mWorkSource:Landroid/os/WorkSource;
@@ -740,11 +740,11 @@
 
     move-result v0
 
-    .line 1225
+    .line 1235
     .restart local v0    # "changed":Z
     if-eqz v0, :cond_1
 
-    .line 1226
+    .line 1236
     iget-object v1, p0, Landroid/os/PowerManager$WakeLock;->mWorkSource:Landroid/os/WorkSource;
 
     invoke-virtual {v1, p1}, Landroid/os/WorkSource;->set(Landroid/os/WorkSource;)V
@@ -753,7 +753,7 @@
 
     goto :goto_1
 
-    .line 1233
+    .line 1243
     :catch_0
     move-exception v1
 
@@ -764,12 +764,12 @@
     .locals 3
 
     .prologue
-    .line 1257
+    .line 1267
     iget-object v1, p0, Landroid/os/PowerManager$WakeLock;->mToken:Landroid/os/IBinder;
 
     monitor-enter v1
 
-    .line 1258
+    .line 1268
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -831,7 +831,7 @@
 
     return-object v0
 
-    .line 1261
+    .line 1271
     :catchall_0
     move-exception v0
 

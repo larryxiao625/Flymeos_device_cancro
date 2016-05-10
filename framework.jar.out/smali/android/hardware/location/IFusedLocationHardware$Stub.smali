@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_getSupportedBatchSize:I = 0x3
 
-.field static final TRANSACTION_injectDeviceContext:I = 0xb
+.field static final TRANSACTION_injectDeviceContext_10:I = 0xb
 
 .field static final TRANSACTION_injectDiagnosticData:I = 0x9
 
@@ -46,7 +46,7 @@
 
 .field static final TRANSACTION_unregisterSink:I = 0x2
 
-.field static final TRANSACTION_updateBatchingOptions:I = 0x6
+.field static final TRANSACTION_updateBatchingOptions_5:I = 0x6
 
 
 # direct methods

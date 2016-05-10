@@ -34,12 +34,16 @@
     .param p2, "windowManagerFuncs"    # Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
     .prologue
+    .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 74
     sput-object p1, Lcom/android/internal/policy/impl/MzGlobalActions;->mContext:Landroid/content/Context;
 
+    .line 75
     iput-object p2, p0, Lcom/android/internal/policy/impl/MzGlobalActions;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
+    .line 76
     return-void
 .end method
 
@@ -47,6 +51,7 @@
     .locals 1
 
     .prologue
+    .line 64
     sget-object v0, Lcom/android/internal/policy/impl/MzGlobalActions;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -58,16 +63,19 @@
     .param p1, "windowManagerFuncs"    # Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
     .prologue
+    .line 80
     sget-object v0, Lcom/android/internal/policy/impl/MzGlobalActions;->mInstance:Lcom/android/internal/policy/impl/MzGlobalActions;
 
     if-nez v0, :cond_0
 
+    .line 81
     new-instance v0, Lcom/android/internal/policy/impl/MzGlobalActions;
 
     invoke-direct {v0, p0, p1}, Lcom/android/internal/policy/impl/MzGlobalActions;-><init>(Landroid/content/Context;Landroid/view/WindowManagerPolicy$WindowManagerFuncs;)V
 
     sput-object v0, Lcom/android/internal/policy/impl/MzGlobalActions;->mInstance:Lcom/android/internal/policy/impl/MzGlobalActions;
 
+    .line 83
     :cond_0
     sget-object v0, Lcom/android/internal/policy/impl/MzGlobalActions;->mInstance:Lcom/android/internal/policy/impl/MzGlobalActions;
 
@@ -80,10 +88,12 @@
     .locals 3
 
     .prologue
+    .line 87
     sget-object v0, Lcom/android/internal/policy/impl/MzGlobalActions;->mMzDialog:Landroid/app/Dialog;
 
     if-nez v0, :cond_0
 
+    .line 88
     new-instance v0, Lcom/android/internal/policy/impl/MzGlobalActions$MzGlobalActionsDialog;
 
     sget-object v1, Lcom/android/internal/policy/impl/MzGlobalActions;->mContext:Landroid/content/Context;
@@ -94,6 +104,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/MzGlobalActions;->mMzDialog:Landroid/app/Dialog;
 
+    .line 90
     sget-object v0, Lcom/android/internal/policy/impl/MzGlobalActions;->mMzDialog:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
@@ -108,10 +119,12 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setSystemUiVisibility(I)V
 
+    .line 93
     :cond_0
     sget-object v0, Lcom/android/internal/policy/impl/MzGlobalActions;->mMzDialog:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 
+    .line 94
     return-void
 .end method

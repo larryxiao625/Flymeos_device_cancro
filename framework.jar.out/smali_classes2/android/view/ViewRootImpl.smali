@@ -169,6 +169,10 @@
 
 
 # instance fields
+.field private mFlymeShadowTouchPoint:Landroid/graphics/Point;
+
+.field private mFlymeStatusBarNfcShareEnabled:Z
+
 .field mAccessibilityFocusedHost:Landroid/view/View;
 
 .field mAccessibilityFocusedVirtualView:Landroid/view/accessibility/AccessibilityNodeInfo;
@@ -244,10 +248,6 @@
 .field mFirstInputStage:Landroid/view/ViewRootImpl$InputStage;
 
 .field mFirstPostImeInputStage:Landroid/view/ViewRootImpl$InputStage;
-
-.field private mFlymeShadowTouchPoint:Landroid/graphics/Point;
-
-.field private mFlymeStatusBarNfcShareEnabled:Z
 
 .field private mFpsNumFrames:I
 
@@ -4353,7 +4353,7 @@
     .end local v3    # "what":I
     :cond_0
     :goto_0
-    invoke-direct {p0, p1}, Landroid/view/ViewRootImpl;->flymeHandleDragEvent(Landroid/view/DragEvent;)V
+    invoke-direct/range {p0 .. p1}, Landroid/view/ViewRootImpl;->flymeHandleDragEvent(Landroid/view/DragEvent;)V
 
     invoke-virtual {p1}, Landroid/view/DragEvent;->recycle()V
 

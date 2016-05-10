@@ -57,11 +57,11 @@
 
 
 # instance fields
+.field private mMzIsVideoRecord:Z
+
 .field private mEventHandler:Landroid/media/MediaRecorder$EventHandler;
 
 .field private mFd:Ljava/io/FileDescriptor;
-
-.field private mMzIsVideoRecord:Z
 
 .field private mNativeContext:J
 
@@ -329,9 +329,9 @@
     .end annotation
 
     .prologue
-    const-wide/16 v2, 0x0
+    invoke-direct/range {p0 .. p0}, Landroid/media/MediaRecorder;->flymeEnforceCameraPermission()V
 
-    invoke-direct {p0}, Landroid/media/MediaRecorder;->flymeEnforceCameraPermission()V
+    const-wide/16 v2, 0x0
 
     .line 757
     iget-object v0, p0, Landroid/media/MediaRecorder;->mPath:Ljava/lang/String;

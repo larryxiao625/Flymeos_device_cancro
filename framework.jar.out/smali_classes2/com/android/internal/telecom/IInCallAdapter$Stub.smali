@@ -26,11 +26,11 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.telecom.IInCallAdapter"
 
-.field static final TRANSACTION_answerCall:I = 0x1
+.field static final TRANSACTION_answerCall_0:I = 0x1
 
 .field static final TRANSACTION_conference:I = 0xd
 
-.field static final TRANSACTION_deflectCall:I = 0x2
+.field static final TRANSACTION_deflectCall_1:I = 0x2
 
 .field static final TRANSACTION_disconnectCall:I = 0x4
 

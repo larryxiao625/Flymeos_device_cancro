@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_onAllPrintJobsHandled:I = 0x3
 
-.field static final TRANSACTION_onPrintJobQueued:I = 0x1
+.field static final TRANSACTION_onPrintJobQueued_0:I = 0x1
 
 .field static final TRANSACTION_onPrintJobStateChanged:I = 0x4
 

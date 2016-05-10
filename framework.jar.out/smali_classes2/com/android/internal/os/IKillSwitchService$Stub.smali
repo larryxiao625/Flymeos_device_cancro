@@ -28,11 +28,11 @@
 
 .field static final TRANSACTION_getAccountId:I = 0x7
 
-.field static final TRANSACTION_getDeviceUuid:I = 0x3
+.field static final TRANSACTION_getDeviceUuid_2:I = 0x3
 
 .field static final TRANSACTION_hasKillSwitch_0:I = 0x1
 
-.field static final TRANSACTION_isDeviceLocked:I = 0x4
+.field static final TRANSACTION_isDeviceLocked_3:I = 0x4
 
 .field static final TRANSACTION_setAccountId:I = 0x6
 

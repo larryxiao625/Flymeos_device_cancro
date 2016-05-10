@@ -26,13 +26,13 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.telephony.IIccPhoneBook"
 
-.field static final TRANSACTION_getAdnCount:I = 0xb
-
 .field static final TRANSACTION_getAdnCountUsingSubId:I = 0xc
+
+.field static final TRANSACTION_getAdnCount_10:I = 0xb
 
 .field static final TRANSACTION_getAdnRecordsInEf:I = 0x1
 
-.field static final TRANSACTION_getAdnRecordsInEfForSubscriber:I = 0x2
+.field static final TRANSACTION_getAdnRecordsInEfForSubscriber_1:I = 0x2
 
 .field static final TRANSACTION_getAdnRecordsSizeForSubscriber_9:I = 0xa
 

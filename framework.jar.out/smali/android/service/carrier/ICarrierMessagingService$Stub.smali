@@ -26,15 +26,15 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.service.carrier.ICarrierMessagingService"
 
-.field static final TRANSACTION_downloadMms:I = 0x6
+.field static final TRANSACTION_downloadMms_5:I = 0x6
 
-.field static final TRANSACTION_filterSms:I = 0x1
+.field static final TRANSACTION_filterSms_0:I = 0x1
 
-.field static final TRANSACTION_sendDataSms:I = 0x3
+.field static final TRANSACTION_sendDataSms_2:I = 0x3
 
-.field static final TRANSACTION_sendMms:I = 0x5
+.field static final TRANSACTION_sendMms_4:I = 0x5
 
-.field static final TRANSACTION_sendMultipartTextSms:I = 0x4
+.field static final TRANSACTION_sendMultipartTextSms_3:I = 0x4
 
 .field static final TRANSACTION_sendTextSms:I = 0x2
 

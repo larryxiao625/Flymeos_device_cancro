@@ -79,6 +79,7 @@
 
 .method public bridge synthetic onReceiveResult(Ljava/lang/Object;)V
     .locals 0
+    .param p1, "x0"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -89,6 +90,7 @@
     .line 385
     check-cast p1, Landroid/service/carrier/CarrierMessagingService$SendMultipartSmsResult;
 
+    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$4;->onReceiveResult(Landroid/service/carrier/CarrierMessagingService$SendMultipartSmsResult;)V
 
     return-void

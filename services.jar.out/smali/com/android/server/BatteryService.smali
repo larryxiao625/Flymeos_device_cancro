@@ -346,6 +346,7 @@
 
     .line 217
     :cond_0
+
     invoke-static/range {p0 .. p0}, Lcom/android/server/BatteryService$FlymeInjector;->registerBootCompleted(Lcom/android/server/BatteryService;)V
 
     return-void
@@ -4263,16 +4264,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_flyme_0
 
     return-void
 
-    :cond_0
+    :cond_flyme_0
+
     iget-object v0, p0, Lcom/android/server/BatteryService;->mBatteryProps:Landroid/os/BatteryProperties;
 
     iget v0, v0, Landroid/os/BatteryProperties;->batteryLevel:I
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
     const/4 v0, 0x7
 
@@ -4280,7 +4282,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/android/server/BatteryService;->mBatteryProps:Landroid/os/BatteryProperties;
 
@@ -4288,9 +4290,9 @@
 
     iget v1, p0, Lcom/android/server/BatteryService;->mLastBatteryVoltage:I
 
-    if-ge v0, v1, :cond_2
+    if-ge v0, v1, :cond_1
 
-    :cond_1
+    :cond_0
     invoke-static/range {p0 .. p0}, Lcom/android/server/BatteryService$FlymeInjector;->writeMessageToFileIfNoPowerLocked(Lcom/android/server/BatteryService;)V
 
     iget-object v0, p0, Lcom/android/server/BatteryService;->mHandler:Landroid/os/Handler;
@@ -4301,7 +4303,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_2
+    :cond_1
     return-void
 .end method
 
@@ -4313,18 +4315,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_flyme_0
 
     return-void
 
-    :cond_0
+    :cond_flyme_0
+    
     iget-object v0, p0, Lcom/android/server/BatteryService;->mBatteryProps:Landroid/os/BatteryProperties;
 
     iget v0, v0, Landroid/os/BatteryProperties;->batteryTemperature:I
 
     iget v1, p0, Lcom/android/server/BatteryService;->mShutdownBatteryTemperature:I
 
-    if-le v0, v1, :cond_1
+    if-le v0, v1, :cond_0
 
     invoke-static/range {p0 .. p0}, Lcom/android/server/BatteryService$FlymeInjector;->writeMessageToFileIfOverTempLocked(Lcom/android/server/BatteryService;)V
 
@@ -4336,7 +4339,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_1
+    :cond_0
     return-void
 .end method
 
@@ -4482,6 +4485,8 @@
     throw v0
 .end method
 
+
+# virtual methods
 .method public onBootPhase(I)V
     .locals 7
     .param p1, "phase"    # I
@@ -4616,8 +4621,6 @@
     goto :goto_0
 .end method
 
-
-# virtual methods
 .method flymeGetFieldBatteryProps()Landroid/os/BatteryProperties;
     .locals 1
 

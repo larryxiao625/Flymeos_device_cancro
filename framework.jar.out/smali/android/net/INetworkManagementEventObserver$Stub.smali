@@ -36,15 +36,15 @@
 
 .field static final TRANSACTION_interfaceDnsServerInfo:I = 0xa
 
-.field static final TRANSACTION_interfaceLinkStateChanged:I = 0x2
+.field static final TRANSACTION_interfaceLinkStateChanged_1:I = 0x2
 
 .field static final TRANSACTION_interfaceMessageRecevied:I = 0x9
 
 .field static final TRANSACTION_interfaceRemoved:I = 0x4
 
-.field static final TRANSACTION_interfaceStatusChanged:I = 0x1
+.field static final TRANSACTION_interfaceStatusChanged_0:I = 0x1
 
-.field static final TRANSACTION_limitReached:I = 0x7
+.field static final TRANSACTION_limitReached_6:I = 0x7
 
 .field static final TRANSACTION_routeRemoved:I = 0xc
 

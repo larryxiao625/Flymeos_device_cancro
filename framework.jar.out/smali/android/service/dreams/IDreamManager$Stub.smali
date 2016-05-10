@@ -26,9 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.service.dreams.IDreamManager"
 
-.field static final TRANSACTION_awaken:I = 0x2
+.field static final TRANSACTION_awaken_1:I = 0x2
 
-.field static final TRANSACTION_dream:I = 0x1
+.field static final TRANSACTION_dream_0:I = 0x1
 
 .field static final TRANSACTION_finishSelf:I = 0x9
 

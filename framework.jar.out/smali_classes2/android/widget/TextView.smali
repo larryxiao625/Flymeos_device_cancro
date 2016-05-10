@@ -13,10 +13,10 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/widget/TextView$4;,
-        Landroid/widget/TextView$FlymeInjector;,
         Landroid/widget/TextView$ChangeWatcher;,
         Landroid/widget/TextView$Marquee;,
         Landroid/widget/TextView$CharWrapper;,
+        Landroid/widget/TextView$FlymeInjector;,
         Landroid/widget/TextView$SavedState;,
         Landroid/widget/TextView$BufferType;,
         Landroid/widget/TextView$OnEditorActionListener;,
@@ -80,6 +80,22 @@
 
 
 # instance fields
+.field public mEmojiAlphaEnabled:Z
+
+.field mFlymeAutoLinkMaskIncludeDateTime:Z
+
+.field private mFlymeCurrentCursorVisible:Z
+
+.field mFlymeCursorWidth:I
+
+.field private mFlymeHintPadding:I
+
+.field mFlymeInputShownChangeListener:Landroid/view/inputmethod/InputMethodManager$InputShownChangeListener;
+
+.field mFlymeTempCoords:[I
+
+.field private mTempCurosrRect:Landroid/graphics/Rect;
+
 .field private mAllowTransformationLengthChange:Z
 
 .field private mAutoLinkMask:I
@@ -118,21 +134,7 @@
 
 .field private mEllipsize:Landroid/text/TextUtils$TruncateAt;
 
-.field public mEmojiAlphaEnabled:Z
-
 .field private mFilters:[Landroid/text/InputFilter;
-
-.field mFlymeAutoLinkMaskIncludeDateTime:Z
-
-.field private mFlymeCurrentCursorVisible:Z
-
-.field mFlymeCursorWidth:I
-
-.field private mFlymeHintPadding:I
-
-.field mFlymeInputShownChangeListener:Landroid/view/inputmethod/InputMethodManager$InputShownChangeListener;
-
-.field mFlymeTempCoords:[I
 
 .field private mFreezesText:Z
 
@@ -238,8 +240,6 @@
 .field private mSpacingMult:F
 
 .field private mSpannableFactory:Landroid/text/Spannable$Factory;
-
-.field private mTempCurosrRect:Landroid/graphics/Rect;
 
 .field private mTempRect:Landroid/graphics/Rect;
 
@@ -3927,8 +3927,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setImportantForAccessibility(I)V
 
+    .line 1368
     :cond_30
     return-void
+
+    .line 697
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -12182,7 +12186,9 @@
     .locals 1
 
     .prologue
-    invoke-static {p0}, Landroid/widget/TextView$FlymeInjector;->mzGetAutoLinkMask(Landroid/widget/TextView;)I
+    iget v0, p0, Landroid/widget/TextView;->mAutoLinkMask:I
+
+    invoke-static/range {p0 .. p0}, Landroid/widget/TextView$FlymeInjector;->mzGetAutoLinkMask(Landroid/widget/TextView;)I
 
     move-result v0
 
@@ -17995,7 +18001,8 @@
     iput-boolean v1, p0, Landroid/widget/TextView;->mPreDrawListenerDetached:Z
 
     :cond_1
-    invoke-static {p0}, Landroid/widget/TextView$FlymeInjector;->onAttachedToWindow(Landroid/widget/TextView;)V
+
+    invoke-static/range {p0 .. p0}, Landroid/widget/TextView$FlymeInjector;->onAttachedToWindow(Landroid/widget/TextView;)V
 
     return-void
 .end method
@@ -18398,7 +18405,7 @@
     :cond_1
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindowInternal()V
 
-    invoke-static {p0}, Landroid/widget/TextView$FlymeInjector;->onDetachedFromWindowInternal(Landroid/widget/TextView;)V
+    invoke-static/range {p0 .. p0}, Landroid/widget/TextView$FlymeInjector;->onDetachedFromWindowInternal(Landroid/widget/TextView;)V
 
     return-void
 .end method
@@ -19714,7 +19721,7 @@
 
     .end local v6    # "sp":Landroid/text/Spannable;
     :cond_2
-    invoke-static {p0, p1}, Landroid/widget/TextView$FlymeInjector;->onFocusChanged(Landroid/widget/TextView;Z)V
+    invoke-static/range {p0 .. p1}, Landroid/widget/TextView$FlymeInjector;->onFocusChanged(Landroid/widget/TextView;Z)V
 
     invoke-direct {p0, p1}, Landroid/widget/TextView;->startStopMarquee(Z)V
 
@@ -22269,11 +22276,19 @@
     :cond_0
     packed-switch p1, :pswitch_data_0
 
-    invoke-static {p0, p1}, Landroid/widget/TextView$FlymeInjector;->mzOnTextContextMenuItem(Landroid/widget/TextView;I)Z
+    invoke-static/range {p0 .. p1}, Landroid/widget/TextView$FlymeInjector;->mzOnTextContextMenuItem(Landroid/widget/TextView;I)Z
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_flyme_0
+
+    const/4 v6, 0x1
+
+    return v6
+
+    :cond_flyme_0
+
+    move v4, v5
 
     :goto_0
     return v4
@@ -22319,13 +22334,6 @@
     invoke-virtual {p0}, Landroid/widget/TextView;->stopSelectionActionMode()V
 
     goto :goto_0
-
-    :cond_1
-    move v4, v5
-
-    goto :goto_0
-
-    nop
 
     :pswitch_data_0
     .packed-switch #android:id@selectAll#t
@@ -22518,7 +22526,7 @@
     if-eqz v5, :cond_a
 
     :cond_7
-    invoke-static {p0, p1}, Landroid/widget/TextView$FlymeInjector;->onTouchUpEventMz(Landroid/widget/TextView;Landroid/view/MotionEvent;)V
+    invoke-static/range {p0 .. p1}, Landroid/widget/TextView$FlymeInjector;->onTouchUpEventMz(Landroid/widget/TextView;Landroid/view/MotionEvent;)V
 
     invoke-static {}, Landroid/view/inputmethod/InputMethodManager;->peekInstance()Landroid/view/inputmethod/InputMethodManager;
 
@@ -22549,6 +22557,10 @@
     or-int/2addr v1, v9
 
     :cond_9
+    iget-object v7, p0, Landroid/widget/TextView;->mEditor:Landroid/widget/Editor;
+
+    #invoke-virtual {v7, p1}, Landroid/widget/Editor;->onTouchUpEvent(Landroid/view/MotionEvent;)V
+
     const/4 v1, 0x1
 
     .end local v2    # "imm":Landroid/view/inputmethod/InputMethodManager;
@@ -22641,7 +22653,7 @@
     .prologue
     invoke-super {p0, p1}, Landroid/view/View;->onWindowFocusChanged(Z)V
 
-    invoke-static {p0, p1}, Landroid/widget/TextView$FlymeInjector;->onFocusChanged(Landroid/widget/TextView;Z)V
+    invoke-static/range {p0 .. p1}, Landroid/widget/TextView$FlymeInjector;->onFocusChanged(Landroid/widget/TextView;Z)V
 
     iget-object v0, p0, Landroid/widget/TextView;->mEditor:Landroid/widget/Editor;
 
@@ -25730,7 +25742,7 @@
     iput-object v7, p0, Landroid/widget/TextView;->mText:Ljava/lang/CharSequence;
 
     :cond_4
-    invoke-static {p0}, Landroid/widget/TextView$FlymeInjector;->updateCurrentCursorVisbilityOnFocusOrInputTypeChangedIfHasFocus(Landroid/widget/TextView;)V
+    invoke-static/range {p0 .. p0}, Landroid/widget/TextView$FlymeInjector;->updateCurrentCursorVisbilityOnFocusOrInputTypeChangedIfHasFocus(Landroid/widget/TextView;)V
 
     invoke-static {}, Landroid/view/inputmethod/InputMethodManager;->peekInstance()Landroid/view/inputmethod/InputMethodManager;
 

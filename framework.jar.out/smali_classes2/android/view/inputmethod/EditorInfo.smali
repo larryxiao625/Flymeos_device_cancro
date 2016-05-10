@@ -8,6 +8,32 @@
 
 
 # static fields
+.field public static final IME_COMMAND_ACTION_ATTRS_CHANGED:Ljava/lang/String; = "com.meizu.input.attrsChanged"
+
+.field public static final IME_COMMAND_ACTION_DICT_CHANGED:Ljava/lang/String; = "com.meizu.input.dictChanged"
+
+.field public static final IME_COMMAND_ACTION_VOICE_ANIM_HIDE:Ljava/lang/String; = "com.meizu.input.textviewVoiceAnimHide"
+
+.field public static final IME_COMMAND_ACTION_VOICE_ANIM_SHAKE:Ljava/lang/String; = "com.meizu.input.textviewVoiceAnimShake"
+
+.field public static final IME_COMMAND_ACTION_VOICE_ANIM_SHOW:Ljava/lang/String; = "com.meizu.input.textviewVoiceAnimShow"
+
+.field public static final IME_OPTION_CANDIDATE_ALWAYS_VISIBLE:Ljava/lang/String; = "com.meizu.input.candidateAlwaysVisible"
+
+.field public static final IME_OPTION_COVER_SMILE:Ljava/lang/String; = "com.meizu.input.cover.SMILE"
+
+.field public static final IME_OPTION_COVER_VOICE:Ljava/lang/String; = "com.meizu.input.cover.VOICE"
+
+.field public static final IME_OPTION_KEEP_APP_DICT_STATE:Ljava/lang/String; = "com.meizu.input.keepAppDictState"
+
+.field public static final IME_OPTION_NO_MICROPHONE:Ljava/lang/String; = "nm"
+
+.field public static final IME_OPTION_VALUE_COVER_SMILE_MMS:Ljava/lang/String; = "mms"
+
+.field public static final IME_OPTION_VALUE_COVER_SMILE_WEIBO:Ljava/lang/String; = "weibo"
+
+.field public static final IME_OPTION_VARIATION_SYMBOL:Ljava/lang/String; = "com.meizu.input.variationSymbol"
+
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -35,16 +61,6 @@
 
 .field public static final IME_ACTION_UNSPECIFIED:I = 0x0
 
-.field public static final IME_COMMAND_ACTION_ATTRS_CHANGED:Ljava/lang/String; = "com.meizu.input.attrsChanged"
-
-.field public static final IME_COMMAND_ACTION_DICT_CHANGED:Ljava/lang/String; = "com.meizu.input.dictChanged"
-
-.field public static final IME_COMMAND_ACTION_VOICE_ANIM_HIDE:Ljava/lang/String; = "com.meizu.input.textviewVoiceAnimHide"
-
-.field public static final IME_COMMAND_ACTION_VOICE_ANIM_SHAKE:Ljava/lang/String; = "com.meizu.input.textviewVoiceAnimShake"
-
-.field public static final IME_COMMAND_ACTION_VOICE_ANIM_SHOW:Ljava/lang/String; = "com.meizu.input.textviewVoiceAnimShow"
-
 .field public static final IME_FLAG_FORCE_ASCII:I = -0x80000000
 
 .field public static final IME_FLAG_NAVIGATE_NEXT:I = 0x8000000
@@ -61,23 +77,7 @@
 
 .field public static final IME_MASK_ACTION:I = 0xff
 
-.field public static final IME_NULL:I = 0x0
-
-.field public static final IME_OPTION_CANDIDATE_ALWAYS_VISIBLE:Ljava/lang/String; = "com.meizu.input.candidateAlwaysVisible"
-
-.field public static final IME_OPTION_COVER_SMILE:Ljava/lang/String; = "com.meizu.input.cover.SMILE"
-
-.field public static final IME_OPTION_COVER_VOICE:Ljava/lang/String; = "com.meizu.input.cover.VOICE"
-
-.field public static final IME_OPTION_KEEP_APP_DICT_STATE:Ljava/lang/String; = "com.meizu.input.keepAppDictState"
-
-.field public static final IME_OPTION_NO_MICROPHONE:Ljava/lang/String; = "nm"
-
-.field public static final IME_OPTION_VALUE_COVER_SMILE_MMS:Ljava/lang/String; = "mms"
-
-.field public static final IME_OPTION_VALUE_COVER_SMILE_WEIBO:Ljava/lang/String; = "weibo"
-
-.field public static final IME_OPTION_VARIATION_SYMBOL:Ljava/lang/String; = "com.meizu.input.variationSymbol"
+.field public static final IME_NULL:I
 
 
 # instance fields

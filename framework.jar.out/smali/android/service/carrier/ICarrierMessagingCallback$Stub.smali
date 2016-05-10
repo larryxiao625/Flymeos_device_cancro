@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_onSendMultipartSmsComplete:I = 0x3
 
-.field static final TRANSACTION_onSendSmsComplete:I = 0x2
+.field static final TRANSACTION_onSendSmsComplete_1:I = 0x2
 
 
 # direct methods

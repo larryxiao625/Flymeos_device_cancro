@@ -219,7 +219,7 @@
 
     invoke-virtual {v0}, Lcom/android/internal/app/AlertController;->installContent()V
 
-    invoke-direct {p0}, Lcom/android/internal/app/AlertActivity;->flymeApplyMeizuStyle()V
+    invoke-direct/range {p0 .. p0}, Lcom/android/internal/app/AlertActivity;->flymeApplyMeizuStyle()V
 
     return-void
 .end method

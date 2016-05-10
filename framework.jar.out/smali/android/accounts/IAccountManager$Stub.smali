@@ -58,7 +58,7 @@
 
 .field static final TRANSACTION_getAuthenticatorTypes:I = 0x3
 
-.field static final TRANSACTION_getPassword:I = 0x1
+.field static final TRANSACTION_getPassword_0:I = 0x1
 
 .field static final TRANSACTION_getPreviousName:I = 0x21
 

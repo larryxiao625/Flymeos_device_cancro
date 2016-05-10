@@ -36,7 +36,7 @@
 
 .field static final TRANSACTION_reportRequireCredentialEntry:I = 0x3
 
-.field static final TRANSACTION_reportUnlockAttempt:I = 0x1
+.field static final TRANSACTION_reportUnlockAttempt_0:I = 0x1
 
 .field static final TRANSACTION_unregisterTrustListener:I = 0x5
 

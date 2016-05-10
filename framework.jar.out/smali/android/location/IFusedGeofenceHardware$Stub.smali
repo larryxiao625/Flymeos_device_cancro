@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_isSupported:I = 0x1
 
-.field static final TRANSACTION_modifyGeofenceOptions:I = 0x6
+.field static final TRANSACTION_modifyGeofenceOptions_5:I = 0x6
 
 .field static final TRANSACTION_pauseMonitoringGeofence:I = 0x4
 

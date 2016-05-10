@@ -26,9 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.location.IGeoFencer"
 
-.field static final TRANSACTION_clearGeoFence:I = 0x2
-
 .field static final TRANSACTION_clearGeoFenceUser:I = 0x3
+
+.field static final TRANSACTION_clearGeoFence_1:I = 0x2
 
 .field static final TRANSACTION_setGeoFence_0:I = 0x1
 

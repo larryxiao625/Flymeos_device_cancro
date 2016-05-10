@@ -30,11 +30,11 @@
 
 .field static final TRANSACTION_addTextMessageDraft:I = 0xa
 
-.field static final TRANSACTION_archiveStoredConversation:I = 0x9
+.field static final TRANSACTION_archiveStoredConversation_8:I = 0x9
 
-.field static final TRANSACTION_deleteStoredConversation:I = 0x7
+.field static final TRANSACTION_deleteStoredConversation_6:I = 0x7
 
-.field static final TRANSACTION_deleteStoredMessage:I = 0x6
+.field static final TRANSACTION_deleteStoredMessage_5:I = 0x6
 
 .field static final TRANSACTION_downloadMessage_1:I = 0x2
 
@@ -42,11 +42,11 @@
 
 .field static final TRANSACTION_getCarrierConfigValues:I = 0x3
 
-.field static final TRANSACTION_importMultimediaMessage:I = 0x5
+.field static final TRANSACTION_importMultimediaMessage_4:I = 0x5
 
-.field static final TRANSACTION_importTextMessage:I = 0x4
+.field static final TRANSACTION_importTextMessage_3:I = 0x4
 
-.field static final TRANSACTION_sendMessage:I = 0x1
+.field static final TRANSACTION_sendMessage_0:I = 0x1
 
 .field static final TRANSACTION_sendStoredMessage_11:I = 0xc
 

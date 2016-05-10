@@ -132,6 +132,8 @@
 
 .field private mVideoCall:Landroid/telecom/InCallService$VideoCall;
 
+
+# direct methods
 .method constructor <init>(Landroid/telecom/Phone;Ljava/lang/String;Landroid/telecom/InCallAdapter;Z)V
     .locals 3
     .param p1, "phone"    # Landroid/telecom/Phone;
@@ -1865,8 +1867,6 @@
     return-void
 .end method
 
-
-# direct methods
 .method constructor <init>(Landroid/telecom/Phone;Ljava/lang/String;Landroid/telecom/InCallAdapter;)V
     .locals 1
     .param p1, "phone"    # Landroid/telecom/Phone;

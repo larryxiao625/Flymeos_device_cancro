@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.backup.IObbBackupService"
 
-.field static final TRANSACTION_backupObbs:I = 0x1
+.field static final TRANSACTION_backupObbs_0:I = 0x1
 
 .field static final TRANSACTION_restoreObbFile:I = 0x2
 

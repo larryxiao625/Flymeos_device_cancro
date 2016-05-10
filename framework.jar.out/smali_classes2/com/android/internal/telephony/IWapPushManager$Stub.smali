@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_deletePackage:I = 0x4
 
-.field static final TRANSACTION_processMessage:I = 0x1
+.field static final TRANSACTION_processMessage_0:I = 0x1
 
 .field static final TRANSACTION_updatePackage:I = 0x3
 

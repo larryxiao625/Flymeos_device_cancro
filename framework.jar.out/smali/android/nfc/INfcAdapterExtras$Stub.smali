@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_authenticate:I = 0x6
 
-.field static final TRANSACTION_close:I = 0x2
+.field static final TRANSACTION_close_1:I = 0x2
 
 .field static final TRANSACTION_getCardEmulationRoute:I = 0x4
 

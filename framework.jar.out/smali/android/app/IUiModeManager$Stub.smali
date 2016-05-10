@@ -26,11 +26,11 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.IUiModeManager"
 
-.field static final TRANSACTION_disableCarMode:I = 0x2
+.field static final TRANSACTION_disableCarMode_1:I = 0x2
 
 .field static final TRANSACTION_enableCarMode_0:I = 0x1
 
-.field static final TRANSACTION_getCurrentModeType:I = 0x3
+.field static final TRANSACTION_getCurrentModeType_2:I = 0x3
 
 .field static final TRANSACTION_getNightMode:I = 0x5
 

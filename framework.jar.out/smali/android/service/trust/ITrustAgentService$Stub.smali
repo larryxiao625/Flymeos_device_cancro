@@ -32,9 +32,9 @@
 
 .field static final TRANSACTION_onDeviceUnlocked:I = 0x4
 
-.field static final TRANSACTION_onTrustTimeout:I = 0x2
+.field static final TRANSACTION_onTrustTimeout_1:I = 0x2
 
-.field static final TRANSACTION_onUnlockAttempt:I = 0x1
+.field static final TRANSACTION_onUnlockAttempt_0:I = 0x1
 
 .field static final TRANSACTION_setCallback:I = 0x6
 

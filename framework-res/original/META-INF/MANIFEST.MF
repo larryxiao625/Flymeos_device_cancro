@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Created-By: 1.7.0_95 (Oracle Corporation)
+Created-By: 1.7.0_79 (Oracle Corporation)
 
 Name: res/color/date_picker_calendar_holo_dark.xml
 SHA1-Digest: XVXiKLsH9AJqchm+o9CnIsmYt0g=
@@ -2564,7 +2564,7 @@ Name: res/drawable-xxhdpi-v4/btn_radio_to_off_mtrl_015.png
 SHA1-Digest: 53DYKltMU34zhaYZHtlNZkme+Co=
 
 Name: AndroidManifest.xml
-SHA1-Digest: PkeUiGtdHj7Vwc3Tn97jeK0A+q0=
+SHA1-Digest: qZ/dboUXnhxyU6Gv2V6SYAN4cug=
 
 Name: res/drawable/ic_find_next_material.xml
 SHA1-Digest: JCExZl8YSD5I4Xwk5r+VPAboOZ0=
@@ -7422,7 +7422,7 @@ Name: res/drawable-xxhdpi-v4/ic_menu_always_landscape_portrait.png
 SHA1-Digest: h3XXGafPSnXT+7QkX+o/I8Jj1cA=
 
 Name: resources.arsc
-SHA1-Digest: PHj7PsWobcxMI6IghY6Us5NVqXs=
+SHA1-Digest: Z/x81+rTSZ8g7ZYUK1DstVjV/U4=
 
 Name: res/drawable/notification_material_media_action_background.xml
 SHA1-Digest: J9rtpTFTvlHcfPgUzQG/3f+wQos=

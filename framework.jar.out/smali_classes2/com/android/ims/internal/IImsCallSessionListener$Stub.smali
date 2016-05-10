@@ -80,7 +80,7 @@
 
 .field static final TRANSACTION_callSessionTerminated:I = 0x4
 
-.field static final TRANSACTION_callSessionTtyModeReceived:I = 0x1c
+.field static final TRANSACTION_callSessionTtyModeReceived_27:I = 0x1c
 
 .field static final TRANSACTION_callSessionUpdateFailed:I = 0xf
 

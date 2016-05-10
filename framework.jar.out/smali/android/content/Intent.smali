@@ -10,8 +10,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/content/Intent$FlymeInjector;,
         Landroid/content/Intent$FilterComparison;,
+        Landroid/content/Intent$FlymeInjector;,
         Landroid/content/Intent$ShortcutIconResource;
     }
 .end annotation
@@ -675,6 +675,8 @@
 
 
 # instance fields
+.field public mFlymeIntent:Landroid/content/IntentExt;
+
 .field private mAction:Ljava/lang/String;
 
 .field private mCategories:Landroid/util/ArraySet;
@@ -699,8 +701,6 @@
 .field private mExtras:Landroid/os/Bundle;
 
 .field private mFlags:I
-
-.field public mFlymeIntent:Landroid/content/IntentExt;
 
 .field private mPackage:Ljava/lang/String;
 
@@ -736,7 +736,7 @@
 
     iput v0, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    invoke-static {p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
 
     return-void
 .end method
@@ -761,7 +761,7 @@
 
     iput v0, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    invoke-static {p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
 
     new-instance v0, Landroid/content/ComponentName;
 
@@ -896,7 +896,8 @@
 
     .line 4248
     :cond_4
-    invoke-static {p0, p1}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;Landroid/content/Intent;)V
+
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;Landroid/content/Intent;)V
 
     return-void
 .end method
@@ -955,7 +956,8 @@
     iput-object v0, p0, Landroid/content/Intent;->mCategories:Landroid/util/ArraySet;
 
     :cond_0
-    invoke-static {p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
+
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
 
     return-void
 .end method
@@ -971,7 +973,7 @@
 
     iput v0, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    invoke-static {p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
 
     invoke-virtual {p0, p1}, Landroid/content/Intent;->readFromParcel(Landroid/os/Parcel;)V
 
@@ -989,7 +991,7 @@
 
     iput v0, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    invoke-static {p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
 
     invoke-virtual {p0, p1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
@@ -1008,7 +1010,7 @@
 
     iput v0, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    invoke-static {p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
 
     invoke-virtual {p0, p1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
@@ -1041,7 +1043,7 @@
 
     iput v0, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    invoke-static {p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
 
     invoke-virtual {p0, p1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
@@ -4879,7 +4881,8 @@
     iput v4, p0, Landroid/content/Intent;->mContentUserHint:I
 
     :cond_12
-    invoke-static {p0, p1}, Landroid/content/Intent$FlymeInjector;->copyMeizuFlag(Landroid/content/Intent;Landroid/content/Intent;)V
+
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->copyMeizuFlag(Landroid/content/Intent;Landroid/content/Intent;)V
 
     return v0
 
@@ -7979,7 +7982,7 @@
 
     iput-object v2, p0, Landroid/content/Intent;->mExtras:Landroid/os/Bundle;
 
-    invoke-static {p0, p1}, Landroid/content/Intent$FlymeInjector;->readIntentExt(Landroid/content/Intent;Landroid/os/Parcel;)V
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->readIntentExt(Landroid/content/Intent;Landroid/os/Parcel;)V
 
     return-void
 .end method
@@ -9791,7 +9794,7 @@
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
-    invoke-static {p0, p1}, Landroid/content/Intent$FlymeInjector;->writeIntentExt(Landroid/content/Intent;Landroid/os/Parcel;)V
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->writeIntentExt(Landroid/content/Intent;Landroid/os/Parcel;)V
 
     return-void
 

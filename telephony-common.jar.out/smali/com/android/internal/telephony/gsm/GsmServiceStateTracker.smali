@@ -6066,6 +6066,8 @@
     .catch Ljava/lang/RuntimeException; {:try_start_6 .. :try_end_6} :catch_0
 .end method
 
+
+# virtual methods
 .method public dispose()V
     .locals 2
 
@@ -11593,8 +11595,6 @@
     goto :goto_4
 .end method
 
-
-# virtual methods
 .method public compareTwoRadioTechnology(II)Z
     .locals 4
     .param p1, "nRadioTechnology1"    # I

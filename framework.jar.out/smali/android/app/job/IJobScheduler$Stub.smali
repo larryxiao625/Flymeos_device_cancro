@@ -26,9 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.job.IJobScheduler"
 
-.field static final TRANSACTION_cancel:I = 0x2
-
 .field static final TRANSACTION_cancelAll:I = 0x3
+
+.field static final TRANSACTION_cancel_1:I = 0x2
 
 .field static final TRANSACTION_getAllPendingJobs:I = 0x4
 

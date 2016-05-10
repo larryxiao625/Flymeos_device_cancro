@@ -26,13 +26,13 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.speech.tts.ITextToSpeechCallback"
 
-.field static final TRANSACTION_onError:I = 0x4
+.field static final TRANSACTION_onError_3:I = 0x4
 
 .field static final TRANSACTION_onStart_0:I = 0x1
 
 .field static final TRANSACTION_onStop:I = 0x3
 
-.field static final TRANSACTION_onSuccess:I = 0x2
+.field static final TRANSACTION_onSuccess_1:I = 0x2
 
 
 # direct methods

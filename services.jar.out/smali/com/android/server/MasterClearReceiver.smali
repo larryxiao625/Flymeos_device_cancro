@@ -64,25 +64,29 @@
 
     if-nez v1, :cond_0
 
+    .line 38
     const-string v1, "MasterClear"
 
     const-string v2, "Ignoring master clear request -- not from trusted server."
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 63
     :goto_0
     return-void
 
+    .line 43
     :cond_0
     invoke-direct/range {p0 .. p2}, Lcom/android/server/MasterClearReceiver;->flymeRebootWipeUserData(Landroid/content/Context;Landroid/content/Intent;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_flyme_0
 
     return-void
 
-    :cond_1
+    :cond_flyme_0
+
     const-string v1, "shutdown"
 
     const/4 v2, 0x0

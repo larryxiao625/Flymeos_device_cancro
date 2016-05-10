@@ -943,6 +943,7 @@
     move-object v0, p0
 
     return-object v0
+
 .end method
 
 .method private static isAdvancedRebootPossible(Landroid/content/Context;)Z

@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_onCallStatus_1:I = 0x2
 
-.field static final TRANSACTION_onCallWaiting_2:I = 0x3
+.field static final TRANSACTION_onCallWaiting:I = 0x3
 
 .field static final TRANSACTION_onPhoneStateChanged_0:I = 0x1
 

@@ -30,9 +30,9 @@
 
 .field static final TRANSACTION_acceptIncomingConnect:I = 0x3
 
-.field static final TRANSACTION_connect:I = 0x1
-
 .field static final TRANSACTION_connectAudio:I = 0x1a
+
+.field static final TRANSACTION_connect_0:I = 0x1
 
 .field static final TRANSACTION_dial:I = 0x15
 

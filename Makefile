@@ -7,7 +7,7 @@
 # The default value is base.
 # Support values: base, base_cm, base_mt6592 and other devices in the future.
 #-----------------------------------------------------------------------------
-BASE := base_nian
+BASE := a0001
 
 ##############################################################################
 # The value is used for resource adapter with the aapt tool.
@@ -97,7 +97,7 @@ board_saved_files := lib/libwebviewchromium.so bin/bootanimation media/bootanima
 # The default value is nothing.
 # You can configure the board system apk name in the value.
 #-----------------------------------------------------------------------------
-board_remove_apps := LogReport MzUpdate
+board_remove_apps := LogReport
 
 ##############################################################################
 # The value decides which apk you want to modify, when the apk is based on the board system apk.

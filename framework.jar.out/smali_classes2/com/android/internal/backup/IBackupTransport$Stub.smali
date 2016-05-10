@@ -60,13 +60,13 @@
 
 .field static final TRANSACTION_performBackup_8:I = 0x9
 
-.field static final TRANSACTION_performFullBackup_18:I = 0x13
+.field static final TRANSACTION_performFullBackup:I = 0x13
 
 .field static final TRANSACTION_requestBackupTime_6:I = 0x7
 
-.field static final TRANSACTION_requestFullBackupTime_17:I = 0x12
+.field static final TRANSACTION_requestFullBackupTime:I = 0x12
 
-.field static final TRANSACTION_sendBackupData_19:I = 0x14
+.field static final TRANSACTION_sendBackupData:I = 0x14
 
 .field static final TRANSACTION_startRestore_13:I = 0xe
 

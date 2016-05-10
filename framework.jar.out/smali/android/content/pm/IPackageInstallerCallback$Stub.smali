@@ -26,9 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.content.pm.IPackageInstallerCallback"
 
-.field static final TRANSACTION_onSessionActiveChanged:I = 0x3
+.field static final TRANSACTION_onSessionActiveChanged_2:I = 0x3
 
-.field static final TRANSACTION_onSessionBadgingChanged:I = 0x2
+.field static final TRANSACTION_onSessionBadgingChanged_1:I = 0x2
 
 .field static final TRANSACTION_onSessionCreated_0:I = 0x1
 

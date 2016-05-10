@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_getCurrentMemoryState:I = 0x3
 
-.field static final TRANSACTION_getCurrentStats:I = 0x1
+.field static final TRANSACTION_getCurrentStats_0:I = 0x1
 
 .field static final TRANSACTION_getStatsOverTime:I = 0x2
 

@@ -40,7 +40,7 @@
 
 .field static final TRANSACTION_incrementOperationCount:I = 0x5
 
-.field static final TRANSACTION_openSession:I = 0x1
+.field static final TRANSACTION_openSession_0:I = 0x1
 
 .field static final TRANSACTION_setUidForeground:I = 0x6
 

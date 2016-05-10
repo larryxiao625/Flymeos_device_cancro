@@ -32,7 +32,7 @@
 
 .field static final TRANSACTION_registrationDisconnected_8:I = 0x9
 
-.field static final TRANSACTION_registrationFeatureCapabilityChanged_6:I = 0x7
+.field static final TRANSACTION_registrationFeatureCapabilityChanged:I = 0x7
 
 .field static final TRANSACTION_registrationProgressing:I = 0x2
 

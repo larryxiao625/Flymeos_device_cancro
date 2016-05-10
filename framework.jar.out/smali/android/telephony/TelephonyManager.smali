@@ -3679,7 +3679,7 @@
     const/4 v1, 0x0
 
     :try_start_0
-    invoke-direct {p0}, Landroid/telephony/TelephonyManager;->enforceReadPhoneStatePermission()V
+    invoke-direct/range {p0 .. p0}, Landroid/telephony/TelephonyManager;->enforceReadPhoneStatePermission()V
 
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
@@ -3717,7 +3717,7 @@
     const/4 v1, 0x0
 
     :try_start_0
-    invoke-direct {p0}, Landroid/telephony/TelephonyManager;->enforceReadPhoneStatePermission()V
+    invoke-direct/range {p0 .. p0}, Landroid/telephony/TelephonyManager;->enforceReadPhoneStatePermission()V
 
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
@@ -4022,7 +4022,7 @@
     .line 613
     .local v1, "subId":[I
     :try_start_0
-    invoke-direct {p0}, Landroid/telephony/TelephonyManager;->enforceReadPhoneStatePermission()V
+    invoke-direct/range {p0 .. p0}, Landroid/telephony/TelephonyManager;->enforceReadPhoneStatePermission()V
 
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
@@ -4398,7 +4398,7 @@
 
     .local v1, "number":Ljava/lang/String;
     :try_start_0
-    invoke-direct {p0}, Landroid/telephony/TelephonyManager;->enforceReadPhoneStatePermission()V
+    invoke-direct/range {p0 .. p0}, Landroid/telephony/TelephonyManager;->enforceReadPhoneStatePermission()V
 
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
@@ -4421,7 +4421,7 @@
     .restart local v1    # "number":Ljava/lang/String;
     :cond_0
     :try_start_1
-    invoke-direct {p0}, Landroid/telephony/TelephonyManager;->enforceReadPhoneStatePermission()V
+    invoke-direct/range {p0 .. p0}, Landroid/telephony/TelephonyManager;->enforceReadPhoneStatePermission()V
 
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
@@ -5721,7 +5721,7 @@
     const/4 v1, 0x0
 
     :try_start_0
-    invoke-direct {p0}, Landroid/telephony/TelephonyManager;->enforceReadPhoneStatePermission()V
+    invoke-direct/range {p0 .. p0}, Landroid/telephony/TelephonyManager;->enforceReadPhoneStatePermission()V
 
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 

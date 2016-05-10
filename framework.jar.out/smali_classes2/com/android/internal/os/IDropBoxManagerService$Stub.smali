@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.os.IDropBoxManagerService"
 
-.field static final TRANSACTION_add:I = 0x1
+.field static final TRANSACTION_add_0:I = 0x1
 
 .field static final TRANSACTION_getNextEntry:I = 0x3
 

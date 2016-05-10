@@ -105,7 +105,7 @@
 
     iput-object v0, p0, Landroid/app/AlertDialog;->mAlert:Lcom/android/internal/app/AlertController;
 
-    invoke-static {p0}, Landroid/app/AlertDialog$FlymeInjector;->setIsThemeDeviceDefaultLight(Landroid/app/AlertDialog;)V
+    invoke-static/range {p0 .. p0}, Landroid/app/AlertDialog$FlymeInjector;->setIsThemeDeviceDefaultLight(Landroid/app/AlertDialog;)V
 
     .line 129
     return-void
@@ -149,7 +149,7 @@
 
     iput-object v0, p0, Landroid/app/AlertDialog;->mAlert:Lcom/android/internal/app/AlertController;
 
-    invoke-static {p0}, Landroid/app/AlertDialog$FlymeInjector;->setIsThemeDeviceDefaultLight(Landroid/app/AlertDialog;)V
+    invoke-static/range {p0 .. p0}, Landroid/app/AlertDialog$FlymeInjector;->setIsThemeDeviceDefaultLight(Landroid/app/AlertDialog;)V
 
     .line 137
     return-void
@@ -172,11 +172,11 @@
     .param p1, "resid"    # I
 
     .prologue
-    const/4 v3, 0x1
-
-    invoke-static {p0, p1}, Landroid/app/AlertDialog$FlymeInjector;->getFlymeAlertDialogTheme(Landroid/content/Context;I)I
+    invoke-static/range {p0 .. p1}, Landroid/app/AlertDialog$FlymeInjector;->getFlymeAlertDialogTheme(Landroid/content/Context;I)I
 
     move-result p1
+
+    const/4 v3, 0x1
 
     if-ne p1, v3, :cond_1
 
@@ -248,6 +248,8 @@
     goto :goto_0
 .end method
 
+
+# virtual methods
 .method public getButton(I)Landroid/widget/Button;
     .locals 1
     .param p1, "whichButton"    # I
@@ -288,7 +290,7 @@
 
     invoke-virtual {v0}, Lcom/android/internal/app/AlertController;->installContent()V
 
-    invoke-virtual {p0, p0}, Landroid/app/AlertDialog;->applyMeizuStyle(Landroid/app/AlertDialog;)V
+    invoke-direct/range {p0 .. p0}, Landroid/app/AlertDialog;->applyFlymeStyle()V
 
     return-void
 .end method
@@ -665,8 +667,15 @@
     return-void
 .end method
 
+.method private applyFlymeStyle()V
+    .locals 0
 
-# virtual methods
+    .prologue
+    invoke-virtual {p0, p0}, Landroid/app/AlertDialog;->applyMeizuStyle(Landroid/app/AlertDialog;)V
+
+    return-void
+.end method
+
 .method protected applyMeizuStyle(Landroid/app/AlertDialog;)V
     .locals 1
     .param p1, "dialog"    # Landroid/app/AlertDialog;

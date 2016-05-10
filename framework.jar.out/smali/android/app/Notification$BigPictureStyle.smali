@@ -15,11 +15,11 @@
 
 
 # instance fields
+.field private mIsFlymeBigPictureTemplate:Z
+
 .field private mBigLargeIcon:Landroid/graphics/Bitmap;
 
 .field private mBigLargeIconSet:Z
-
-.field private mIsFlymeBigPictureTemplate:Z
 
 .field private mPicture:Landroid/graphics/Bitmap;
 

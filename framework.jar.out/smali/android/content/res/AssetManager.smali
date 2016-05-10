@@ -163,7 +163,7 @@
 
     invoke-static {}, Landroid/content/res/AssetManager;->ensureSystemAssets()V
 
-    invoke-direct {p0}, Landroid/content/res/AssetManager;->addFlymeAssetPath()V
+    invoke-direct/range {p0 .. p0}, Landroid/content/res/AssetManager;->addFlymeAssetPath()V
 
     monitor-exit p0
 
@@ -216,7 +216,7 @@
 
     invoke-direct {p0, v1}, Landroid/content/res/AssetManager;->init(Z)V
 
-    invoke-direct {p0}, Landroid/content/res/AssetManager;->addFlymeAssetPath()V
+    invoke-direct/range {p0 .. p0}, Landroid/content/res/AssetManager;->addFlymeAssetPath()V
 
     return-void
 .end method

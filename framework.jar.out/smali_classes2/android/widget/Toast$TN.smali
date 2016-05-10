@@ -102,7 +102,7 @@
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    invoke-direct {p0}, Landroid/widget/Toast$TN;->initFlymeExtraFields()V
+    invoke-direct/range {p0 .. p0}, Landroid/widget/Toast$TN;->initFlymeExtraFields()V
 
     return-void
 .end method
@@ -224,6 +224,7 @@
 
     .line 472
     :cond_1
+
     invoke-static {}, Landroid/widget/Toast$FlymeInjector;->resetFlymeExtraFields()V
 
     return-void
@@ -424,7 +425,7 @@
 
     iput-object v5, v7, Landroid/view/WindowManager$LayoutParams;->packageName:Ljava/lang/String;
 
-    invoke-direct {p0}, Landroid/widget/Toast$TN;->hookFlymeToastType()V
+    invoke-direct/range {p0 .. p0}, Landroid/widget/Toast$TN;->hookFlymeToastType()V
 
     iget-object v7, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 

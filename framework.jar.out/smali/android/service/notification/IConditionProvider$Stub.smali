@@ -26,11 +26,11 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.service.notification.IConditionProvider"
 
-.field static final TRANSACTION_onConnected:I = 0x1
+.field static final TRANSACTION_onConnected_0:I = 0x1
 
-.field static final TRANSACTION_onRequestConditions:I = 0x2
+.field static final TRANSACTION_onRequestConditions_1:I = 0x2
 
-.field static final TRANSACTION_onSubscribe:I = 0x3
+.field static final TRANSACTION_onSubscribe_2:I = 0x3
 
 .field static final TRANSACTION_onUnsubscribe:I = 0x4
 

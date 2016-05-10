@@ -7,9 +7,9 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/app/WallpaperManager$1;,
+        Landroid/app/WallpaperManager$Globals;,
         Landroid/app/WallpaperManager$FlymeInjector;,
         Landroid/app/WallpaperManager$FLYME_WALLPAPER_TYPE;,
-        Landroid/app/WallpaperManager$Globals;,
         Landroid/app/WallpaperManager$FastBitmapDrawable;
     }
 .end annotation

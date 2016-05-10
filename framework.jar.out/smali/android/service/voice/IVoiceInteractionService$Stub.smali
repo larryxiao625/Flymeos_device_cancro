@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_ready_0:I = 0x1
 
-.field static final TRANSACTION_shutdown:I = 0x3
+.field static final TRANSACTION_shutdown_2:I = 0x3
 
 .field static final TRANSACTION_soundModelsChanged_1:I = 0x2
 

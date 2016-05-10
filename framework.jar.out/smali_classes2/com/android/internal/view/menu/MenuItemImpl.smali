@@ -37,6 +37,8 @@
 
 
 # instance fields
+.field private mFlymeIsHeader:Z
+
 .field private mActionProvider:Landroid/view/ActionProvider;
 
 .field private mActionView:Landroid/view/View;
@@ -46,8 +48,6 @@
 .field private mClickListener:Landroid/view/MenuItem$OnMenuItemClickListener;
 
 .field private mFlags:I
-
-.field private mFlymeIsHeader:Z
 
 .field private final mGroup:I
 

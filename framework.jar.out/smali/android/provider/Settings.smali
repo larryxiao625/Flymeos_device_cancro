@@ -6,11 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/provider/Settings$ShareList;,
         Landroid/provider/Settings$Bookmarks;,
         Landroid/provider/Settings$Global;,
         Landroid/provider/Settings$Secure;,
         Landroid/provider/Settings$System;,
+        Landroid/provider/Settings$ShareList;,
         Landroid/provider/Settings$NameValueCache;,
         Landroid/provider/Settings$NameValueTable;,
         Landroid/provider/Settings$SettingNotFoundException;
@@ -202,7 +202,7 @@
     .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 8502
+    .line 8514
     return-void
 .end method
 
@@ -221,7 +221,7 @@
     .param p0, "androidId"    # J
 
     .prologue
-    .line 8707
+    .line 8719
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

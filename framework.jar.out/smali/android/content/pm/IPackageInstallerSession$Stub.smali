@@ -40,7 +40,7 @@
 
 .field static final TRANSACTION_openWrite:I = 0x4
 
-.field static final TRANSACTION_setClientProgress:I = 0x1
+.field static final TRANSACTION_setClientProgress_0:I = 0x1
 
 
 # direct methods

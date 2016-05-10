@@ -80,7 +80,8 @@
     .line 437
     :cond_0
     :try_start_0
-    goto/16 :goto_2
+
+    goto/16 :goto_flyme_0
 
     iget-object v1, p0, Lcom/android/server/am/ServiceRecord$1;->val$localForegroundNoti:Landroid/app/Notification;
 
@@ -392,7 +393,7 @@
     .end local v11    # "ctx":Landroid/content/Context;
     .end local v12    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :cond_3
-    :goto_2
+    :goto_flyme_0
     const/4 v1, 0x1
 
     new-array v8, v1, [I

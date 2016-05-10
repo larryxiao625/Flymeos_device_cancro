@@ -36,7 +36,7 @@
 
 .field static final TRANSACTION_setLayoutDirection:I = 0x5
 
-.field static final TRANSACTION_volumeChanged:I = 0x2
+.field static final TRANSACTION_volumeChanged_1:I = 0x2
 
 
 # direct methods

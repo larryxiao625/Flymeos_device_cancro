@@ -1,4 +1,4 @@
-.class Landroid/widget/AbsListView$5;
+.class final Landroid/widget/AbsListView$FlymeBackPressedListener;
 .super Ljava/lang/Object;
 .source "AbsListView.java"
 
@@ -7,13 +7,13 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/widget/AbsListView;->startMultiChoice()Z
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/widget/AbsListView;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    accessFlags = 0x10
+    name = "FlymeBackPressedListener"
 .end annotation
 
 
@@ -26,7 +26,8 @@
     .locals 0
 
     .prologue
-    iput-object p1, p0, Landroid/widget/AbsListView$5;->this$0:Landroid/widget/AbsListView;
+    .line 8138
+    iput-object p1, p0, Landroid/widget/AbsListView$FlymeBackPressedListener;->this$0:Landroid/widget/AbsListView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,7 +40,8 @@
     .locals 1
 
     .prologue
-    iget-object v0, p0, Landroid/widget/AbsListView$5;->this$0:Landroid/widget/AbsListView;
+    .line 8141
+    iget-object v0, p0, Landroid/widget/AbsListView$FlymeBackPressedListener;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v0}, Landroid/widget/AbsListView;->getCheckedItemCount()I
 
@@ -47,16 +49,20 @@
 
     if-lez v0, :cond_0
 
-    iget-object v0, p0, Landroid/widget/AbsListView$5;->this$0:Landroid/widget/AbsListView;
+    .line 8142
+    iget-object v0, p0, Landroid/widget/AbsListView$FlymeBackPressedListener;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v0}, Landroid/widget/AbsListView;->clearChoices()V
 
-    iget-object v0, p0, Landroid/widget/AbsListView$5;->this$0:Landroid/widget/AbsListView;
+    .line 8143
+    iget-object v0, p0, Landroid/widget/AbsListView$FlymeBackPressedListener;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v0}, Landroid/widget/AbsListView;->requestLayout()V
 
+    .line 8144
     const/4 v0, 0x1
 
+    .line 8146
     :goto_0
     return v0
 

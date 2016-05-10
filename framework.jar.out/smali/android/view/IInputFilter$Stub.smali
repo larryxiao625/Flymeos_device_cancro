@@ -28,9 +28,9 @@
 
 .field static final TRANSACTION_filterInputEvent:I = 0x3
 
-.field static final TRANSACTION_install:I = 0x1
+.field static final TRANSACTION_install_0:I = 0x1
 
-.field static final TRANSACTION_uninstall:I = 0x2
+.field static final TRANSACTION_uninstall_1:I = 0x2
 
 
 # direct methods

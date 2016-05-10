@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.content.res.IThemeChangeListener"
 
-.field static final TRANSACTION_onFinish:I = 0x2
+.field static final TRANSACTION_onFinish_1:I = 0x2
 
 .field static final TRANSACTION_onProgress_0:I = 0x1
 

@@ -864,7 +864,7 @@
 .end method
 
 .method public performClick()Z
-    .locals 1
+    .locals 2
 
     .prologue
     invoke-virtual {p0}, Landroid/widget/CompoundButton;->toggle()V
@@ -875,6 +875,10 @@
 
     .local v0, "handled":Z
     if-nez v0, :cond_0
+
+    const/4 v1, 0x0
+
+    #invoke-virtual {p0, v1}, Landroid/widget/CompoundButton;->playSoundEffect(I)V
 
     :cond_0
     return v0

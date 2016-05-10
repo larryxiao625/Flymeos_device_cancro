@@ -248,24 +248,28 @@
     .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
+    invoke-direct/range {p0 .. p1}, Landroid/widget/PopupWindow$PopupViewContainer;->onFlymeTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_flyme_0
+
     const/4 v2, 0x1
 
-    invoke-direct {p0, p1}, Landroid/widget/PopupWindow$PopupViewContainer;->onFlymeTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    :goto_0
-    return v2
-
-    :cond_0
+    .line 1736
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v3
 
     float-to-int v0, v3
 
+    .line 1737
     .local v0, "x":I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -279,47 +283,53 @@
 
     move-result v3
 
-    if-nez v3, :cond_2
+    if-nez v3, :cond_1
 
-    if-ltz v0, :cond_1
+    if-ltz v0, :cond_0
 
     invoke-virtual {p0}, Landroid/widget/PopupWindow$PopupViewContainer;->getWidth()I
 
     move-result v3
 
-    if-ge v0, v3, :cond_1
+    if-ge v0, v3, :cond_0
 
-    if-ltz v1, :cond_1
+    if-ltz v1, :cond_0
 
     invoke-virtual {p0}, Landroid/widget/PopupWindow$PopupViewContainer;->getHeight()I
 
     move-result v3
 
-    if-lt v1, v3, :cond_2
+    if-lt v1, v3, :cond_1
 
-    :cond_1
+    .line 1741
+    :cond_0
     iget-object v3, p0, Landroid/widget/PopupWindow$PopupViewContainer;->this$0:Landroid/widget/PopupWindow;
 
     invoke-virtual {v3}, Landroid/widget/PopupWindow;->dismiss()V
 
-    goto :goto_0
+    .line 1747
+    :goto_0
+    return v2
 
-    :cond_2
+    .line 1743
+    :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v3
 
     const/4 v4, 0x4
 
-    if-ne v3, v4, :cond_3
+    if-ne v3, v4, :cond_2
 
+    .line 1744
     iget-object v3, p0, Landroid/widget/PopupWindow$PopupViewContainer;->this$0:Landroid/widget/PopupWindow;
 
     invoke-virtual {v3}, Landroid/widget/PopupWindow;->dismiss()V
 
     goto :goto_0
 
-    :cond_3
+    .line 1747
+    :cond_2
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v2

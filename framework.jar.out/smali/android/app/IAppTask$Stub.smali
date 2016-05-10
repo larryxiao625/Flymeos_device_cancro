@@ -26,11 +26,11 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.IAppTask"
 
-.field static final TRANSACTION_finishAndRemoveTask:I = 0x1
+.field static final TRANSACTION_finishAndRemoveTask_0:I = 0x1
 
-.field static final TRANSACTION_getTaskInfo:I = 0x2
+.field static final TRANSACTION_getTaskInfo_1:I = 0x2
 
-.field static final TRANSACTION_moveToFront:I = 0x3
+.field static final TRANSACTION_moveToFront_2:I = 0x3
 
 .field static final TRANSACTION_setExcludeFromRecents:I = 0x5
 

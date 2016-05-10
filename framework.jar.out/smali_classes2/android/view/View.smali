@@ -47,6 +47,12 @@
 
 
 # static fields
+.field public static final ANIM_BACK:I = 0x0
+
+.field public static final ANIM_DISMISS:I = 0x1
+
+.field public static final ANIM_IDLE:I = -0x1
+
 .field public static final ACCESSIBILITY_CURSOR_POSITION_UNDEFINED:I = -0x1
 
 .field public static final ACCESSIBILITY_LIVE_REGION_ASSERTIVE:I = 0x2
@@ -70,12 +76,6 @@
         }
     .end annotation
 .end field
-
-.field public static final ANIM_BACK:I = 0x0
-
-.field public static final ANIM_DISMISS:I = 0x1
-
-.field public static final ANIM_IDLE:I = -0x1
 
 .field static final CLICKABLE:I = 0x4000
 
@@ -783,6 +783,20 @@
 
 
 # instance fields
+.field protected mDragSurface:Landroid/view/Surface;
+
+.field private mFlymeIgnoreIm:Z
+
+.field protected mShadowBuilder:Landroid/view/View$DragShadowBuilder;
+
+.field protected mhScrollBarPaddingLeft:I
+
+.field protected mhScrollBarPaddingRight:I
+
+.field protected mvScrollBarPaddingBottom:I
+
+.field protected mvScrollBarPaddingTop:I
+
 .field private mAccessibilityCursorPosition:I
 
 .field mAccessibilityDelegate:Landroid/view/View$AccessibilityDelegate;
@@ -839,8 +853,6 @@
 
 .field protected mCurrentAnimation:Landroid/view/animation/Animation;
 
-.field protected mDragSurface:Landroid/view/Surface;
-
 .field private mDrawableState:[I
 
 .field private mDrawingCache:Landroid/graphics/Bitmap;
@@ -848,8 +860,6 @@
 .field private mDrawingCacheBackgroundColor:I
 
 .field private mFloatingTreeObserver:Landroid/view/ViewTreeObserver;
-
-.field private mFlymeIgnoreIm:Z
 
 .field mGhostView:Landroid/view/GhostView;
 
@@ -1082,8 +1092,6 @@
 
 .field private mSendingHoverAccessibilityEvents:Z
 
-.field protected mShadowBuilder:Landroid/view/View$DragShadowBuilder;
-
 .field private mStateListAnimator:Landroid/animation/StateListAnimator;
 
 .field mSystemUiVisibility:I
@@ -1181,14 +1189,6 @@
 .end field
 
 .field mWindowAttachCount:I
-
-.field protected mhScrollBarPaddingLeft:I
-
-.field protected mhScrollBarPaddingRight:I
-
-.field protected mvScrollBarPaddingBottom:I
-
-.field protected mvScrollBarPaddingTop:I
 
 
 # direct methods
@@ -7568,12 +7568,38 @@
 .end method
 
 .method private initialAwakenScrollBars()Z
-    .locals 1
+    .locals 2
 
     .prologue
     const/4 v0, 0x0
 
     return v0
+
+    const/4 v0, 0x1
+
+    iget-object v1, p0, Landroid/view/View;->mScrollCache:Landroid/view/View$ScrollabilityCache;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Landroid/view/View;->mScrollCache:Landroid/view/View$ScrollabilityCache;
+
+    iget v1, v1, Landroid/view/View$ScrollabilityCache;->scrollBarDefaultDelayBeforeFade:I
+
+    mul-int/lit8 v1, v1, 0x4
+
+    invoke-virtual {p0, v1, v0}, Landroid/view/View;->awakenScrollBars(IZ)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method private isHoverable()Z

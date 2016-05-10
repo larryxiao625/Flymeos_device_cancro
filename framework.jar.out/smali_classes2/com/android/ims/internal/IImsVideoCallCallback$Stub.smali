@@ -36,7 +36,7 @@
 
 .field static final TRANSACTION_handleCallSessionEvent:I = 0x3
 
-.field static final TRANSACTION_receiveSessionModifyRequest:I = 0x1
+.field static final TRANSACTION_receiveSessionModifyRequest_0:I = 0x1
 
 .field static final TRANSACTION_receiveSessionModifyResponse:I = 0x2
 

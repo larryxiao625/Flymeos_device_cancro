@@ -40,11 +40,13 @@
 # virtual methods
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 66
     check-cast p1, Landroid/transition/ChangeTransform$PathAnimatorMatrix;
 
+    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/transition/ChangeTransform$1;->get(Landroid/transition/ChangeTransform$PathAnimatorMatrix;)[F
 
     move-result-object v0
@@ -78,13 +80,17 @@
 
 .method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
+    .param p1, "x0"    # Ljava/lang/Object;
+    .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
     .line 66
     check-cast p1, Landroid/transition/ChangeTransform$PathAnimatorMatrix;
 
+    .end local p1    # "x0":Ljava/lang/Object;
     check-cast p2, [F
 
+    .end local p2    # "x1":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2}, Landroid/transition/ChangeTransform$1;->set(Landroid/transition/ChangeTransform$PathAnimatorMatrix;[F)V
 
     return-void

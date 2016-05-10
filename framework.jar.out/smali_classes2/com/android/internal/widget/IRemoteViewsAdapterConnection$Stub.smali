@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_onServiceConnected_0:I = 0x1
 
-.field static final TRANSACTION_onServiceDisconnected:I = 0x2
+.field static final TRANSACTION_onServiceDisconnected_1:I = 0x2
 
 
 # direct methods

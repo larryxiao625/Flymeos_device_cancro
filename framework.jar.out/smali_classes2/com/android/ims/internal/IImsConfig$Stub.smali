@@ -30,15 +30,15 @@
 
 .field static final TRANSACTION_getPacketCount:I = 0x9
 
-.field static final TRANSACTION_getPacketErrorCount_9:I = 0xa
+.field static final TRANSACTION_getPacketErrorCount:I = 0xa
 
-.field static final TRANSACTION_getProvisionedStringValue_1:I = 0x2
+.field static final TRANSACTION_getProvisionedStringValue:I = 0x2
 
 .field static final TRANSACTION_getProvisionedValue_0:I = 0x1
 
 .field static final TRANSACTION_getVideoQuality:I = 0x7
 
-.field static final TRANSACTION_getVolteProvisioned_10:I = 0xb
+.field static final TRANSACTION_getVolteProvisioned:I = 0xb
 
 .field static final TRANSACTION_getWifiCallingPreference:I = 0xc
 
@@ -48,7 +48,7 @@
 
 .field static final TRANSACTION_setProvisionedValue_2:I = 0x3
 
-.field static final TRANSACTION_setVideoQuality:I = 0x8
+.field static final TRANSACTION_setVideoQuality_7:I = 0x8
 
 .field static final TRANSACTION_setWifiCallingPreference_12:I = 0xd
 

@@ -6400,10 +6400,12 @@
 
     if-eqz v17, :cond_0
 
+    .line 1270
     const/4 v11, 0x1
 
-    goto/16 :goto_0
+    goto :goto_0
 
+    .line 1276
     .end local v5    # "children":[Landroid/view/View;
     .end local v6    # "count":I
     .end local v8    # "i":I
@@ -6809,21 +6811,27 @@
 
     iput v0, v1, Landroid/view/DragEvent;->mY:F
 
+    .line 1374
     move-object/from16 v0, p1
 
     invoke-virtual {v13, v0}, Landroid/view/View;->dispatchDragEvent(Landroid/view/DragEvent;)Z
 
     move-result v11
 
+    .line 1375
     move-object/from16 v0, p1
 
     iput v14, v0, Landroid/view/DragEvent;->mX:F
 
+    .line 1376
     move-object/from16 v0, p1
 
     iput v15, v0, Landroid/view/DragEvent;->mY:F
 
     goto/16 :goto_0
+
+    .line 1240
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1

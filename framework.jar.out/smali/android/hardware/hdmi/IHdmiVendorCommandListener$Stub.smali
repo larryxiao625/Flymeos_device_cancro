@@ -26,9 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.hardware.hdmi.IHdmiVendorCommandListener"
 
-.field static final TRANSACTION_onControlStateChanged:I = 0x2
+.field static final TRANSACTION_onControlStateChanged_1:I = 0x2
 
-.field static final TRANSACTION_onReceived:I = 0x1
+.field static final TRANSACTION_onReceived_0:I = 0x1
 
 
 # direct methods

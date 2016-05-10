@@ -13,7 +13,6 @@
     }
 .end annotation
 
-
 # instance fields
 .field private mInputDevicesReady:Z
 

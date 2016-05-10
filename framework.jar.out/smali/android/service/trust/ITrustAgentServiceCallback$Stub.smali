@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.service.trust.ITrustAgentServiceCallback"
 
-.field static final TRANSACTION_grantTrust:I = 0x1
+.field static final TRANSACTION_grantTrust_0:I = 0x1
 
 .field static final TRANSACTION_onConfigureCompleted:I = 0x4
 

@@ -16,8 +16,6 @@
 
 
 # instance fields
-.field private mDisabledAlpha:F
-
 .field mFlymeDragTouchDownX:F
 
 .field mFlymeDragTouchDownY:F
@@ -29,6 +27,10 @@
 .field mFlymeTouchDownProgress:I
 
 .field mFlymeTouchSlopSquare:I
+
+.field protected mTouchScrollMode:I
+
+.field private mDisabledAlpha:F
 
 .field private mHasThumbTint:Z
 
@@ -57,8 +59,6 @@
 .field private mTouchDownX:F
 
 .field mTouchProgressOffset:F
-
-.field protected mTouchScrollMode:I
 
 
 # direct methods
@@ -330,7 +330,7 @@
 
     iput v3, p0, Landroid/widget/AbsSeekBar;->mScaledTouchSlop:I
 
-    invoke-static {p0}, Landroid/widget/AbsSeekBar$FlymeInjector;->initFlymeExtraFields(Landroid/widget/AbsSeekBar;)V
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsSeekBar$FlymeInjector;->initFlymeExtraFields(Landroid/widget/AbsSeekBar;)V
 
     .line 123
     return-void
@@ -1032,7 +1032,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    invoke-static {p0, p1}, Landroid/widget/AbsSeekBar$FlymeInjector;->drawThumb(Landroid/widget/AbsSeekBar;Landroid/graphics/Canvas;)V
+    invoke-static/range {p0 .. p1}, Landroid/widget/AbsSeekBar$FlymeInjector;->drawThumb(Landroid/widget/AbsSeekBar;Landroid/graphics/Canvas;)V
 
     .line 534
     iget-object v0, p0, Landroid/widget/AbsSeekBar;->mThumb:Landroid/graphics/drawable/Drawable;
@@ -1834,7 +1834,7 @@
 
     iput v2, p0, Landroid/widget/AbsSeekBar;->mTouchDownX:F
 
-    invoke-static {p0, p1}, Landroid/widget/AbsSeekBar$FlymeInjector;->mzInitTouchDownStates(Landroid/widget/AbsSeekBar;Landroid/view/MotionEvent;)V
+    invoke-static/range {p0 .. p1}, Landroid/widget/AbsSeekBar$FlymeInjector;->mzInitTouchDownStates(Landroid/widget/AbsSeekBar;Landroid/view/MotionEvent;)V
 
     goto :goto_0
 
@@ -1856,12 +1856,12 @@
 
     invoke-virtual {p0, v2}, Landroid/widget/AbsSeekBar;->invalidate(Landroid/graphics/Rect;)V
 
-    invoke-static {p0}, Landroid/widget/AbsSeekBar$FlymeInjector;->invalidateThumb(Landroid/widget/AbsSeekBar;)V
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsSeekBar$FlymeInjector;->invalidateThumb(Landroid/widget/AbsSeekBar;)V
 
     :cond_4
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->onStartTrackingTouch()V
 
-    invoke-static {p0, p1}, Landroid/widget/AbsSeekBar$FlymeInjector;->mzInitTouchDownStates2(Landroid/widget/AbsSeekBar;Landroid/view/MotionEvent;)V
+    invoke-static/range {p0 .. p1}, Landroid/widget/AbsSeekBar$FlymeInjector;->mzInitTouchDownStates2(Landroid/widget/AbsSeekBar;Landroid/view/MotionEvent;)V
 
     invoke-direct {p0}, Landroid/widget/AbsSeekBar;->attemptClaimDrag()V
 
@@ -1872,7 +1872,7 @@
 
     if-eqz v2, :cond_5
 
-    invoke-static {p0, p1}, Landroid/widget/AbsSeekBar$FlymeInjector;->mzProcessTouchAction(Landroid/widget/AbsSeekBar;Landroid/view/MotionEvent;)V
+    invoke-static/range {p0 .. p1}, Landroid/widget/AbsSeekBar$FlymeInjector;->mzProcessTouchAction(Landroid/widget/AbsSeekBar;Landroid/view/MotionEvent;)V
 
     goto :goto_0
 
@@ -1915,7 +1915,7 @@
 
     invoke-virtual {p0, v2}, Landroid/widget/AbsSeekBar;->invalidate(Landroid/graphics/Rect;)V
 
-    invoke-static {p0}, Landroid/widget/AbsSeekBar$FlymeInjector;->invalidateThumb(Landroid/widget/AbsSeekBar;)V
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsSeekBar$FlymeInjector;->invalidateThumb(Landroid/widget/AbsSeekBar;)V
 
     :cond_6
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->onStartTrackingTouch()V
@@ -1932,7 +1932,7 @@
 
     if-eqz v3, :cond_7
 
-    invoke-static {p0, p1}, Landroid/widget/AbsSeekBar$FlymeInjector;->mzProcessTouchAction(Landroid/widget/AbsSeekBar;Landroid/view/MotionEvent;)V
+    invoke-static/range {p0 .. p1}, Landroid/widget/AbsSeekBar$FlymeInjector;->mzProcessTouchAction(Landroid/widget/AbsSeekBar;Landroid/view/MotionEvent;)V
 
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->onStopTrackingTouch()V
 
@@ -1941,9 +1941,9 @@
     :goto_1
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->invalidate()V
 
-    invoke-static {p0}, Landroid/widget/AbsSeekBar$FlymeInjector;->mzSetInDragoning(Landroid/widget/AbsSeekBar;)V
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsSeekBar$FlymeInjector;->mzSetInDragoning(Landroid/widget/AbsSeekBar;)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_7
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->onStartTrackingTouch()V
@@ -1967,8 +1967,6 @@
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->invalidate()V
 
     goto/16 :goto_0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -2331,7 +2329,8 @@
 
     .end local v1    # "state":[I
     :cond_3
-    invoke-static {p0}, Landroid/widget/AbsSeekBar$FlymeInjector;->setThumbWidth(Landroid/widget/AbsSeekBar;)V
+
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsSeekBar$FlymeInjector;->setThumbWidth(Landroid/widget/AbsSeekBar;)V
 
     return-void
 
@@ -2436,159 +2435,8 @@
     goto :goto_0
 .end method
 
-.method static synthetic access$000(Landroid/widget/AbsSeekBar;)I
+.method flymeGetFieldContext()Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
-
-    .prologue
-    iget v0, p0, Landroid/widget/AbsSeekBar;->mScaledTouchSlop:I
-
-    return v0
-.end method
-
-.method static synthetic access$100(Landroid/widget/AbsSeekBar;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
-
-    .prologue
-    iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingLeft:I
-
-    return v0
-.end method
-
-.method static synthetic access$1000(Landroid/widget/AbsSeekBar;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
-
-    .prologue
-    iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingLeft:I
-
-    return v0
-.end method
-
-.method static synthetic access$1100(Landroid/widget/AbsSeekBar;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
-
-    .prologue
-    iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingRight:I
-
-    return v0
-.end method
-
-.method static synthetic access$1200(Landroid/widget/AbsSeekBar;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
-
-    .prologue
-    iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingLeft:I
-
-    return v0
-.end method
-
-.method static synthetic access$1300(Landroid/widget/AbsSeekBar;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
-
-    .prologue
-    iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingRight:I
-
-    return v0
-.end method
-
-.method static synthetic access$1400(Landroid/widget/AbsSeekBar;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
-
-    .prologue
-    iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingLeft:I
-
-    return v0
-.end method
-
-.method static synthetic access$1500(Landroid/widget/AbsSeekBar;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
-
-    .prologue
-    iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingRight:I
-
-    return v0
-.end method
-
-.method static synthetic access$1600(Landroid/widget/AbsSeekBar;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
-
-    .prologue
-    iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingLeft:I
-
-    return v0
-.end method
-
-.method static synthetic access$1700(Landroid/widget/AbsSeekBar;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
-
-    .prologue
-    iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingRight:I
-
-    return v0
-.end method
-
-.method static synthetic access$1800(Landroid/widget/AbsSeekBar;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
-
-    .prologue
-    iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingLeft:I
-
-    return v0
-.end method
-
-.method static synthetic access$1900(Landroid/widget/AbsSeekBar;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
-
-    .prologue
-    iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingRight:I
-
-    return v0
-.end method
-
-.method static synthetic access$200(Landroid/widget/AbsSeekBar;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
-
-    .prologue
-    iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingRight:I
-
-    return v0
-.end method
-
-.method static synthetic access$300(Landroid/widget/AbsSeekBar;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
-
-    .prologue
-    iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingTop:I
-
-    return v0
-.end method
-
-.method static synthetic access$400(Landroid/widget/AbsSeekBar;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
-
-    .prologue
-    iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingBottom:I
-
-    return v0
-.end method
-
-.method static synthetic access$500(Landroid/widget/AbsSeekBar;)Landroid/content/Context;
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
 
     .prologue
     iget-object v0, p0, Landroid/widget/AbsSeekBar;->mContext:Landroid/content/Context;
@@ -2596,9 +2444,26 @@
     return-object v0
 .end method
 
-.method static synthetic access$600(Landroid/widget/AbsSeekBar;)I
+.method flymeGetFieldKeyProgressIncrement()I
     .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
+
+    .prologue
+    iget v0, p0, Landroid/widget/AbsSeekBar;->mKeyProgressIncrement:I
+
+    return v0
+.end method
+
+.method flymeGetFieldPaddingBottom()I
+    .locals 1
+
+    .prologue
+    iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingBottom:I
+
+    return v0
+.end method
+
+.method flymeGetFieldPaddingLeft()I
+    .locals 1
 
     .prologue
     iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingLeft:I
@@ -2606,29 +2471,8 @@
     return v0
 .end method
 
-.method static synthetic access$700(Landroid/widget/AbsSeekBar;)I
+.method flymeGetFieldPaddingRight()I
     .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
-
-    .prologue
-    iget v0, p0, Landroid/widget/AbsSeekBar;->mThumbOffset:I
-
-    return v0
-.end method
-
-.method static synthetic access$800(Landroid/widget/AbsSeekBar;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
-
-    .prologue
-    iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingLeft:I
-
-    return v0
-.end method
-
-.method static synthetic access$900(Landroid/widget/AbsSeekBar;)I
-    .locals 1
-    .param p0, "x0"    # Landroid/widget/AbsSeekBar;
 
     .prologue
     iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingRight:I
@@ -2636,11 +2480,29 @@
     return v0
 .end method
 
-.method flymeGetFieldKeyProgressIncrement()I
+.method flymeGetFieldPaddingTop()I
     .locals 1
 
     .prologue
-    iget v0, p0, Landroid/widget/AbsSeekBar;->mKeyProgressIncrement:I
+    iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingTop:I
+
+    return v0
+.end method
+
+.method flymeGetFieldScaledTouchSlop()I
+    .locals 1
+
+    .prologue
+    iget v0, p0, Landroid/widget/AbsSeekBar;->mScaledTouchSlop:I
+
+    return v0
+.end method
+
+.method flymeGetFieldThumbOffset()I
+    .locals 1
+
+    .prologue
+    iget v0, p0, Landroid/widget/AbsSeekBar;->mThumbOffset:I
 
     return v0
 .end method

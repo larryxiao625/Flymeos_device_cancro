@@ -194,6 +194,8 @@
 
 
 # instance fields
+.field mMoveWindowService:Lcom/android/server/wm/MoveWindowService;
+
 .field mAccessibilityController:Lcom/android/server/wm/AccessibilityController;
 
 .field final mActivityManager:Landroid/app/IActivityManager;
@@ -453,8 +455,6 @@
 .end field
 
 .field mLowerWallpaperTarget:Lcom/android/server/wm/WindowState;
-
-.field mMoveWindowService:Lcom/android/server/wm/MoveWindowService;
 
 .field final mOnlyCore:Z
 
@@ -33327,18 +33327,22 @@
     .param p6, "outSurface"    # Landroid/view/Surface;
 
     .prologue
+    .line 7562
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v9
 
+    .line 7563
     .local v9, "callerPid":I
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v14
 
+    .line 7564
     .local v14, "origId":J
     const/16 v16, 0x0
 
+    .line 7567
     .local v16, "token":Landroid/os/IBinder;
     :try_start_0
     move-object/from16 v0, p0
@@ -33361,15 +33365,18 @@
 
     if-nez v3, :cond_1
 
+    .line 7571
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/WindowManagerService;->getDefaultDisplayContentLocked()Lcom/android/server/wm/DisplayContent;
 
     move-result-object v11
 
+    .line 7572
     .local v11, "displayContent":Lcom/android/server/wm/DisplayContent;
     invoke-virtual {v11}, Lcom/android/server/wm/DisplayContent;->getDisplay()Landroid/view/Display;
 
     move-result-object v10
 
+    .line 7573
     .local v10, "display":Landroid/view/Display;
     new-instance v2, Landroid/view/SurfaceControl;
 
@@ -33387,6 +33394,7 @@
 
     invoke-direct/range {v2 .. v8}, Landroid/view/SurfaceControl;-><init>(Landroid/view/SurfaceSession;Ljava/lang/String;IIII)V
 
+    .line 7575
     .local v2, "surface":Landroid/view/SurfaceControl;
     invoke-virtual {v10}, Landroid/view/Display;->getLayerStack()I
 
@@ -33394,14 +33402,17 @@
 
     invoke-virtual {v2, v3}, Landroid/view/SurfaceControl;->setLayerStack(I)V
 
+    .line 7578
     move-object/from16 v0, p6
 
     invoke-virtual {v0, v2}, Landroid/view/Surface;->copyFrom(Landroid/view/SurfaceControl;)V
 
+    .line 7579
     invoke-interface/range {p1 .. p1}, Landroid/view/IWindow;->asBinder()Landroid/os/IBinder;
 
     move-result-object v8
 
+    .line 7580
     .local v8, "winBinder":Landroid/os/IBinder;
     new-instance v5, Landroid/os/Binder;
 
@@ -33410,6 +33421,7 @@
     .catch Landroid/view/Surface$OutOfResourcesException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_3
 
+    .line 7581
     .end local v16    # "token":Landroid/os/IBinder;
     .local v5, "token":Landroid/os/IBinder;
     :try_start_2
@@ -33451,6 +33463,7 @@
     .catch Landroid/view/Surface$OutOfResourcesException; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
+    .line 7585
     .end local v5    # "token":Landroid/os/IBinder;
     .restart local v16    # "token":Landroid/os/IBinder;
     :try_start_3
@@ -33473,6 +33486,7 @@
 
     move-result-object v13
 
+    .line 7587
     .local v13, "msg":Landroid/os/Message;
     move-object/from16 v0, p0
 
@@ -33487,6 +33501,7 @@
 
     move-object/from16 v5, v16
 
+    .line 7598
     .end local v2    # "surface":Landroid/view/SurfaceControl;
     .end local v8    # "winBinder":Landroid/os/IBinder;
     .end local v10    # "display":Landroid/view/Display;
@@ -33526,6 +33541,7 @@
     .restart local v5    # "token":Landroid/os/IBinder;
     goto :goto_0
 
+    .line 7591
     .end local v5    # "token":Landroid/os/IBinder;
     .restart local v16    # "token":Landroid/os/IBinder;
     :catch_0
@@ -33533,6 +33549,7 @@
 
     move-object/from16 v5, v16
 
+    .line 7592
     .end local v16    # "token":Landroid/os/IBinder;
     .restart local v5    # "token":Landroid/os/IBinder;
     .local v12, "e":Landroid/view/Surface$OutOfResourcesException;
@@ -33574,18 +33591,21 @@
 
     invoke-static {v3, v4, v12}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 7593
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wm/WindowManagerService;->mDragState:Lcom/android/server/wm/DragState;
 
     if-eqz v3, :cond_0
 
+    .line 7594
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wm/WindowManagerService;->mDragState:Lcom/android/server/wm/DragState;
 
     invoke-virtual {v3}, Lcom/android/server/wm/DragState;->reset()V
 
+    .line 7595
     const/4 v3, 0x0
 
     move-object/from16 v0, p0
@@ -33594,6 +33614,7 @@
 
     goto :goto_0
 
+    .line 7598
     .end local v12    # "e":Landroid/view/Surface$OutOfResourcesException;
     :catchall_0
     move-exception v3
@@ -33628,6 +33649,7 @@
     .restart local v5    # "token":Landroid/os/IBinder;
     goto :goto_3
 
+    .line 7598
     .end local v5    # "token":Landroid/os/IBinder;
     .restart local v16    # "token":Landroid/os/IBinder;
     :catchall_3
@@ -33639,6 +33661,7 @@
     .restart local v5    # "token":Landroid/os/IBinder;
     goto :goto_2
 
+    .line 7591
     .restart local v2    # "surface":Landroid/view/SurfaceControl;
     .restart local v8    # "winBinder":Landroid/os/IBinder;
     .restart local v10    # "display":Landroid/view/Display;

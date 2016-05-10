@@ -254,12 +254,14 @@
 
 .method public bridge synthetic calculateMarshalSize(Ljava/lang/Object;)I
     .locals 1
+    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 40
     .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange<TT;>.MarshalerRange;"
     check-cast p1, Landroid/util/Range;
 
+    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->calculateMarshalSize(Landroid/util/Range;)I
 
     move-result v0
@@ -338,12 +340,15 @@
 
 .method public bridge synthetic marshal(Ljava/lang/Object;Ljava/nio/ByteBuffer;)V
     .locals 0
+    .param p1, "x0"    # Ljava/lang/Object;
+    .param p2, "x1"    # Ljava/nio/ByteBuffer;
 
     .prologue
     .line 40
     .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange<TT;>.MarshalerRange;"
     check-cast p1, Landroid/util/Range;
 
+    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2}, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->marshal(Landroid/util/Range;Ljava/nio/ByteBuffer;)V
 
     return-void
@@ -467,6 +472,7 @@
 
 .method public bridge synthetic unmarshal(Ljava/nio/ByteBuffer;)Ljava/lang/Object;
     .locals 1
+    .param p1, "x0"    # Ljava/nio/ByteBuffer;
 
     .prologue
     .line 40

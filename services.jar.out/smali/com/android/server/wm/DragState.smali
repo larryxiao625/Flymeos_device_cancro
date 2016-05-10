@@ -4,6 +4,18 @@
 
 
 # instance fields
+.field mMzInitHeight:F
+
+.field mMzInitWidth:F
+
+.field mMzInitX:F
+
+.field mMzInitY:F
+
+.field mMzOnTouching:Z
+
+.field mMzStatusBarNfcEnabled:Z
+
 .field mClientChannel:Landroid/view/InputChannel;
 
 .field mCurrentX:F
@@ -29,18 +41,6 @@
 .field mInputEventReceiver:Lcom/android/server/wm/WindowManagerService$DragInputEventReceiver;
 
 .field mLocalWin:Landroid/os/IBinder;
-
-.field mMzInitHeight:F
-
-.field mMzInitWidth:F
-
-.field mMzInitX:F
-
-.field mMzInitY:F
-
-.field mMzOnTouching:Z
-
-.field mMzStatusBarNfcEnabled:Z
 
 .field mNotifiedWindows:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;

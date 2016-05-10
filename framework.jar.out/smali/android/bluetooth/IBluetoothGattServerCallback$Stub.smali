@@ -44,7 +44,7 @@
 
 .field static final TRANSACTION_onServerConnectionState:I = 0x3
 
-.field static final TRANSACTION_onServerRegistered:I = 0x1
+.field static final TRANSACTION_onServerRegistered_0:I = 0x1
 
 .field static final TRANSACTION_onServiceAdded:I = 0x4
 

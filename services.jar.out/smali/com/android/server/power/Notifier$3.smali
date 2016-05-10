@@ -111,20 +111,23 @@
 
     invoke-static {v1, v3}, Lcom/android/server/power/Notifier$FlymeInjector;->notifyAccessControlGotoSleep(Lcom/android/server/power/Notifier;I)V
 
+    .line 335
     return-void
 
+    .line 327
     :pswitch_0
     const/4 v0, 0x1
 
+    .line 328
     goto :goto_0
 
+    .line 330
     :pswitch_1
     const/4 v0, 0x3
 
     goto :goto_0
 
-    nop
-
+    .line 325
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

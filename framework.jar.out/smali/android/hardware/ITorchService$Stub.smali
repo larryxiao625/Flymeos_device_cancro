@@ -32,9 +32,9 @@
 
 .field static final TRANSACTION_isTorchOn:I = 0x5
 
-.field static final TRANSACTION_onCameraClosed:I = 0x2
+.field static final TRANSACTION_onCameraClosed_1:I = 0x2
 
-.field static final TRANSACTION_onCameraOpened:I = 0x1
+.field static final TRANSACTION_onCameraOpened_0:I = 0x1
 
 .field static final TRANSACTION_removeListener:I = 0x8
 

@@ -38,13 +38,13 @@
 
 .field static final TRANSACTION_disableCellBroadcast_20:I = 0x15
 
+.field static final TRANSACTION_enableCellBroadcast:I = 0x13
+
 .field static final TRANSACTION_enableCellBroadcastForSubscriber_19:I = 0x14
 
 .field static final TRANSACTION_enableCellBroadcastRangeForSubscriber_23:I = 0x18
 
 .field static final TRANSACTION_enableCellBroadcastRange_22:I = 0x17
-
-.field static final TRANSACTION_enableCellBroadcast_18:I = 0x13
 
 .field static final TRANSACTION_getAllMessagesFromIccEf:I = 0x2
 
@@ -60,9 +60,9 @@
 
 .field static final TRANSACTION_getPremiumSmsPermissionForSubscriber:I = 0x1c
 
-.field static final TRANSACTION_getSmsCapacityOnIccForSubscriber_39:I = 0x28
+.field static final TRANSACTION_getSmsCapacityOnIccForSubscriber:I = 0x28
 
-.field static final TRANSACTION_getSmscAddressFromIccForSubscriber_40:I = 0x29
+.field static final TRANSACTION_getSmscAddressFromIccForSubscriber:I = 0x29
 
 .field static final TRANSACTION_injectSmsPdu_14:I = 0xf
 
@@ -70,15 +70,15 @@
 
 .field static final TRANSACTION_isImsSmsSupported_30:I = 0x1f
 
-.field static final TRANSACTION_isSMSPromptEnabled:I = 0x25
+.field static final TRANSACTION_isSMSPromptEnabled_36:I = 0x25
 
-.field static final TRANSACTION_isSmsSimPickActivityNeeded:I = 0x21
+.field static final TRANSACTION_isSmsSimPickActivityNeeded_32:I = 0x21
 
 .field static final TRANSACTION_sendDataForSubscriber_8:I = 0x9
 
-.field static final TRANSACTION_sendDataWithOrigPortUsingSubscriber_10:I = 0xb
+.field static final TRANSACTION_sendDataWithOrigPort:I = 0xa
 
-.field static final TRANSACTION_sendDataWithOrigPort_9:I = 0xa
+.field static final TRANSACTION_sendDataWithOrigPortUsingSubscriber:I = 0xb
 
 .field static final TRANSACTION_sendData_7:I = 0x8
 
@@ -94,7 +94,7 @@
 
 .field static final TRANSACTION_sendTextForSubscriber_12:I = 0xd
 
-.field static final TRANSACTION_sendTextWithOptionsUsingSubscriber_13:I = 0xe
+.field static final TRANSACTION_sendTextWithOptionsUsingSubscriber:I = 0xe
 
 .field static final TRANSACTION_sendText_11:I = 0xc
 
@@ -104,11 +104,11 @@
 
 .field static final TRANSACTION_setSmscAddressToIccForSubscriber_41:I = 0x2a
 
-.field static final TRANSACTION_synthesizeMessages:I = 0x1
+.field static final TRANSACTION_synthesizeMessages_0:I = 0x1
 
-.field static final TRANSACTION_updateMessageOnIccEf:I = 0x4
+.field static final TRANSACTION_updateMessageOnIccEfForSubscriber_4:I = 0x5
 
-.field static final TRANSACTION_updateMessageOnIccEfForSubscriber:I = 0x5
+.field static final TRANSACTION_updateMessageOnIccEf_3:I = 0x4
 
 
 # direct methods

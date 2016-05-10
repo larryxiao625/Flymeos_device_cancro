@@ -30,15 +30,15 @@
 
 .field static final TRANSACTION_clccResponse:I = 0x16
 
-.field static final TRANSACTION_connect:I = 0x1
-
 .field static final TRANSACTION_connectAudio:I = 0x11
+
+.field static final TRANSACTION_connect_0:I = 0x1
 
 .field static final TRANSACTION_disableWBS:I = 0x18
 
-.field static final TRANSACTION_disconnect:I = 0x2
-
 .field static final TRANSACTION_disconnectAudio:I = 0x12
+
+.field static final TRANSACTION_disconnect_1:I = 0x2
 
 .field static final TRANSACTION_enableWBS:I = 0x17
 

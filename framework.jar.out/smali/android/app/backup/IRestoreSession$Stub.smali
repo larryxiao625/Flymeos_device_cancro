@@ -28,11 +28,11 @@
 
 .field static final TRANSACTION_endRestoreSession_4:I = 0x5
 
-.field static final TRANSACTION_getAvailableRestoreSets:I = 0x1
+.field static final TRANSACTION_getAvailableRestoreSets_0:I = 0x1
 
 .field static final TRANSACTION_restoreAll_1:I = 0x2
 
-.field static final TRANSACTION_restorePackage_3:I = 0x4
+.field static final TRANSACTION_restorePackage:I = 0x4
 
 .field static final TRANSACTION_restoreSome_2:I = 0x3
 

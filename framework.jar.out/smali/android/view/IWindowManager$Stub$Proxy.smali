@@ -6421,4 +6421,5 @@
     invoke-interface {p0, p1, p2, v0}, Landroid/view/IWindowManager;->keyguardGoingAway(ZZZ)V
 
     return-void
+
 .end method

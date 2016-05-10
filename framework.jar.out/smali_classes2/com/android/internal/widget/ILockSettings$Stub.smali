@@ -52,7 +52,7 @@
 
 .field static final TRANSACTION_setLockPattern:I = 0x8
 
-.field static final TRANSACTION_setLong:I = 0x2
+.field static final TRANSACTION_setLong_1:I = 0x2
 
 .field static final TRANSACTION_setString:I = 0x3
 

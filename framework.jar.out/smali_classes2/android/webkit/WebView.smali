@@ -12,13 +12,13 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/webkit/WebView$1;,
-        Landroid/webkit/WebView$ReaderTitleAndNumCallBack;,
-        Landroid/webkit/WebView$ReaderCallBack;,
-        Landroid/webkit/WebView$ReaderModeListener;,
         Landroid/webkit/WebView$FindListenerDistributor;,
         Landroid/webkit/WebView$PrivateAccess;,
         Landroid/webkit/WebView$HitTestResult;,
         Landroid/webkit/WebView$PictureListener;,
+        Landroid/webkit/WebView$ReaderTitleAndNumCallBack;,
+        Landroid/webkit/WebView$ReaderCallBack;,
+        Landroid/webkit/WebView$ReaderModeListener;,
         Landroid/webkit/WebView$FindListener;,
         Landroid/webkit/WebView$WebViewTransport;
     }
@@ -26,11 +26,11 @@
 
 
 # static fields
+.field public static final SCHEME_DATE:Ljava/lang/String; = "date:"
+
 .field public static final DATA_REDUCTION_PROXY_SETTING_CHANGED:Ljava/lang/String; = "android.webkit.DATA_REDUCTION_PROXY_SETTING_CHANGED"
 
 .field private static final LOGTAG:Ljava/lang/String; = "WebView"
-
-.field public static final SCHEME_DATE:Ljava/lang/String; = "date:"
 
 .field public static final SCHEME_GEO:Ljava/lang/String; = "geo:0,0?q="
 

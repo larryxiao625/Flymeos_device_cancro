@@ -13,9 +13,9 @@
 
 
 # static fields
-.field public static final ALL:I = 0xf
-
 .field public static final DATE_TIME:I = 0x10
+
+.field public static final ALL:I = 0xf
 
 .field public static final EMAIL_ADDRESSES:I = 0x2
 
@@ -232,7 +232,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6
+    if-nez v1, :cond_flyme_0
+
+    invoke-static {p0, v0}, Landroid/text/util/Linkify;->flymeGatherLinks(Landroid/text/Spannable;Ljava/util/ArrayList;)V
+
+    goto/16 :goto_flyme_0
+
+    :cond_flyme_0
 
     sget-object v2, Landroid/util/Patterns;->WEB_URL:Ljava/util/regex/Pattern;
 
@@ -261,7 +267,7 @@
     invoke-static/range {v0 .. v5}, Landroid/text/util/Linkify;->gatherLinks(Ljava/util/ArrayList;Landroid/text/Spannable;Ljava/util/regex/Pattern;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V
 
     :cond_2
-    :goto_2
+    :goto_flyme_0
     and-int/lit8 v1, p1, 0x2
 
     if-eqz v1, :cond_3
@@ -303,7 +309,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_7
+    if-nez v1, :cond_6
 
     move v1, v10
 
@@ -312,22 +318,17 @@
 
     .line 243
     :cond_6
-    invoke-static {p0, v0}, Landroid/text/util/Linkify;->flymeGatherLinks(Landroid/text/Spannable;Ljava/util/ArrayList;)V
-
-    goto :goto_2
-
-    :cond_7
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v7
 
     .local v7, "i$":Ljava/util/Iterator;
-    :goto_3
+    :goto_2
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_7
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -345,10 +346,10 @@
 
     invoke-static {v1, v2, v3, p0}, Landroid/text/util/Linkify;->applyLink(Ljava/lang/String;IILandroid/text/Spannable;)V
 
-    goto :goto_3
+    goto :goto_2
 
     .end local v8    # "link":Landroid/text/util/LinkSpec;
-    :cond_8
+    :cond_7
     move v1, v11
 
     .line 247

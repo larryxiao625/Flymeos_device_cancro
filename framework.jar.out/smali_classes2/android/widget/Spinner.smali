@@ -31,6 +31,10 @@
 
 
 # instance fields
+.field protected mMzDropDownHorizontalOffset:I
+
+.field protected mMzPopupLayoutMode:I
+
 .field private mDisableChildrenWhenDisabled:Z
 
 .field mDropDownWidth:I
@@ -38,10 +42,6 @@
 .field private mForwardingListener:Landroid/widget/ListPopupWindow$ForwardingListener;
 
 .field private mGravity:I
-
-.field protected mMzDropDownHorizontalOffset:I
-
-.field protected mMzPopupLayoutMode:I
 
 .field private mPopup:Landroid/widget/Spinner$SpinnerPopup;
 
@@ -1454,11 +1454,13 @@
 
 .method public bridge synthetic setAdapter(Landroid/widget/Adapter;)V
     .locals 0
+    .param p1, "x0"    # Landroid/widget/Adapter;
 
     .prologue
     .line 61
     check-cast p1, Landroid/widget/SpinnerAdapter;
 
+    .end local p1    # "x0":Landroid/widget/Adapter;
     invoke-virtual {p0, p1}, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
 
     return-void
@@ -1550,7 +1552,7 @@
 
     invoke-interface {v0, p1}, Landroid/widget/Spinner$SpinnerPopup;->setHorizontalOffset(I)V
 
-    invoke-direct {p0, p1}, Landroid/widget/Spinner;->setFlymeDropDownHorizontalOffset(I)V
+    invoke-direct/range {p0 .. p1}, Landroid/widget/Spinner;->setFlymeDropDownHorizontalOffset(I)V
 
     return-void
 .end method

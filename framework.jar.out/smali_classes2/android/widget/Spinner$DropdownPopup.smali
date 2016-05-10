@@ -268,7 +268,7 @@
     :goto_2
     invoke-virtual {p0, v3}, Landroid/widget/Spinner$DropdownPopup;->setHorizontalOffset(I)V
 
-    invoke-direct {p0}, Landroid/widget/Spinner$DropdownPopup;->setFlymeHorizontalOffset()V
+    invoke-direct/range {p0 .. p0}, Landroid/widget/Spinner$DropdownPopup;->setFlymeHorizontalOffset()V
 
     return-void
 
@@ -402,7 +402,7 @@
     .local v3, "wasShowing":Z
     invoke-virtual {p0}, Landroid/widget/Spinner$DropdownPopup;->computeContentWidth()V
 
-    invoke-direct {p0}, Landroid/widget/Spinner$DropdownPopup;->setFlymeLayoutMode()V
+    invoke-direct/range {p0 .. p0}, Landroid/widget/Spinner$DropdownPopup;->setFlymeLayoutMode()V
 
     const/4 v4, 0x2
 

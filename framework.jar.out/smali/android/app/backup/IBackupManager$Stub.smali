@@ -40,21 +40,21 @@
 
 .field static final TRANSACTION_dataChanged_0:I = 0x1
 
+.field static final TRANSACTION_fullBackup:I = 0xd
+
 .field static final TRANSACTION_fullBackupNoninteractive_14:I = 0xf
 
-.field static final TRANSACTION_fullBackup_12:I = 0xd
-
-.field static final TRANSACTION_fullRestoreNoninteractive:I = 0x11
+.field static final TRANSACTION_fullRestoreNoninteractive_16:I = 0x11
 
 .field static final TRANSACTION_fullRestore_15:I = 0x10
 
-.field static final TRANSACTION_fullTransportBackup_13:I = 0xe
+.field static final TRANSACTION_fullTransportBackup:I = 0xe
 
 .field static final TRANSACTION_getConfigurationIntent_21:I = 0x16
 
-.field static final TRANSACTION_getCurrentTransport:I = 0x13
+.field static final TRANSACTION_getCurrentTransport_18:I = 0x13
 
-.field static final TRANSACTION_getDataManagementIntent:I = 0x18
+.field static final TRANSACTION_getDataManagementIntent_23:I = 0x18
 
 .field static final TRANSACTION_getDataManagementLabel:I = 0x19
 
@@ -62,11 +62,11 @@
 
 .field static final TRANSACTION_hasBackupPassword_10:I = 0xb
 
-.field static final TRANSACTION_isBackupEnabled:I = 0x9
+.field static final TRANSACTION_isBackupEnabled_8:I = 0x9
 
-.field static final TRANSACTION_isBackupServiceActive:I = 0x1d
+.field static final TRANSACTION_isBackupServiceActive_28:I = 0x1d
 
-.field static final TRANSACTION_listAllTransports:I = 0x14
+.field static final TRANSACTION_listAllTransports_19:I = 0x14
 
 .field static final TRANSACTION_opComplete_26:I = 0x1b
 
@@ -78,7 +78,7 @@
 
 .field static final TRANSACTION_setBackupEnabled_5:I = 0x6
 
-.field static final TRANSACTION_setBackupPassword:I = 0xa
+.field static final TRANSACTION_setBackupPassword_9:I = 0xa
 
 .field static final TRANSACTION_setBackupProvisioned_7:I = 0x8
 

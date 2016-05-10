@@ -28,11 +28,11 @@
 
 .field static final TRANSACTION_onUpdate_2:I = 0x3
 
-.field static final TRANSACTION_restoreFinished_3:I = 0x4
+.field static final TRANSACTION_restoreFinished:I = 0x4
 
-.field static final TRANSACTION_restoreSetsAvailable_0:I = 0x1
+.field static final TRANSACTION_restoreSetsAvailable:I = 0x1
 
-.field static final TRANSACTION_restoreStarting:I = 0x2
+.field static final TRANSACTION_restoreStarting_1:I = 0x2
 
 
 # direct methods

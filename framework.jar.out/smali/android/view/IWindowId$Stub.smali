@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_registerFocusObserver_0:I = 0x1
 
-.field static final TRANSACTION_unregisterFocusObserver:I = 0x2
+.field static final TRANSACTION_unregisterFocusObserver_1:I = 0x2
 
 
 # direct methods

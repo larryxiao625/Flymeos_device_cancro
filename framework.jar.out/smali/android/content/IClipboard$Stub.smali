@@ -38,7 +38,7 @@
 
 .field static final TRANSACTION_removePrimaryClipChangedListener:I = 0x6
 
-.field static final TRANSACTION_setPrimaryClip:I = 0x1
+.field static final TRANSACTION_setPrimaryClip_0:I = 0x1
 
 
 # direct methods

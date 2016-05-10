@@ -28,11 +28,11 @@
 
 .field static final TRANSACTION_resolvePacFile_0:I = 0x1
 
-.field static final TRANSACTION_setPacFile:I = 0x2
+.field static final TRANSACTION_setPacFile_1:I = 0x2
 
-.field static final TRANSACTION_startPacSystem:I = 0x3
+.field static final TRANSACTION_startPacSystem_2:I = 0x3
 
-.field static final TRANSACTION_stopPacSystem:I = 0x4
+.field static final TRANSACTION_stopPacSystem_3:I = 0x4
 
 
 # direct methods

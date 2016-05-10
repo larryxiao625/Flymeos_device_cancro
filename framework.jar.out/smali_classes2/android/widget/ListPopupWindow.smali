@@ -40,6 +40,20 @@
 
 
 # instance fields
+.field private mFlymeContentHeight:I
+
+.field private mFlymeFieldId:I
+
+.field private mFlymeHeaderView:Landroid/view/View;
+
+.field private mFlymeListViewPadding:Landroid/graphics/Rect;
+
+.field private mFlymeMaxHeight:I
+
+.field protected mMzAdjustWindowPosition:Z
+
+.field protected mMzKeepInputMethodNeeded:Z
+
 .field private mAdapter:Landroid/widget/ListAdapter;
 
 .field private mContext:Landroid/content/Context;
@@ -64,16 +78,6 @@
 
 .field private mDropDownWidth:I
 
-.field private mFlymeContentHeight:I
-
-.field private mFlymeFieldId:I
-
-.field private mFlymeHeaderView:Landroid/view/View;
-
-.field private mFlymeListViewPadding:Landroid/graphics/Rect;
-
-.field private mFlymeMaxHeight:I
-
 .field private mForceIgnoreOutsideTouch:Z
 
 .field private mHandler:Landroid/os/Handler;
@@ -89,10 +93,6 @@
 .field mListItemExpandMaximum:I
 
 .field private mModal:Z
-
-.field protected mMzAdjustWindowPosition:Z
-
-.field protected mMzKeepInputMethodNeeded:Z
 
 .field private mObserver:Landroid/database/DataSetObserver;
 
@@ -317,7 +317,7 @@
 
     iput v2, p0, Landroid/widget/ListPopupWindow;->mLayoutDirection:I
 
-    invoke-direct {p0}, Landroid/widget/ListPopupWindow;->initFlymeExtraFields()V
+    invoke-direct/range {p0 .. p0}, Landroid/widget/ListPopupWindow;->initFlymeExtraFields()V
 
     .line 230
     return-void
@@ -1083,6 +1083,8 @@
     return-void
 .end method
 
+
+# virtual methods
 .method public clearListSelection()V
     .locals 2
 
@@ -2190,17 +2192,17 @@
     .prologue
     iget-boolean v0, p0, Landroid/widget/ListPopupWindow;->mMzKeepInputMethodNeeded:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_flyme_0
 
-    :goto_0
     return-void
 
-    :cond_0
+    :cond_flyme_0
+
     iget-object v0, p0, Landroid/widget/ListPopupWindow;->mPopup:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0, p1}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
 
-    goto :goto_0
+    return-void
 .end method
 
 .method setListItemExpandMax(I)V
@@ -2367,7 +2369,8 @@
 
     .line 722
     :cond_0
-    invoke-direct {p0, p1}, Landroid/widget/ListPopupWindow;->setFlymeSelection(I)V
+
+    invoke-direct/range {p0 .. p1}, Landroid/widget/ListPopupWindow;->setFlymeSelection(I)V
 
     return-void
 .end method
@@ -2973,8 +2976,6 @@
     return-void
 .end method
 
-
-# virtual methods
 .method public adjustWindowPositionForMz(Z)V
     .locals 0
     .param p1, "adjust"    # Z
@@ -3017,6 +3018,33 @@
 
     :cond_0
     return v0
+.end method
+
+.method flymeGetFieldHandler()Landroid/os/Handler;
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Landroid/widget/ListPopupWindow;->mHandler:Landroid/os/Handler;
+
+    return-object v0
+.end method
+
+.method flymeGetFieldPopup()Landroid/widget/PopupWindow;
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Landroid/widget/ListPopupWindow;->mPopup:Landroid/widget/PopupWindow;
+
+    return-object v0
+.end method
+
+.method flymeGetFieldResizePopupRunnable()Landroid/widget/ListPopupWindow$ResizePopupRunnable;
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Landroid/widget/ListPopupWindow;->mResizePopupRunnable:Landroid/widget/ListPopupWindow$ResizePopupRunnable;
+
+    return-object v0
 .end method
 
 .method public getContentWidth()I

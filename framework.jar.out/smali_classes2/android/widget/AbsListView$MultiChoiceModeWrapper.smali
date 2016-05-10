@@ -171,6 +171,22 @@
     invoke-interface/range {v1 .. v6}, Landroid/widget/AbsListView$MultiChoiceModeListener;->onItemCheckedStateChanged(Landroid/view/ActionMode;IJZ)V
 
     return-void
+
+    .line 6243
+    iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;
+
+    invoke-virtual {v0}, Landroid/widget/AbsListView;->getCheckedItemCount()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 6244
+    invoke-virtual {p1}, Landroid/view/ActionMode;->finish()V
+
+    .line 6246
+    :cond_0
+    return-void
 .end method
 
 .method public onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z

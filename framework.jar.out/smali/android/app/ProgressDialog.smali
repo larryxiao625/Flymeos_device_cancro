@@ -166,7 +166,7 @@
 
     invoke-virtual {v0, v1}, Ljava/text/NumberFormat;->setMaximumFractionDigits(I)V
 
-    invoke-direct {p0}, Landroid/app/ProgressDialog;->initFlymeExtraFields()V
+    invoke-direct/range {p0 .. p0}, Landroid/app/ProgressDialog;->initFlymeExtraFields()V
 
     return-void
 .end method
@@ -319,6 +319,8 @@
     return-object v0
 .end method
 
+
+# virtual methods
 .method public getMax()I
     .locals 1
 
@@ -870,7 +872,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-direct {p0}, Landroid/app/ProgressDialog;->setFlymeMessageViewVisibility()V
+    invoke-direct/range {p0 .. p0}, Landroid/app/ProgressDialog;->setFlymeMessageViewVisibility()V
 
     goto :goto_0
 
@@ -1068,8 +1070,6 @@
     goto :goto_0
 .end method
 
-
-# virtual methods
 .method protected applyMeizuStyle(Landroid/app/AlertDialog;)V
     .locals 25
     .param p1, "dialog"    # Landroid/app/AlertDialog;

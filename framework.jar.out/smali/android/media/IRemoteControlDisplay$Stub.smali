@@ -28,11 +28,11 @@
 
 .field static final TRANSACTION_setAllMetadata:I = 0x7
 
-.field static final TRANSACTION_setArtwork_5:I = 0x6
+.field static final TRANSACTION_setArtwork:I = 0x6
 
-.field static final TRANSACTION_setCurrentClientId:I = 0x1
+.field static final TRANSACTION_setCurrentClientId_0:I = 0x1
 
-.field static final TRANSACTION_setEnabled:I = 0x2
+.field static final TRANSACTION_setEnabled_1:I = 0x2
 
 .field static final TRANSACTION_setMetadata_4:I = 0x5
 

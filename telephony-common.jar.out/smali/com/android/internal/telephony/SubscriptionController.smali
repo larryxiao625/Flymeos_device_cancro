@@ -1082,6 +1082,16 @@
 
     move-object/from16 v0, p1
 
+    #invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+
+    #move-result v1
+
+    #move-object/from16 v0, p1
+
+    #invoke-interface {v0, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    #move-result-object v6
+
     const-string v6, ""
 
     .line 358
@@ -1212,6 +1222,16 @@
 
     move-object/from16 v0, p1
 
+    #invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+
+    #move-result v1
+
+    #move-object/from16 v0, p1
+
+    #invoke-interface {v0, v1}, Landroid/database/Cursor;->getInt(I)I
+
+    #move-result v15
+
     const/16 v15, 0x1
 
     .line 377
@@ -1220,6 +1240,16 @@
 
     move-object/from16 v0, p1
 
+    #invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+
+    #move-result v1
+
+    #move-object/from16 v0, p1
+
+    #invoke-interface {v0, v1}, Landroid/database/Cursor;->getInt(I)I
+
+    #move-result v16
+
     const/16 v16, -0x1
 
     .line 379
@@ -1227,6 +1257,16 @@
     const-string v1, "user_network_mode"
 
     move-object/from16 v0, p1
+
+    #invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+
+    #move-result v1
+
+    #move-object/from16 v0, p1
+
+    #invoke-interface {v0, v1}, Landroid/database/Cursor;->getInt(I)I
+
+    #move-result v17
 
     const/16 v17, -0x1
 
@@ -2132,7 +2172,17 @@
 
     invoke-direct {p0}, Lcom/android/internal/telephony/SubscriptionController;->enforceSubscriptionPermission()V
 
+    #new-instance v1, Landroid/content/ContentValues;
+
+    #const/4 v2, 0x1
+
+    #invoke-direct {v1, v2}, Landroid/content/ContentValues;-><init>(I)V
+
     .local v1, "value":Landroid/content/ContentValues;
+    #const-string v2, "carrier_name"
+
+    #invoke-virtual {v1, v2, p1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+
     iget-object v2, p0, Lcom/android/internal/telephony/SubscriptionController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -2164,6 +2214,10 @@
     move-result-object v4
 
     const/4 v5, 0x0
+
+    #invoke-virtual {v2, v3, v1, v4, v5}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+
+    #move-result v0
 
     const/4 v0, 0x0
 
@@ -3407,6 +3461,8 @@
     const-string v4, ""
 
     move-object/from16 v0, v22
+
+    #invoke-virtual {v0, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object v3, Landroid/telephony/SubscriptionManager;->CONTENT_URI:Landroid/net/Uri;
 
@@ -8151,12 +8207,20 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/SubscriptionController;->logd(Ljava/lang/String;)V
 
+    #new-instance v0, Landroid/content/ContentValues;
+
+    #const/4 v1, 0x1
+
+    #invoke-direct {v0, v1}, Landroid/content/ContentValues;-><init>(I)V
+
     .local v0, "value":Landroid/content/ContentValues;
     const-string v1, "network_mode"
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
+
+    #invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
     iget-object v1, p0, Lcom/android/internal/telephony/SubscriptionController;->mContext:Landroid/content/Context;
 
@@ -8189,6 +8253,8 @@
     move-result-object v3
 
     const/4 v4, 0x0
+
+    #invoke-virtual {v1, v2, v0, v3, v4}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
     return-void
 .end method
@@ -8439,12 +8505,20 @@
 
     if-eqz v3, :cond_0
 
+    #new-instance v2, Landroid/content/ContentValues;
+
+    #const/4 v3, 0x1
+
+    #invoke-direct {v2, v3}, Landroid/content/ContentValues;-><init>(I)V
+
     .local v2, "value":Landroid/content/ContentValues;
     const-string v3, "sub_state"
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
+
+    #invoke-virtual {v2, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
     iget-object v3, p0, Lcom/android/internal/telephony/SubscriptionController;->mContext:Landroid/content/Context;
 
@@ -8478,6 +8552,10 @@
     move-result-object v5
 
     const/4 v6, 0x0
+
+    #invoke-virtual {v3, v4, v2, v5, v6}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+
+    #move-result v1
 
     .end local v2    # "value":Landroid/content/ContentValues;
     :cond_0

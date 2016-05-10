@@ -527,8 +527,16 @@
 
     .line 102
     .restart local v3    # "uid":I
-    if-nez v3, :cond_1
+    if-eqz v3, :cond_1
 
+    goto/16 :goto_flyme_0
+
+    const/16 v4, 0x3e8
+
+    if-ne v3, v4, :cond_2
+
+    .line 103
+    :cond_1
     new-instance v4, Ljava/lang/UnsupportedOperationException;
 
     const-string v6, "For security reasons, WebView is not allowed in privileged processes"
@@ -537,6 +545,7 @@
 
     throw v4
 
+    .line 145
     :catchall_0
     move-exception v4
 
@@ -546,8 +555,9 @@
 
     throw v4
 
-    .line 103
-    :cond_1
+    .line 107
+    :cond_2
+    :goto_flyme_0
     const-wide/16 v6, 0x10
 
     :try_start_1

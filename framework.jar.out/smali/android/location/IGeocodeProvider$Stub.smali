@@ -26,9 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.location.IGeocodeProvider"
 
-.field static final TRANSACTION_getFromLocation:I = 0x1
-
 .field static final TRANSACTION_getFromLocationName:I = 0x2
+
+.field static final TRANSACTION_getFromLocation_0:I = 0x1
 
 
 # direct methods

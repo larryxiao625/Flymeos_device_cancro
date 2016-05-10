@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.ims.internal.IImsUt"
 
-.field static final TRANSACTION_close:I = 0x1
+.field static final TRANSACTION_close_0:I = 0x1
 
 .field static final TRANSACTION_queryCFForServiceClass:I = 0x13
 
@@ -38,7 +38,7 @@
 
 .field static final TRANSACTION_queryCOLR:I = 0x7
 
-.field static final TRANSACTION_queryCallBarring:I = 0x2
+.field static final TRANSACTION_queryCallBarring_1:I = 0x2
 
 .field static final TRANSACTION_queryCallForward:I = 0x3
 

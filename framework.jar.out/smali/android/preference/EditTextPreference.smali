@@ -78,7 +78,7 @@
 
     iput-object v0, p0, Landroid/preference/EditTextPreference;->mEditText:Landroid/widget/EditText;
 
-    invoke-static {p0, p1, p2}, Landroid/preference/EditTextPreference$FlymeInjector;->flymeSetDialogStyleEditText(Landroid/preference/EditTextPreference;Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-static/range {p0 .. p2}, Landroid/preference/EditTextPreference$FlymeInjector;->flymeSetDialogStyleEditText(Landroid/preference/EditTextPreference;Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     iget-object v0, p0, Landroid/preference/EditTextPreference;->mEditText:Landroid/widget/EditText;
 
@@ -95,6 +95,8 @@
     return-void
 .end method
 
+
+# virtual methods
 .method public getEditText()Landroid/widget/EditText;
     .locals 1
 
@@ -174,7 +176,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-static {p0}, Landroid/preference/EditTextPreference$FlymeInjector;->flymeSetEditTextSelection(Landroid/preference/EditTextPreference;)V
+    invoke-static/range {p0 .. p0}, Landroid/preference/EditTextPreference$FlymeInjector;->flymeSetEditTextSelection(Landroid/preference/EditTextPreference;)V
 
     .line 116
     invoke-virtual {v0}, Landroid/widget/EditText;->getParent()Landroid/view/ViewParent;
@@ -444,8 +446,6 @@
     goto :goto_0
 .end method
 
-
-# virtual methods
 .method flymeGetFieldEditText()Landroid/widget/EditText;
     .locals 1
 

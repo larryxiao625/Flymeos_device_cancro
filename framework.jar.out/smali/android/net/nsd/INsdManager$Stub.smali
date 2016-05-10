@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_getMessenger_0:I = 0x1
 
-.field static final TRANSACTION_setEnabled:I = 0x2
+.field static final TRANSACTION_setEnabled_1:I = 0x2
 
 
 # direct methods

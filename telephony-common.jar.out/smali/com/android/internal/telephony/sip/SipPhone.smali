@@ -732,6 +732,8 @@
 
 .method public bridge synthetic activateCellBroadcastSms(ILandroid/os/Message;)V
     .locals 0
+    .param p1, "x0"    # I
+    .param p2, "x1"    # Landroid/os/Message;
 
     .prologue
     .line 51
@@ -1092,6 +1094,9 @@
 
 .method public bridge synthetic dial(Ljava/lang/String;Lcom/android/internal/telephony/UUSInfo;I)Lcom/android/internal/telephony/Connection;
     .locals 1
+    .param p1, "x0"    # Ljava/lang/String;
+    .param p2, "x1"    # Lcom/android/internal/telephony/UUSInfo;
+    .param p3, "x2"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/internal/telephony/CallStateException;
@@ -1233,6 +1238,7 @@
 
 .method public bridge synthetic getAvailableNetworks(Landroid/os/Message;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Message;
 
     .prologue
     .line 51
@@ -1265,6 +1271,8 @@
 
 .method public bridge synthetic getCallForwardingOption(ILandroid/os/Message;)V
     .locals 0
+    .param p1, "x0"    # I
+    .param p2, "x1"    # Landroid/os/Message;
 
     .prologue
     .line 51
@@ -1292,6 +1300,7 @@
 
 .method public bridge synthetic getCellBroadcastSmsConfig(Landroid/os/Message;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Message;
 
     .prologue
     .line 51
@@ -1338,6 +1347,7 @@
 
 .method public bridge synthetic getDataCallList(Landroid/os/Message;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Message;
 
     .prologue
     .line 51
@@ -1360,6 +1370,7 @@
 
 .method public bridge synthetic getDataConnectionState(Ljava/lang/String;)Lcom/android/internal/telephony/PhoneConstants$DataState;
     .locals 1
+    .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
     .line 51
@@ -1550,6 +1561,7 @@
 
 .method public bridge synthetic getLinkProperties(Ljava/lang/String;)Landroid/net/LinkProperties;
     .locals 1
+    .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
     .line 51
@@ -1622,6 +1634,7 @@
 
 .method public bridge synthetic getNeighboringCids(Landroid/os/Message;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Message;
 
     .prologue
     .line 51
@@ -1781,6 +1794,7 @@
 
 .method public bridge synthetic handleInCallMmiCommands(Ljava/lang/String;)Z
     .locals 1
+    .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
     .line 51
@@ -1793,6 +1807,7 @@
 
 .method public bridge synthetic handlePinMmi(Ljava/lang/String;)Z
     .locals 1
+    .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
     .line 51
@@ -1839,6 +1854,9 @@
 
 .method public bridge synthetic registerForRingbackTone(Landroid/os/Handler;ILjava/lang/Object;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Handler;
+    .param p2, "x1"    # I
+    .param p3, "x2"    # Ljava/lang/Object;
 
     .prologue
     .line 51
@@ -1849,6 +1867,9 @@
 
 .method public bridge synthetic registerForSuppServiceNotification(Landroid/os/Handler;ILjava/lang/Object;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Handler;
+    .param p2, "x1"    # I
+    .param p3, "x2"    # Ljava/lang/Object;
 
     .prologue
     .line 51
@@ -1929,6 +1950,7 @@
 
 .method public bridge synthetic saveClirSetting(I)V
     .locals 0
+    .param p1, "x0"    # I
 
     .prologue
     .line 51
@@ -1939,6 +1961,8 @@
 
 .method public bridge synthetic selectNetworkManually(Lcom/android/internal/telephony/OperatorInfo;Landroid/os/Message;)V
     .locals 0
+    .param p1, "x0"    # Lcom/android/internal/telephony/OperatorInfo;
+    .param p2, "x1"    # Landroid/os/Message;
 
     .prologue
     .line 51
@@ -2047,6 +2071,7 @@
 
 .method public bridge synthetic sendUssdResponse(Ljava/lang/String;)V
     .locals 0
+    .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
     .line 51
@@ -2057,6 +2082,11 @@
 
 .method public bridge synthetic setCallForwardingOption(IILjava/lang/String;ILandroid/os/Message;)V
     .locals 0
+    .param p1, "x0"    # I
+    .param p2, "x1"    # I
+    .param p3, "x2"    # Ljava/lang/String;
+    .param p4, "x3"    # I
+    .param p5, "x4"    # Landroid/os/Message;
 
     .prologue
     .line 51
@@ -2082,6 +2112,8 @@
 
 .method public bridge synthetic setCellBroadcastSmsConfig([ILandroid/os/Message;)V
     .locals 0
+    .param p1, "x0"    # [I
+    .param p2, "x1"    # Landroid/os/Message;
 
     .prologue
     .line 51
@@ -2092,6 +2124,7 @@
 
 .method public bridge synthetic setDataEnabled(Z)V
     .locals 0
+    .param p1, "x0"    # Z
 
     .prologue
     .line 51
@@ -2102,6 +2135,7 @@
 
 .method public bridge synthetic setDataRoamingEnabled(Z)V
     .locals 0
+    .param p1, "x0"    # Z
 
     .prologue
     .line 51
@@ -2176,6 +2210,9 @@
 
 .method public bridge synthetic setLine1Number(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
     .locals 0
+    .param p1, "x0"    # Ljava/lang/String;
+    .param p2, "x1"    # Ljava/lang/String;
+    .param p3, "x2"    # Landroid/os/Message;
 
     .prologue
     .line 51
@@ -2219,6 +2256,7 @@
 
 .method public bridge synthetic setNetworkSelectionModeAutomatic(Landroid/os/Message;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Message;
 
     .prologue
     .line 51
@@ -2229,6 +2267,9 @@
 
 .method public bridge synthetic setOnPostDialCharacter(Landroid/os/Handler;ILjava/lang/Object;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Handler;
+    .param p2, "x1"    # I
+    .param p3, "x2"    # Ljava/lang/Object;
 
     .prologue
     .line 51
@@ -2257,6 +2298,7 @@
 
 .method public bridge synthetic setRadioPower(Z)V
     .locals 0
+    .param p1, "x0"    # Z
 
     .prologue
     .line 51
@@ -2267,6 +2309,9 @@
 
 .method public bridge synthetic setVoiceMailNumber(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
     .locals 0
+    .param p1, "x0"    # Ljava/lang/String;
+    .param p2, "x1"    # Ljava/lang/String;
+    .param p3, "x2"    # Landroid/os/Message;
 
     .prologue
     .line 51
@@ -2690,6 +2735,7 @@
 
 .method public bridge synthetic unregisterForRingbackTone(Landroid/os/Handler;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Handler;
 
     .prologue
     .line 51
@@ -2700,6 +2746,7 @@
 
 .method public bridge synthetic unregisterForSuppServiceNotification(Landroid/os/Handler;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Handler;
 
     .prologue
     .line 51

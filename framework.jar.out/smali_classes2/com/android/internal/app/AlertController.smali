@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/app/AlertController$FlymeInjector;,
         Lcom/android/internal/app/AlertController$CheckedItemAdapter;,
         Lcom/android/internal/app/AlertController$AlertParams;,
+        Lcom/android/internal/app/AlertController$FlymeInjector;,
         Lcom/android/internal/app/AlertController$RecycleListView;,
         Lcom/android/internal/app/AlertController$ButtonHandler;
     }
@@ -16,11 +16,11 @@
 
 
 # instance fields
+.field public mAlertExt:Lcom/android/internal/app/AlertControllerExt;
+
 .field private mAdapter:Landroid/widget/ListAdapter;
 
 .field private mAlertDialogLayout:I
-
-.field public mAlertExt:Lcom/android/internal/app/AlertControllerExt;
 
 .field private final mButtonHandler:Landroid/view/View$OnClickListener;
 
@@ -229,7 +229,7 @@
 
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    invoke-static {p0, p1, p2, p3}, Lcom/android/internal/app/AlertController$FlymeInjector;->initFlymeExtFields(Lcom/android/internal/app/AlertController;Landroid/content/Context;Landroid/content/DialogInterface;Landroid/view/Window;)V
+    invoke-static/range {p0 .. p3}, Lcom/android/internal/app/AlertController$FlymeInjector;->initFlymeExtFields(Lcom/android/internal/app/AlertController;Landroid/content/Context;Landroid/content/DialogInterface;Landroid/view/Window;)V
 
     return-void
 .end method
@@ -2360,6 +2360,8 @@
     goto :goto_0
 .end method
 
+
+# virtual methods
 .method public getButton(I)Landroid/widget/Button;
     .locals 1
     .param p1, "whichButton"    # I
@@ -2850,8 +2852,6 @@
     return-void
 .end method
 
-
-# virtual methods
 .method public getAdapter()Landroid/widget/ListAdapter;
     .locals 1
 

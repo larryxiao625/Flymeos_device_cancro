@@ -17,6 +17,8 @@
 
 
 # instance fields
+.field private mFlymeLayoutMode:I
+
 .field private final mAnchor:Landroid/view/View;
 
 .field private final mContext:Landroid/content/Context;
@@ -24,8 +26,6 @@
 .field private mDismissListener:Landroid/widget/PopupMenu$OnDismissListener;
 
 .field private mDragListener:Landroid/view/View$OnTouchListener;
-
-.field private mFlymeLayoutMode:I
 
 .field private final mMenu:Lcom/android/internal/view/menu/MenuBuilder;
 
@@ -132,7 +132,7 @@
 
     invoke-virtual {v0, p0}, Lcom/android/internal/view/menu/MenuPopupHelper;->setCallback(Lcom/android/internal/view/menu/MenuPresenter$Callback;)V
 
-    invoke-direct {p0}, Landroid/widget/PopupMenu;->initFlymeExtraFields()V
+    invoke-direct/range {p0 .. p0}, Landroid/widget/PopupMenu;->initFlymeExtraFields()V
 
     return-void
 .end method
@@ -148,6 +148,8 @@
     return-object v0
 .end method
 
+
+# virtual methods
 .method public dismiss()V
     .locals 1
 
@@ -362,7 +364,7 @@
     .locals 1
 
     .prologue
-    invoke-direct {p0}, Landroid/widget/PopupMenu;->flymeSetPopupLayoutMode()V
+    invoke-direct/range {p0 .. p0}, Landroid/widget/PopupMenu;->flymeSetPopupLayoutMode()V
 
     iget-object v0, p0, Landroid/widget/PopupMenu;->mPopup:Lcom/android/internal/view/menu/MenuPopupHelper;
 
@@ -395,8 +397,6 @@
     return-void
 .end method
 
-
-# virtual methods
 .method public adjustWindowPositionForMz(Z)V
     .locals 1
     .param p1, "adjust"    # Z

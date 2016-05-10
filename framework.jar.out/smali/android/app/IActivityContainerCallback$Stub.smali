@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.IActivityContainerCallback"
 
-.field static final TRANSACTION_onAllActivitiesComplete:I = 0x2
+.field static final TRANSACTION_onAllActivitiesComplete_1:I = 0x2
 
 .field static final TRANSACTION_setVisible_0:I = 0x1
 

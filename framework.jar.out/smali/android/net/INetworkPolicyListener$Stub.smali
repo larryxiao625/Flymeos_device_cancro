@@ -26,9 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.net.INetworkPolicyListener"
 
-.field static final TRANSACTION_onMeteredIfacesChanged:I = 0x2
+.field static final TRANSACTION_onMeteredIfacesChanged_1:I = 0x2
 
-.field static final TRANSACTION_onRestrictBackgroundChanged:I = 0x3
+.field static final TRANSACTION_onRestrictBackgroundChanged_2:I = 0x3
 
 .field static final TRANSACTION_onUidRulesChanged_0:I = 0x1
 

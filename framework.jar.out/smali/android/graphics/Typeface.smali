@@ -986,21 +986,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_flyme_0
 
     invoke-static {}, Landroid/content/res/flymetheme/FlymeFontsHelper;->getflymeTypeface()Landroid/graphics/Typeface;
 
     move-result-object v0
 
-    :goto_0
     return-object v0
 
-    :cond_0
+    :cond_flyme_0
+
     sget-object v0, Landroid/graphics/Typeface;->sDefaults:[Landroid/graphics/Typeface;
 
     aget-object v0, v0, p0
 
-    goto :goto_0
+    return-object v0
 .end method
 
 .method private static getSystemFontConfigLocation()Ljava/io/File;

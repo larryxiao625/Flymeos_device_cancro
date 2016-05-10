@@ -44,7 +44,7 @@
 
 .field static final TRANSACTION_queryPhoneState:I = 0x8
 
-.field static final TRANSACTION_sendDtmf:I = 0x3
+.field static final TRANSACTION_sendDtmf_2:I = 0x3
 
 .field static final TRANSACTION_updateBtHandsfreeAfterRadioTechnologyChange:I = 0x9
 

@@ -69,7 +69,7 @@
     .prologue
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/AbsSeekBar;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    invoke-direct {p0}, Landroid/widget/SeekBar;->flymeSetTouchMode()V
+    invoke-direct/range {p0 .. p0}, Landroid/widget/SeekBar;->flymeSetTouchMode()V
 
     return-void
 .end method

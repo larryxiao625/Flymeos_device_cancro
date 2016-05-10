@@ -602,7 +602,11 @@
     :cond_3
     move v0, v9
 
+    .line 519
     goto :goto_3
+
+    .line 493
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1

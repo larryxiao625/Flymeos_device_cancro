@@ -10144,14 +10144,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_flyme_0
 
     return-void
 
-    :cond_1
+    :cond_flyme_0
+
     sget-boolean v2, Lcom/android/server/LocationManagerService;->D:Z
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_1
 
     const-string v2, "LocationManagerService"
 
@@ -10199,47 +10200,53 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_2
+    .line 1824
+    :cond_1
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v3
 
+    .line 1825
     .local v3, "uid":I
     invoke-static {v3}, Landroid/os/UserHandle;->getUserId(I)I
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_2
 
+    .line 1827
     const-string v2, "LocationManagerService"
 
     const-string v4, "proximity alerts are currently available only to the primary user"
 
     invoke-static {v2, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1849
     .end local v12    # "sanitizedRequest":Landroid/location/LocationRequest;
     :goto_0
     return-void
 
+    .line 1830
     .restart local v12    # "sanitizedRequest":Landroid/location/LocationRequest;
-    :cond_3
+    :cond_2
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v18
 
+    .line 1832
     .local v18, "identity":J
     :try_start_0
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/LocationManagerService;->mGeoFencer:Lcom/android/server/location/GeoFencerBase;
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_4
 
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/server/LocationManagerService;->mGeoFencerEnabled:Z
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_4
 
     .line 1834
     invoke-virtual {v12}, Landroid/location/LocationRequest;->getExpireAt()J
@@ -10250,7 +10257,7 @@
 
     cmp-long v2, v4, v6
 
-    if-nez v2, :cond_4
+    if-nez v2, :cond_3
 
     .line 1835
     const-wide/16 v9, -0x1
@@ -10296,7 +10303,7 @@
 
     .line 1837
     .restart local v12    # "sanitizedRequest":Landroid/location/LocationRequest;
-    :cond_4
+    :cond_3
     :try_start_1
     invoke-virtual {v12}, Landroid/location/LocationRequest;->getExpireAt()J
 
@@ -10313,7 +10320,7 @@
 
     .line 1843
     .end local v9    # "expiration":J
-    :cond_5
+    :cond_4
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/server/LocationManagerService;->mGeofenceManager:Lcom/android/server/location/GeofenceManager;
@@ -10418,11 +10425,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_flyme_0
 
     return-void
 
-    :cond_3
+    :cond_flyme_0
+
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v5
@@ -10465,7 +10473,7 @@
 
     .line 1631
     .local v4, "receiver":Lcom/android/server/LocationManagerService$Receiver;
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_3
 
     move-object v2, p0
 
@@ -10473,17 +10481,22 @@
 
     move-object/from16 v7, p4
 
+    .line 1632
     invoke-direct/range {v2 .. v7}, Lcom/android/server/LocationManagerService;->requestLocationUpdatesLocked(Landroid/location/LocationRequest;Lcom/android/server/LocationManagerService$Receiver;IILjava/lang/String;)V
 
-    :cond_4
+    .line 1634
+    :cond_3
     monitor-exit v14
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 1636
     invoke-static {v12, v13}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
+    .line 1638
     return-void
 
+    .line 1634
     .end local v4    # "receiver":Lcom/android/server/LocationManagerService$Receiver;
     :catchall_0
     move-exception v2

@@ -28,9 +28,9 @@
 
 .field static final TRANSACTION_getConnectedDevices_0:I = 0x1
 
-.field static final TRANSACTION_getConnectionState:I = 0x3
+.field static final TRANSACTION_getConnectionState_2:I = 0x3
 
-.field static final TRANSACTION_getDevicesMatchingConnectionStates:I = 0x2
+.field static final TRANSACTION_getDevicesMatchingConnectionStates_1:I = 0x2
 
 .field static final TRANSACTION_sendPassThroughCmd:I = 0x4
 

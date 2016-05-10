@@ -378,6 +378,7 @@
 
 .method public bridge synthetic scaled(F)Landroid/filterfw/geometry/Quad;
     .locals 1
+    .param p1, "x0"    # F
 
     .prologue
     .line 26
@@ -390,6 +391,8 @@
 
 .method public bridge synthetic scaled(FF)Landroid/filterfw/geometry/Quad;
     .locals 1
+    .param p1, "x0"    # F
+    .param p2, "x1"    # F
 
     .prologue
     .line 26

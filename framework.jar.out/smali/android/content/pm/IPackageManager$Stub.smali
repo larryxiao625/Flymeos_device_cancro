@@ -54,7 +54,7 @@
 
 .field static final TRANSACTION_checkUidSignatures:I = 0x19
 
-.field static final TRANSACTION_clearApplicationUserData_78:I = 0x4f
+.field static final TRANSACTION_clearApplicationUserData:I = 0x4f
 
 .field static final TRANSACTION_clearCrossProfileIntentFilters:I = 0x45
 
@@ -78,7 +78,7 @@
 
 .field static final TRANSACTION_finishPackageInstall:I = 0x33
 
-.field static final TRANSACTION_forceDexOpt:I = 0x5a
+.field static final TRANSACTION_forceDexOpt_89:I = 0x5a
 
 .field static final TRANSACTION_freeStorageAndNotify_75:I = 0x4c
 
@@ -128,7 +128,7 @@
 
 .field static final TRANSACTION_getPackageInstaller:I = 0x6d
 
-.field static final TRANSACTION_getPackageSizeInfo:I = 0x50
+.field static final TRANSACTION_getPackageSizeInfo_79:I = 0x50
 
 .field static final TRANSACTION_getPackageUid:I = 0x3
 
@@ -222,7 +222,7 @@
 
 .field static final TRANSACTION_queryPermissionsByGroup:I = 0x8
 
-.field static final TRANSACTION_querySyncProviders:I = 0x2d
+.field static final TRANSACTION_querySyncProviders_44:I = 0x2d
 
 .field static final TRANSACTION_removePackageFromPreferred:I = 0x39
 

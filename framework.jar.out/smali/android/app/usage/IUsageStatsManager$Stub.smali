@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_queryEvents:I = 0x3
 
-.field static final TRANSACTION_queryUsageStats:I = 0x1
+.field static final TRANSACTION_queryUsageStats_0:I = 0x1
 
 
 # direct methods

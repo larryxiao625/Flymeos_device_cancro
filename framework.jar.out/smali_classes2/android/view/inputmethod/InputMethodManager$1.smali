@@ -149,16 +149,16 @@
     .param p1, "sequence"    # I
 
     .prologue
-    invoke-direct {p0, p1}, Landroid/view/inputmethod/InputMethodManager$1;->hookOnUnbindMethodForOnInputShownChanged(I)Z
+    invoke-direct/range {p0 .. p1}, Landroid/view/inputmethod/InputMethodManager$1;->hookOnUnbindMethodForOnInputShownChanged(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_flyme_0
 
-    :goto_0
     return-void
 
-    :cond_0
+    :cond_flyme_0
+
     iget-object v0, p0, Landroid/view/inputmethod/InputMethodManager$1;->this$0:Landroid/view/inputmethod/InputMethodManager;
 
     iget-object v0, v0, Landroid/view/inputmethod/InputMethodManager;->mH:Landroid/view/inputmethod/InputMethodManager$H;
@@ -177,7 +177,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/inputmethod/InputMethodManager$H;->sendMessage(Landroid/os/Message;)Z
 
-    goto :goto_0
+    return-void
 .end method
 
 .method public setActive(Z)V

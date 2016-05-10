@@ -1,6 +1,6 @@
 Signature-Version: 1.0
 Created-By: 1.0 (Android SignApk)
-SHA1-Digest-Manifest: kCEAYNXyWHBtgRlXlDTWKxcnFXc=
+SHA1-Digest-Manifest: 6N55S5sTrZLUtM160gR75cc5iWA=
 
 Name: res/color/date_picker_calendar_holo_dark.xml
 SHA1-Digest-Manifest: WupPXu7oiNHkbn8g65z5Nmx97X8=
@@ -2565,7 +2565,7 @@ Name: res/drawable-xxhdpi-v4/btn_radio_to_off_mtrl_015.png
 SHA1-Digest-Manifest: BVY2FmnW7QYc6JgRYwhFFNWn6Po=
 
 Name: AndroidManifest.xml
-SHA1-Digest-Manifest: fOGLwb/mQGg6PVFrzafTjMlzZ0I=
+SHA1-Digest-Manifest: GVoxwT7iCRHLSTYEB1XZOj6IBMo=
 
 Name: res/drawable/ic_find_next_material.xml
 SHA1-Digest-Manifest: cKzq8OsX6RV0jDRn0tE6lkmheS4=
@@ -7426,7 +7426,7 @@ Name: res/drawable/notification_material_media_action_background.xml
 SHA1-Digest-Manifest: 8lG6DFjmHaCXw3ocvXT0m754UNE=
 
 Name: resources.arsc
-SHA1-Digest-Manifest: PrFOMgiY9c1uYmxieGdl6sQKSrI=
+SHA1-Digest-Manifest: NYXirylZGW8BQ6nJiVOMLWvHzd0=
 
 Name: res/drawable-xhdpi-v4/btn_keyboard_key_dark_normal_on_holo.9.png
 SHA1-Digest-Manifest: URs2e0VsW62FSCn0sT3tSynA7QY=

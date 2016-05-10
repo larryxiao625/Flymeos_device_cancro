@@ -34,9 +34,9 @@
 
 .field static final TRANSACTION_setSelectedText:I = 0x5
 
-.field static final TRANSACTION_setTextAfterCursor:I = 0x2
+.field static final TRANSACTION_setTextAfterCursor_1:I = 0x2
 
-.field static final TRANSACTION_setTextBeforeCursor:I = 0x1
+.field static final TRANSACTION_setTextBeforeCursor_0:I = 0x1
 
 
 # direct methods

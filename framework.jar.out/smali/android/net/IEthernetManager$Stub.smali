@@ -28,13 +28,13 @@
 
 .field static final TRANSACTION_addListener:I = 0x4
 
-.field static final TRANSACTION_getConfiguration:I = 0x1
+.field static final TRANSACTION_getConfiguration_0:I = 0x1
 
-.field static final TRANSACTION_isAvailable:I = 0x3
+.field static final TRANSACTION_isAvailable_2:I = 0x3
 
 .field static final TRANSACTION_removeListener:I = 0x5
 
-.field static final TRANSACTION_setConfiguration:I = 0x2
+.field static final TRANSACTION_setConfiguration_1:I = 0x2
 
 
 # direct methods

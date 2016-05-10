@@ -14,7 +14,6 @@
 # instance fields
 .field private mFlymeOnKeyPreImeListener:Landroid/widget/EditText$OnKeyPreImeListener;
 
-
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
@@ -74,6 +73,8 @@
     return-void
 .end method
 
+
+# virtual methods
 .method public extendSelection(I)V
     .locals 1
     .param p1, "index"    # I
@@ -338,8 +339,6 @@
     return-void
 .end method
 
-
-# virtual methods
 .method protected drawableStateChanged()V
     .locals 1
 

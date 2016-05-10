@@ -251,6 +251,7 @@
 # virtual methods
 .method public bridge synthetic dumpLocked(Ljava/io/PrintWriter;)V
     .locals 0
+    .param p1, "x0"    # Ljava/io/PrintWriter;
 
     .prologue
     .line 55

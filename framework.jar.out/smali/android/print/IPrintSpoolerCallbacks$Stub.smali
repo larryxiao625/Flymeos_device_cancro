@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_onGetPrintJobInfoResult:I = 0x5
 
-.field static final TRANSACTION_onGetPrintJobInfosResult:I = 0x1
+.field static final TRANSACTION_onGetPrintJobInfosResult_0:I = 0x1
 
 .field static final TRANSACTION_onSetPrintJobStateResult:I = 0x3
 

@@ -28,9 +28,9 @@
 
 .field static final TRANSACTION_canMakeReadOnly:I = 0x11
 
-.field static final TRANSACTION_close:I = 0x1
+.field static final TRANSACTION_close_0:I = 0x1
 
-.field static final TRANSACTION_connect:I = 0x2
+.field static final TRANSACTION_connect_1:I = 0x2
 
 .field static final TRANSACTION_formatNdef:I = 0xc
 

@@ -3138,7 +3138,7 @@
     .line 1354
     :cond_0
     :try_start_0
-    invoke-direct {p0}, Landroid/net/wifi/WifiManager;->flymeEnforceWifiPermission()V
+    invoke-direct/range {p0 .. p0}, Landroid/net/wifi/WifiManager;->flymeEnforceWifiPermission()V
 
     iget-object v2, p0, Landroid/net/wifi/WifiManager;->mService:Landroid/net/wifi/IWifiManager;
 

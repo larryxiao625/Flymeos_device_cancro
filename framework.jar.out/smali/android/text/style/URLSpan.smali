@@ -82,16 +82,16 @@
     .param p1, "widget"    # Landroid/view/View;
 
     .prologue
-    invoke-direct {p0, p1}, Landroid/text/style/URLSpan;->onFlymeClick(Landroid/view/View;)Z
+    invoke-direct/range {p0 .. p1}, Landroid/text/style/URLSpan;->onFlymeClick(Landroid/view/View;)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_0
+    if-eqz v0, :cond_flyme_0
 
-    :goto_0
     return-void
 
-    :cond_0
+    :cond_flyme_0
+
     invoke-virtual {p0}, Landroid/text/style/URLSpan;->getURL()Ljava/lang/String;
 
     move-result-object v3
@@ -124,9 +124,11 @@
 
     invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 62
     invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    goto :goto_0
+    .line 63
+    return-void
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V

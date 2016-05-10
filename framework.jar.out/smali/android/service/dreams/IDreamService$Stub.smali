@@ -28,9 +28,9 @@
 
 .field static final TRANSACTION_attach_0:I = 0x1
 
-.field static final TRANSACTION_detach:I = 0x2
+.field static final TRANSACTION_detach_1:I = 0x2
 
-.field static final TRANSACTION_wakeUp:I = 0x3
+.field static final TRANSACTION_wakeUp_2:I = 0x3
 
 
 # direct methods

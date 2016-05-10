@@ -28,9 +28,9 @@
 
 .field static final TRANSACTION_isPlaying:I = 0x3
 
-.field static final TRANSACTION_play:I = 0x1
-
 .field static final TRANSACTION_playAsync:I = 0x5
+
+.field static final TRANSACTION_play_0:I = 0x1
 
 .field static final TRANSACTION_setVolume:I = 0x4
 

@@ -21,6 +21,8 @@
 
 
 # instance fields
+.field private mIsFlymeThemeLight:Z
+
 .field private mHandler:Landroid/os/Handler;
 
 .field private mHasReturnedViewTypeCount:Z
@@ -28,8 +30,6 @@
 .field private mHighlightedDrawable:Landroid/graphics/drawable/Drawable;
 
 .field private mHighlightedPosition:I
-
-.field private mIsFlymeThemeLight:Z
 
 .field private volatile mIsSyncing:Z
 
@@ -140,7 +140,7 @@
 
     invoke-direct {p0}, Landroid/preference/PreferenceGroupAdapter;->syncMyPreferences()V
 
-    invoke-direct {p0}, Landroid/preference/PreferenceGroupAdapter;->initFlymeExtraFields()V
+    invoke-direct/range {p0 .. p0}, Landroid/preference/PreferenceGroupAdapter;->initFlymeExtraFields()V
 
     return-void
 .end method
@@ -460,17 +460,17 @@
     .prologue
     iget-boolean v0, p0, Landroid/preference/PreferenceGroupAdapter;->mIsFlymeThemeLight:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_flyme_0
 
     const/4 v0, 0x1
 
-    :goto_0
     return v0
 
-    :cond_0
+    :cond_flyme_0
+
     const/4 v0, 0x0
 
-    goto :goto_0
+    return v0
 .end method
 
 .method public getCount()I
@@ -522,6 +522,7 @@
 
 .method public bridge synthetic getItem(I)Ljava/lang/Object;
     .locals 1
+    .param p1, "x0"    # I
 
     .prologue
     .line 53
@@ -806,15 +807,16 @@
     :cond_1
     iget-boolean v0, p0, Landroid/preference/PreferenceGroupAdapter;->mIsFlymeThemeLight:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_flyme_0
 
-    invoke-direct {p0, p1}, Landroid/preference/PreferenceGroupAdapter;->isFlymePreferenceEnabled(I)Z
+    invoke-direct/range {p0 .. p1}, Landroid/preference/PreferenceGroupAdapter;->isFlymePreferenceEnabled(I)Z
 
     move-result v0
 
-    goto :goto_0
+    return v0
 
-    :cond_2
+    :cond_flyme_0
+
     invoke-virtual {p0, p1}, Landroid/preference/PreferenceGroupAdapter;->getItem(I)Landroid/preference/Preference;
 
     move-result-object v0

@@ -1131,6 +1131,7 @@
 
     packed-switch v2, :pswitch_data_1
 
+    :cond_1
     :pswitch_2
     move-object v5, v8
 
@@ -1161,7 +1162,7 @@
 
     sget-object v3, Lcom/android/internal/telephony/cat/ResultCode;->HELP_INFO_REQUIRED:Lcom/android/internal/telephony/cat/ResultCode;
 
-    if-ne v2, v3, :cond_1
+    if-ne v2, v3, :cond_2
 
     move v6, v0
 
@@ -1173,7 +1174,7 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     move v6, v5
 
     .line 977
@@ -1206,10 +1207,10 @@
     .local v7, "input":Lcom/android/internal/telephony/cat/Input;
     iget-boolean v0, v7, Lcom/android/internal/telephony/cat/Input;->yesNo:Z
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_3
 
     .line 989
-    if-nez v6, :cond_8
+    if-nez v6, :cond_1
 
     .line 990
     new-instance v5, Lcom/android/internal/telephony/cat/GetInkeyInputResponseData;
@@ -1229,7 +1230,7 @@
     .line 994
     .end local v5    # "resp":Lcom/android/internal/telephony/cat/ResponseData;
     .restart local v8    # "resp":Lcom/android/internal/telephony/cat/ResponseData;
-    :cond_2
+    :cond_3
     new-instance v5, Lcom/android/internal/telephony/cat/GetInkeyInputResponseData;
 
     iget-boolean v0, p1, Lcom/android/internal/telephony/cat/CatResponseMessage;->mUsersYesNoSelection:Z
@@ -1250,7 +1251,7 @@
 
     sget-object v3, Lcom/android/internal/telephony/cat/ResultCode;->TERMINAL_CRNTLY_UNABLE_TO_PROCESS:Lcom/android/internal/telephony/cat/ResultCode;
 
-    if-ne v2, v3, :cond_3
+    if-ne v2, v3, :cond_4
 
     .line 1002
     invoke-virtual {p1, v0}, Lcom/android/internal/telephony/cat/CatResponseMessage;->setAdditionalInfo(I)V
@@ -1264,7 +1265,7 @@
     .line 1004
     .end local v5    # "resp":Lcom/android/internal/telephony/cat/ResponseData;
     .restart local v8    # "resp":Lcom/android/internal/telephony/cat/ResponseData;
-    :cond_3
+    :cond_4
     iput-boolean v5, p1, Lcom/android/internal/telephony/cat/CatResponseMessage;->mIncludeAdditionalInfo:Z
 
     .line 1005
@@ -1308,7 +1309,7 @@
 
     iget v2, p1, Lcom/android/internal/telephony/cat/CatResponseMessage;->mEventValue:I
 
-    if-ne v0, v2, :cond_4
+    if-ne v0, v2, :cond_5
 
     .line 1021
     iget v1, p1, Lcom/android/internal/telephony/cat/CatResponseMessage;->mEventValue:I
@@ -1326,7 +1327,7 @@
 
     .line 1024
     .restart local v1    # "cmdDet":Lcom/android/internal/telephony/cat/CommandDetails;
-    :cond_4
+    :cond_5
     iget v1, p1, Lcom/android/internal/telephony/cat/CatResponseMessage;->mEventValue:I
 
     .end local v1    # "cmdDet":Lcom/android/internal/telephony/cat/CommandDetails;
@@ -1345,14 +1346,14 @@
     :pswitch_a
     sget-object v0, Lcom/android/internal/telephony/cat/AppInterface$CommandType;->SET_UP_CALL:Lcom/android/internal/telephony/cat/AppInterface$CommandType;
 
-    if-eq v9, v0, :cond_5
+    if-eq v9, v0, :cond_6
 
     sget-object v0, Lcom/android/internal/telephony/cat/AppInterface$CommandType;->OPEN_CHANNEL:Lcom/android/internal/telephony/cat/AppInterface$CommandType;
 
-    if-ne v9, v0, :cond_6
+    if-ne v9, v0, :cond_7
 
     .line 1040
-    :cond_5
+    :cond_6
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mCmdIf:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, v5, v10}, Lcom/android/internal/telephony/CommandsInterface;->handleCallSetupRequestFromSim(ZLandroid/os/Message;)V
@@ -1363,7 +1364,7 @@
     goto/16 :goto_0
 
     .line 1044
-    :cond_6
+    :cond_7
     const/4 v5, 0x0
 
     .line 1046
@@ -1377,7 +1378,7 @@
     :pswitch_b
     sget-object v0, Lcom/android/internal/telephony/cat/AppInterface$CommandType;->SET_UP_CALL:Lcom/android/internal/telephony/cat/AppInterface$CommandType;
 
-    if-ne v9, v0, :cond_7
+    if-ne v9, v0, :cond_8
 
     .line 1050
     iput-object v10, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
@@ -1385,7 +1386,7 @@
     goto/16 :goto_0
 
     .line 1054
-    :cond_7
+    :cond_8
     :pswitch_c
     const/4 v5, 0x0
 
@@ -1394,19 +1395,7 @@
     .restart local v5    # "resp":Lcom/android/internal/telephony/cat/ResponseData;
     goto/16 :goto_1
 
-    .end local v5    # "resp":Lcom/android/internal/telephony/cat/ResponseData;
-    .restart local v7    # "input":Lcom/android/internal/telephony/cat/Input;
-    .restart local v8    # "resp":Lcom/android/internal/telephony/cat/ResponseData;
-    :cond_8
-    move-object v5, v8
-
-    .end local v8    # "resp":Lcom/android/internal/telephony/cat/ResponseData;
-    .restart local v5    # "resp":Lcom/android/internal/telephony/cat/ResponseData;
-    goto/16 :goto_1
-
     .line 959
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

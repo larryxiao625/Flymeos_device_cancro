@@ -39,9 +39,9 @@
 
 
 # instance fields
-.field public BSSID:Ljava/lang/String;
-
 .field public HexSSID:Ljava/lang/String;
+
+.field public BSSID:Ljava/lang/String;
 
 .field public SSID:Ljava/lang/String;
 
@@ -177,7 +177,7 @@
 
     iput v0, p0, Landroid/net/wifi/ScanResult;->isAutoJoinCandidate:I
 
-    invoke-static {p0, p1}, Landroid/net/wifi/ScanResult$FlymeInjector;->initFlymeExtraFields(Landroid/net/wifi/ScanResult;Landroid/net/wifi/ScanResult;)V
+    invoke-static/range {p0 .. p1}, Landroid/net/wifi/ScanResult$FlymeInjector;->initFlymeExtraFields(Landroid/net/wifi/ScanResult;Landroid/net/wifi/ScanResult;)V
 
     :cond_0
     return-void
@@ -225,7 +225,7 @@
 
     iput v1, p0, Landroid/net/wifi/ScanResult;->distanceSdCm:I
 
-    invoke-static {p0, p1}, Landroid/net/wifi/ScanResult$FlymeInjector;->initFlymeExtraFields(Landroid/net/wifi/ScanResult;Landroid/net/wifi/WifiSsid;)V
+    invoke-static/range {p0 .. p1}, Landroid/net/wifi/ScanResult$FlymeInjector;->initFlymeExtraFields(Landroid/net/wifi/ScanResult;Landroid/net/wifi/WifiSsid;)V
 
     return-void
 
@@ -277,7 +277,7 @@
 
     iput p9, p0, Landroid/net/wifi/ScanResult;->distanceSdCm:I
 
-    invoke-static {p0, p1}, Landroid/net/wifi/ScanResult$FlymeInjector;->initFlymeExtraFields(Landroid/net/wifi/ScanResult;Landroid/net/wifi/WifiSsid;)V
+    invoke-static/range {p0 .. p1}, Landroid/net/wifi/ScanResult$FlymeInjector;->initFlymeExtraFields(Landroid/net/wifi/ScanResult;Landroid/net/wifi/WifiSsid;)V
 
     return-void
 

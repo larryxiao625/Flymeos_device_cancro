@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_onInterruptionFilterChanged:I = 0x6
 
-.field static final TRANSACTION_onListenerConnected:I = 0x1
+.field static final TRANSACTION_onListenerConnected_0:I = 0x1
 
 .field static final TRANSACTION_onListenerHintsChanged:I = 0x5
 

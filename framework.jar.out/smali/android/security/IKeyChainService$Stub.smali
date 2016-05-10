@@ -32,7 +32,7 @@
 
 .field static final TRANSACTION_getCaCertificateChainAliases:I = 0xb
 
-.field static final TRANSACTION_getCertificate:I = 0x2
+.field static final TRANSACTION_getCertificate_1:I = 0x2
 
 .field static final TRANSACTION_getEncodedCaCertificate:I = 0xa
 
@@ -46,7 +46,7 @@
 
 .field static final TRANSACTION_installKeyPair:I = 0x4
 
-.field static final TRANSACTION_requestPrivateKey:I = 0x1
+.field static final TRANSACTION_requestPrivateKey_0:I = 0x1
 
 .field static final TRANSACTION_reset:I = 0x6
 

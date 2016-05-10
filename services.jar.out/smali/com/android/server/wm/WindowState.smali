@@ -20,6 +20,8 @@
 
 
 # instance fields
+.field mWindowStateExt:Lcom/android/server/wm/WindowStateExt;
+
 .field mAppFreezing:Z
 
 .field final mAppOp:I
@@ -246,8 +248,6 @@
 .field final mWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
 .field final mWindowId:Landroid/view/IWindowId;
-
-.field mWindowStateExt:Lcom/android/server/wm/WindowStateExt;
 
 .field mXOffset:I
 

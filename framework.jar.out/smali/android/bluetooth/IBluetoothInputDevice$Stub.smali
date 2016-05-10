@@ -26,11 +26,11 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.bluetooth.IBluetoothInputDevice"
 
-.field static final TRANSACTION_connect:I = 0x1
+.field static final TRANSACTION_connect_0:I = 0x1
 
-.field static final TRANSACTION_disconnect:I = 0x2
+.field static final TRANSACTION_disconnect_1:I = 0x2
 
-.field static final TRANSACTION_getConnectedDevices:I = 0x3
+.field static final TRANSACTION_getConnectedDevices_2:I = 0x3
 
 .field static final TRANSACTION_getConnectionState:I = 0x5
 

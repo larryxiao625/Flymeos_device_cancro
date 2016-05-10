@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/content/ContentProvider$FlymeInjector;,
         Landroid/content/ContentProvider$PipeDataWriter;,
+        Landroid/content/ContentProvider$FlymeInjector;,
         Landroid/content/ContentProvider$Transport;
     }
 .end annotation

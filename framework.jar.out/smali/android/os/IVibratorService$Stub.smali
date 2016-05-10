@@ -30,11 +30,11 @@
 
 .field static final TRANSACTION_hasVibrator_0:I = 0x1
 
-.field static final TRANSACTION_vibrate:I = 0x2
-
 .field static final TRANSACTION_vibrateLowPriority:I = 0x5
 
 .field static final TRANSACTION_vibratePattern:I = 0x3
+
+.field static final TRANSACTION_vibrate_1:I = 0x2
 
 
 # direct methods

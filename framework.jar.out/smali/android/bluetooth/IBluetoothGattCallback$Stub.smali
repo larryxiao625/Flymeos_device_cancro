@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_onClientConnectionState:I = 0x2
 
-.field static final TRANSACTION_onClientRegistered:I = 0x1
+.field static final TRANSACTION_onClientRegistered_0:I = 0x1
 
 .field static final TRANSACTION_onConfigureMTU:I = 0x12
 

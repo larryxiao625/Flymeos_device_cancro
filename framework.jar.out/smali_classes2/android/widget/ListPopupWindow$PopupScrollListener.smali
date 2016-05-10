@@ -70,13 +70,12 @@
 
     iget-boolean v0, v0, Landroid/widget/ListPopupWindow;->mMzKeepInputMethodNeeded:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_flyme_0
 
-    :cond_0
-    :goto_0
     return-void
 
-    :cond_1
+    :cond_flyme_0
+
     const/4 v0, 0x1
 
     if-ne p2, v0, :cond_0
@@ -129,5 +128,7 @@
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow$ResizePopupRunnable;->run()V
 
-    goto :goto_0
+    .line 1812
+    :cond_0
+    return-void
 .end method

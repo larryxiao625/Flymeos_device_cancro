@@ -36,7 +36,7 @@
 
 .field static final TRANSACTION_getCallId:I = 0x2
 
-.field static final TRANSACTION_getCallProfile_2:I = 0x3
+.field static final TRANSACTION_getCallProfile:I = 0x3
 
 .field static final TRANSACTION_getCallSubstate:I = 0x1d
 
@@ -50,7 +50,7 @@
 
 .field static final TRANSACTION_getVideoCallProvider_27:I = 0x1c
 
-.field static final TRANSACTION_hold:I = 0x11
+.field static final TRANSACTION_hold_16:I = 0x11
 
 .field static final TRANSACTION_inviteParticipants_21:I = 0x16
 
@@ -64,7 +64,7 @@
 
 .field static final TRANSACTION_removeParticipants_22:I = 0x17
 
-.field static final TRANSACTION_resume:I = 0x12
+.field static final TRANSACTION_resume_17:I = 0x12
 
 .field static final TRANSACTION_sendDtmf_23:I = 0x18
 
@@ -74,11 +74,11 @@
 
 .field static final TRANSACTION_setMute:I = 0xa
 
+.field static final TRANSACTION_start:I = 0xb
+
 .field static final TRANSACTION_startConference_11:I = 0xc
 
 .field static final TRANSACTION_startDtmf_24:I = 0x19
-
-.field static final TRANSACTION_start_10:I = 0xb
 
 .field static final TRANSACTION_stopDtmf_25:I = 0x1a
 

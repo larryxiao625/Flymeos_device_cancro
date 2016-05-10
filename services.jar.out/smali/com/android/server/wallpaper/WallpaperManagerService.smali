@@ -34,13 +34,13 @@
 
 
 # instance fields
-.field final mContext:Landroid/content/Context;
-
-.field mCurrentUserId:I
-
 .field private mFlymeRestoredWallpaperComponent:Landroid/content/ComponentName;
 
 .field mFlymeWallpaperService:Lcom/android/server/wallpaper/FlymeWallpaperService;
+
+.field final mContext:Landroid/content/Context;
+
+.field mCurrentUserId:I
 
 .field final mIPackageManager:Landroid/content/pm/IPackageManager;
 
@@ -6400,6 +6400,7 @@
     iput-boolean v5, v4, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->imageWallpaperPending:Z
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/wallpaper/WallpaperManagerService;->flymeSetWallpaperSimultaneously()V
+
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 

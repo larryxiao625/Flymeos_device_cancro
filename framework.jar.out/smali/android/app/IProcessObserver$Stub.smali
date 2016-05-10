@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_onProcessDied:I = 0x3
 
-.field static final TRANSACTION_onProcessStateChanged:I = 0x2
+.field static final TRANSACTION_onProcessStateChanged_1:I = 0x2
 
 
 # direct methods

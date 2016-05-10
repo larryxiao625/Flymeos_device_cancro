@@ -28,9 +28,9 @@
 
 .field static final TRANSACTION_cancel_1:I = 0x2
 
-.field static final TRANSACTION_pokeWakelock:I = 0x4
+.field static final TRANSACTION_pokeWakelock_3:I = 0x4
 
-.field static final TRANSACTION_reportFailedAttempt:I = 0x3
+.field static final TRANSACTION_reportFailedAttempt_2:I = 0x3
 
 .field static final TRANSACTION_unlock_0:I = 0x1
 

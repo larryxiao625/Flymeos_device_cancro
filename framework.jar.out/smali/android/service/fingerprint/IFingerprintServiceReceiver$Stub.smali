@@ -26,9 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.service.fingerprint.IFingerprintServiceReceiver"
 
-.field static final TRANSACTION_onAcquired:I = 0x2
+.field static final TRANSACTION_onAcquired_1:I = 0x2
 
-.field static final TRANSACTION_onEnrollResult:I = 0x1
+.field static final TRANSACTION_onEnrollResult_0:I = 0x1
 
 .field static final TRANSACTION_onError:I = 0x4
 

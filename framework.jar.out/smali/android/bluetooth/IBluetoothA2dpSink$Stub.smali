@@ -26,9 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.bluetooth.IBluetoothA2dpSink"
 
-.field static final TRANSACTION_connect:I = 0x1
+.field static final TRANSACTION_connect_0:I = 0x1
 
-.field static final TRANSACTION_disconnect:I = 0x2
+.field static final TRANSACTION_disconnect_1:I = 0x2
 
 .field static final TRANSACTION_getAudioConfig:I = 0x9
 

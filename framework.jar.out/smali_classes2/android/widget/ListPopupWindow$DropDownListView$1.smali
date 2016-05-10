@@ -56,11 +56,13 @@
 
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 1478
     check-cast p1, Landroid/graphics/drawable/Drawable;
 
+    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/widget/ListPopupWindow$DropDownListView$1;->get(Landroid/graphics/drawable/Drawable;)Ljava/lang/Integer;
 
     move-result-object v0
@@ -83,11 +85,14 @@
 
 .method public bridge synthetic setValue(Ljava/lang/Object;I)V
     .locals 0
+    .param p1, "x0"    # Ljava/lang/Object;
+    .param p2, "x1"    # I
 
     .prologue
     .line 1478
     check-cast p1, Landroid/graphics/drawable/Drawable;
 
+    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2}, Landroid/widget/ListPopupWindow$DropDownListView$1;->setValue(Landroid/graphics/drawable/Drawable;I)V
 
     return-void

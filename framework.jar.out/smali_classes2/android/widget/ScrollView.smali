@@ -22,6 +22,10 @@
 
 
 # instance fields
+.field private mFlymeFirstInit:Z
+
+.field private mIsFlymeThemeLight:Z
+
 .field private mActivePointerId:I
 
 .field private mChildToScrollTo:Landroid/view/View;
@@ -38,11 +42,7 @@
 
 .field private mFlingStrictSpan:Landroid/os/StrictMode$Span;
 
-.field private mFlymeFirstInit:Z
-
 .field private mIsBeingDragged:Z
-
-.field private mIsFlymeThemeLight:Z
 
 .field private mIsLayoutDirty:Z
 
@@ -202,7 +202,7 @@
 
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    invoke-direct {p0}, Landroid/widget/ScrollView;->initFlymeStyles()V
+    invoke-direct/range {p0 .. p0}, Landroid/widget/ScrollView;->initFlymeStyles()V
 
     return-void
 .end method
@@ -2090,7 +2090,7 @@
     .prologue
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    invoke-direct {p0}, Landroid/widget/ScrollView;->initFlymeExtraFields()V
+    invoke-direct/range {p0 .. p0}, Landroid/widget/ScrollView;->initFlymeExtraFields()V
 
     iget-object v4, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
@@ -2142,7 +2142,7 @@
 
     invoke-virtual {p1, v4, v5}, Landroid/graphics/Canvas;->translate(FF)V
 
-    invoke-direct {p0, p1}, Landroid/widget/ScrollView;->flymeDrawWithTop(Landroid/graphics/Canvas;)V
+    invoke-direct/range {p0 .. p1}, Landroid/widget/ScrollView;->flymeDrawWithTop(Landroid/graphics/Canvas;)V
 
     .line 1697
     iget-object v4, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
@@ -2230,7 +2230,7 @@
 
     invoke-virtual {p1, v4, v5}, Landroid/graphics/Canvas;->translate(FF)V
 
-    invoke-direct {p0, p1}, Landroid/widget/ScrollView;->flymeDrawWithBottom(Landroid/graphics/Canvas;)V
+    invoke-direct/range {p0 .. p1}, Landroid/widget/ScrollView;->flymeDrawWithBottom(Landroid/graphics/Canvas;)V
 
     .line 1710
     const/high16 v4, 0x43340000    # 180.0f
