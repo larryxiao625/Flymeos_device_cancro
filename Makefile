@@ -55,8 +55,8 @@ vendor_modify_images := boot
 # You can configure the apk name in the vendor/system/app or vendor/system/pri-app directory.
 #-----------------------------------------------------------------------------
 vendor_saved_apps := AntHalService  Bluetooth BluetoothExt BackupRestoreConfirmation Camera2 \
-ExternalStorageProvider FusedLocation HTMLViewer InputDevices KeyChain NfcNci ProxyHandler \
-qcrilmsgtunnel QuickBoot shutdownlistener TimeService SharedStorageBackup Shell Stk Tag \
+ExternalStorageProvider FusedLocation HTMLViewer InputDevices KeyChain ProxyHandler \
+qcrilmsgtunnel QuickBoot shutdownlistener TimeService SharedStorageBackup Shell Stk \
 UserDictionaryProvider WAPPushManager
 
 ##############################################################################
@@ -142,11 +142,11 @@ board_modify_apps := TeleService SystemUI
 # The default value is Nexus-5_Unofficial.
 # You should configure the property according to your device and your ID with replace the "Nexus-5_Unofficial".
 override_property += \
-    ro.flyme.romer=nian0114 \
-    ro.product.model_romer=port_nian0114 \
+    ro.flyme.romer=romerxzh \
+    ro.product.model_romer=port_romerxzh \
     ro.ota.romname=Flyme OS \
     ro.ota.manifest=http://flymeota.nianrom.cn/cancro/ota.xml \
-    ro.ota.version=20160509
+    ro.ota.version=201605011
 
 ##############################################################################
 # The value decides which property you will remove from the build.prop.
